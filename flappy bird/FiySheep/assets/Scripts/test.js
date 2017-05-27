@@ -24,84 +24,86 @@ cc.Class({
 
     properties: {
 
-         pro1:{
-            default:null,
-            type:cc.Node,
-            displayName:"展示的名字",
-            tooltip:"说明说明"
-         },
+        //  pro1:{
+        //     default:null,
+        //     type:cc.Node,
+        //     displayName:"展示的名字",
+        //     tooltip:"说明说明"
+        //  },
 
-         pro2:{
-            default:null,
-            type:cc.Button,
-            visible:false,  //不在属性检查器显示
-         },
+        //  pro2:{
+        //     default:null,
+        //     type:cc.Button,
+        //     visible:false,  //不在属性检查器显示
+        //  },
 
-         pro3:{
-            default:10,
-            readonly:true
-         },
+        //  pro3:{
+        //     default:10,
+        //     readonly:true
+        //  },
 
-         pro4:{
-            default:"设置文本框",
-            multiline:true
-         },
+        //  pro4:{
+        //     default:"设置文本框",
+        //     multiline:true
+        //  },
 
-         pro5:{
-            default:10,
-            min : 2,
-            max : 20,
-            step : 1
-         },
+        //  pro5:{
+        //     default:10,
+        //     min : 2,
+        //     max : 20,
+        //     step : 1
+        //  },
 
-         pro6:{
-            default : 8,
-            range : [4,30,2]
-         },
+        //  pro6:{
+        //     default : 8,
+        //     range : [4,30,2]
+        //  },
 
-         pro7:{
-            default : 50,
-            range:[0,100,2],
-            slide:true
-         },
+        //  pro7:{
+        //     default : 50,
+        //     range:[0,100,2],
+        //     slide:true
+        //  },
 
-         _pro8:{
-            default : "这样子也可以不显示",
-         },
+        //  _pro8:{
+        //     default : "这样子也可以不显示",
+        //     type:cc.String
+        //  },
 
-         pro9:{
-            default:function(){
-                return [1,2,3];
-            },
-         },
 
-         pro10:{
-            default:"",
-            serializable:false
-         },
+        //  pro9:{
+        //     default:function(){
+        //         return [1,2,3];
+        //     },
+        //  },
 
-         pro11:{
-            default:"",
-            url:cc.Texture2D,
-         },
+        //  pro10:{
+        //     default:"",
+        //     serializable:false
+        //  },
 
-         pro12:{
-            get:function(){
-                return this.pro7;
-            }
-         },
+        //  pro11:{
+        //     default:"",
+        //     url:cc.Texture2D,
+        //  },
 
-         pro13:{
-            set:function(value){
-                this.pro7 = Math.floor(value);
-            },
-            type:cc.Integer
-         },
+        //  pro12:{
+        //     get:function(){
+        //         return this.pro7;
+        //     }
+        //  },
 
-         pro14:{
-            default:Order_type.normal,
-            type:Order_type
-         }
+        //  pro13:{
+        //     set:function(value){
+        //         this.pro7 = Math.floor(value);
+        //     },
+        //     type:cc.Integer
+        //  },
+
+        //  pro14:{
+        //     default:Order_type.normal,
+        //     type:Order_type
+        //  }
     },
 
     // use this for initialization
@@ -109,7 +111,7 @@ cc.Class({
 
 
 
-        console.log(Order_type.normal+"_"+Order_type.shinei+"_"+Order_type.baoche+"_"+Order_type[0]);
+        // console.log(Order_type.normal+"_"+Order_type.shinei+"_"+Order_type.baoche+"_"+Order_type[0]);
 
     },
 
