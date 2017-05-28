@@ -16,7 +16,7 @@ cc.Class({
     
     // use this for initialization
     onLoad: function () {
-        YH.
+        // YH.
     },
 
     // called every frame, uncomment this function to activate update callback

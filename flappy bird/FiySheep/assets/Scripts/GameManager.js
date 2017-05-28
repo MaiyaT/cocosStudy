@@ -21,7 +21,7 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
 
-        // YH.
+        console.log("========YH======="+YH.pipeManager);
 
     },
 

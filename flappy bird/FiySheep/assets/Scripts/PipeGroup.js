@@ -55,9 +55,9 @@ cc.Class({
 
         this.node.x -= dt*this.speed;
 
-        console.log("水管x坐标1  " + this.node.x);
-        console.log("水管x坐标2  " + this.node.getBoundingBoxToWorld());
-        console.log("水管x坐标3  " + this.node.getBoundingBox());
+        // console.log("水管x坐标1  " + this.node.x);
+        // console.log("水管x坐标2  " + this.node.getBoundingBoxToWorld());
+        // console.log("水管x坐标3  " + this.node.getBoundingBox());
 
         if(this.node.getBoundingBoxToWorld().xMax < 0){
             
