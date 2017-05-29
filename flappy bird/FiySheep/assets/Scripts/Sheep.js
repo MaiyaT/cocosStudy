@@ -119,6 +119,36 @@ cc.Class({
         this.pool_dust = new cc.NodePool(Dust)
         this.registerInput();
 
+        //开启碰撞
+        let collistion = cc.director.getCollisionManager();
+        collistion.enabled = true;
+
+
+        console.log("===========grounpList======"+cc.game.groupList);
+    },
+
+    onCollisionEnter:function(other,self){
+
+        // console.log("========发生了碰撞========",other);
+        if(this.state != State.Dead){
+
+            //检查碰撞了哪一个分组了
+            let group_name = cc.game.groupList[other.node.groupIndex];
+
+            // console.log("=========碰撞到 "+ group_name +" 了=============");
+
+            let game_m = cc.find("Game").getComponent("GameManager");
+
+            if(group_name == "Pipe"){
+                //碰到了 水管 over
+                // this.state = State.Dead;
+                // game_m.stop_game();
+            }
+            else if(group_name == "NextPipe"){
+                //过了一根水管
+                game_m.score_add();
+            }
+        }
     },
 
     // -- 注册操作事件

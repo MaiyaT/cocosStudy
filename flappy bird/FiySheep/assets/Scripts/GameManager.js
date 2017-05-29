@@ -16,6 +16,29 @@ cc.Class({
         //    readonly: false,    // optional, default is false
         // },
         // ...
+
+        score_lab:{
+            default:null,
+            type:cc.Label
+        },
+
+        _score:{
+            get:function(){
+                return parseInt(this.score_lab.string);
+            },
+            set:function(value){
+                this.score_lab.string = value;
+            },
+        },
+
+    },
+
+    score_add:function(){
+        this._score ++;
+    },
+
+    score_reset:function(){
+        this._score = 0;
     },
 
     // use this for initialization
