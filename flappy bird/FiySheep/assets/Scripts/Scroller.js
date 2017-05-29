@@ -2,12 +2,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        
-        speed:{
-            default:0,
-            step:50
-        },
-
+    
         left_margin:0,
 
     },
@@ -22,7 +17,7 @@ cc.Class({
 
         var pos_x = this.node.x;
 
-        pos_x -= this.speed*dt;
+        pos_x -= YH.yh_speed*dt;
 
         if (pos_x <= this.left_margin){
             pos_x = 0;

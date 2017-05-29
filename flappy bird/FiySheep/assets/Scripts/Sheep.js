@@ -118,6 +118,7 @@ cc.Class({
         this.state = State.Run;
         this.pool_dust = new cc.NodePool(Dust)
         this.registerInput();
+
     },
 
     // -- 注册操作事件

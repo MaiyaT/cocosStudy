@@ -1,4 +1,6 @@
 
+var PipeManager = require("PipeManager");
+
 //水管移动和上下位置摆放
 cc.Class({
     extends: cc.Component,
@@ -6,16 +8,15 @@ cc.Class({
     properties: {
         
         bottom_y_rand:{
-            type:cc.Vec2,
+            // type:cc.Vec2,
             default:cc.p(0,0),
             tooltip:"下面一根水管 position y的范围"
         },
         space_rand:{
-            type:cc.Vec2,
+            // type:cc.Vec2,
             default:cc.p(0,0),
             tooltip:"两根水管之间的间距范围"
         },
-        speed:0,
         pipe_top:{
             default:null,
             type:cc.Node,
@@ -53,7 +54,7 @@ cc.Class({
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
 
-        this.node.x -= dt*this.speed;
+        this.node.x -= dt*YH.yh_speed;
 
         // console.log("水管x坐标1  " + this.node.x);
         // console.log("水管x坐标2  " + this.node.getBoundingBoxToWorld());
@@ -61,6 +62,9 @@ cc.Class({
 
         if(this.node.getBoundingBoxToWorld().xMax < 0){
             
+            let pipe_m = cc.find("Game").getComponent(PipeManager);
+
+            pipe_m.pipe_release(this);
         }
     },
 });
