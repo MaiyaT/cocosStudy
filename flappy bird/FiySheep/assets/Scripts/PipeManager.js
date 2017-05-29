@@ -12,7 +12,7 @@ cc.Class({
         },
 
         creat_interval:{
-            default:0.8,
+            default:0.6,
             tooltip:"创建水管的时间间隔"
         },
 
@@ -44,8 +44,10 @@ cc.Class({
         }else{
             group = cc.instantiate(this.pipe_pre);
         }
+        let c_group = group.getComponent("PipeGroup");
+        c_group.configSetup();
 
-        let origin_x = YH.yh_width + group.width;
+        let origin_x = YH.yh_width*0.5 + group.width;
         group.x = origin_x;
 
         group.active = true;

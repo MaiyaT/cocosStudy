@@ -22,7 +22,7 @@
       }
     ],
     "_tag": -1,
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 10
@@ -57,8 +57,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 1078,
-      "y": 677
+      "x": 703,
+      "y": 233
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -305,13 +305,13 @@
     "_enabled": true,
     "bottom_y_rand": {
       "__type__": "cc.Vec2",
-      "x": -270,
-      "y": -50
+      "x": 20,
+      "y": 220
     },
     "space_rand": {
       "__type__": "cc.Vec2",
-      "x": 250,
-      "y": 375
+      "x": 200,
+      "y": 350
     },
     "pipe_top": {
       "__id__": 2

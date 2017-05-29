@@ -30,12 +30,16 @@ cc.Class({
     //水管初始坐标等设置
     configSetup:function(){
 
-        let y_bottom = this.bottom_y_rand.x + (this.bottom_y_rand.y-this.bottom_y_rand.x)*cc.random0To1();
+        //地面的高度
+        let ground = cc.find("Canvas/ground");
+        let groundY = ground.y + ground.height*0.5;
+
+        let y_bottom = this.bottom_y_rand.x + (this.bottom_y_rand.y-this.bottom_y_rand.x)*cc.random0To1() + groundY;
         let space = this.space_rand.x + (this.space_rand.y-this.space_rand.x)*cc.random0To1();
         let y_top = y_bottom + Math.abs(space);
 
         this.pipe_top.y = y_top;
-        this.pipe_bottom = y_bottom;
+        this.pipe_bottom.y = y_bottom;
 
     },
 
@@ -48,7 +52,7 @@ cc.Class({
         // console.log("======cc.random0To1======"+cc.random0To1());//0~1
         // console.log("======cc.randomMinus1To1======"+cc.randomMinus1To1());//-1~1
 
-        this.configSetup();
+        // this.configSetup();
     },
 
     // called every frame, uncomment this function to activate update callback
