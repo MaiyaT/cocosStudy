@@ -1,5 +1,13 @@
 
+var Sheep = require("Sheep");
 
+var GameState = cc.Enum({
+
+    Menu : -1,
+    Run:-1,
+    Over:-1,
+
+});
 
 
 cc.Class({
@@ -24,17 +32,28 @@ cc.Class({
 
         _score:{
             get:function(){
-                return parseInt(this.score_lab.string);
+                let str = this.score_lab.string;
+                let result = str.replace("Score:","");
+                return parseInt(result);
             },
             set:function(value){
-                this.score_lab.string = value;
+                this.score_lab.string = "Score:"+value;
             },
         },
 
+        game_state:{
+            default:GameState.Menu,
+            type:GameState,
+            visible:false
+        },
+    },
+
+    statics:{
+        GameState
     },
 
     score_add:function(){
-        this._score ++;
+        this._score = this._score + 1;
     },
 
     score_reset:function(){
@@ -44,23 +63,47 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
 
+        this.game_state = GameState.Menu;
+
         YH.yh_width = cc.director.getWinSizeInPixels().width;
         YH.yh_height = cc.director.getWinSizeInPixels().height;
 
         console.log("=================屏幕的宽高"+YH.yh_width+"==="+YH.yh_height);
 
+        this.gameOver = cc.find("GameOver");
         this.start_game();
     },
 
     start_game:function(){
 
-        var pipe_m = this.node.getComponent("PipeManager");
+        this.game_state = GameState.Run;
 
+        let sheep = cc.find("Canvas/sheep").getComponent("Sheep");
+        sheep.reRun();
+
+        this.gameOver.active = false;
+        this.score_reset();
+
+        this.gameOver.getComponent("GameOverMenu").score.string = "Score:0";
+
+        var pipe_m = this.node.getComponent("PipeManager");
         pipe_m.start_schedule();
     },
 
     stop_game:function(){
 
+        this.game_state = GameState.Over;
+
+        // let sheep = cc.find("Canvas/sheep").getComponent("Sheep");
+        // sheep.state = Sheep.State.Dead;
+
+        this.gameOver.active = true;
+        this.gameOver.getComponent("GameOverMenu").score.string = "Score:"+this._score;
+
+        this.score_reset();
+
+        var pipe_m = this.node.getComponent("PipeManager");
+        pipe_m.stop_schedule();
     },
 
     // called every frame, uncomment this function to activate update callback
@@ -68,3 +111,8 @@ cc.Class({
 
     // },
 });
+
+
+// module.exports = {
+//     "game_state":this.game_state
+// };

@@ -1,5 +1,6 @@
 
 var PipeManager = require("PipeManager");
+var GameManager = require("GameManager");
 
 //水管移动和上下位置摆放
 cc.Class({
@@ -58,17 +59,28 @@ cc.Class({
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
 
-        this.node.x -= dt*YH.yh_speed;
+        let game_m = cc.find("Game").getComponent(GameManager);
+        if (game_m.game_state === GameManager.GameState.Run)
+        {
+            this.node.x -= dt*YH.yh_speed;
 
-        // console.log("水管x坐标1  " + this.node.x);
-        // console.log("水管x坐标2  " + this.node.getBoundingBoxToWorld());
-        // console.log("水管x坐标3  " + this.node.getBoundingBox());
+            // console.log("水管x坐标1  " + this.node.x);
+            // console.log("水管x坐标2  " + this.node.getBoundingBoxToWorld());
+            // console.log("水管x坐标3  " + this.node.getBoundingBox());
 
-        if(this.node.getBoundingBoxToWorld().xMax < 0){
-            
-            let pipe_m = cc.find("Game").getComponent(PipeManager);
-
-            pipe_m.pipe_release(this);
+            if(this.node.getBoundingBoxToWorld().xMax < 0){
+                
+                this.release_pipe();
+            }
         }
+    },
+
+
+    release_pipe:function(){
+
+        let pipe_m = cc.find("Game").getComponent(PipeManager);
+
+        pipe_m.pipe_release(this);
+
     },
 });

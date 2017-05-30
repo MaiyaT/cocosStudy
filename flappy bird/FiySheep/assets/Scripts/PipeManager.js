@@ -1,4 +1,6 @@
 
+var PipeGroup = require("PipeGroup");
+var GameManager = require("GameManager");
 
 
 cc.Class({
@@ -26,6 +28,43 @@ cc.Class({
 
     start_schedule:function(){
 
+        //清理掉场景中的 水管
+        let Pipes = cc.find("Canvas/Pipes");
+        // Pipes.children.forEach(function(item){
+        //     console.log("======遍历子视图======"+item);
+            
+            // if(item.name === "PipeGroup"){
+               
+            //     console.log("============= 是 PipeGroup 类型 ===========");
+
+            //     item.getComponent("PipeGroup").release_pipe();
+            // }
+        // });
+
+        let pipe_list = [];
+        for (let i = 0;i<Pipes.children.length; i++){
+
+            let item = Pipes.children[i];
+            if(item.name === "PipeGroup"){
+               
+               pipe_list.push(item);
+
+                console.log("============= 是 PipeGroup 类型 ===========");                
+            }
+        }
+
+        while(pipe_list.length > 0){
+           
+            let item = pipe_list[0];
+            item.getComponent("PipeGroup").release_pipe();
+
+            console.log("=============== 移除 ================");
+
+            pipe_list.shift();
+        }
+
+
+
         //先执行一次
         this.pipe_create();
         //开始计时器
@@ -34,6 +73,13 @@ cc.Class({
     },
 
     pipe_create:function(){
+
+        let game_m = cc.find("Game").getComponent(GameManager);
+        if (game_m.game_state !== GameManager.GameState.Run){
+            return;
+        }
+
+
         console.log("============= pipe_create");
 
         console.log("================ size =======" + this.pool_m.size());

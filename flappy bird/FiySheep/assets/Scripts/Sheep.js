@@ -1,4 +1,8 @@
 
+
+
+
+
 var State = cc.Enum({
     None : -1,
     Run  : -1,
@@ -89,7 +93,17 @@ cc.Class({
             default:null,
             url:cc.AudioClip,
             tooltip:"跳跃的声音"
-        }
+        },
+
+        deadAudio:{
+            default:null,
+            url:cc.AudioClip
+        },
+
+        getAudio:{
+            default:null,
+            url:cc.AudioClip
+        },
     },
 
 
@@ -137,16 +151,21 @@ cc.Class({
 
             // console.log("=========碰撞到 "+ group_name +" 了=============");
 
-            let game_m = cc.find("Game").getComponent("GameManager");
+            var GameManager = require("GameManager");
+            let game_m = cc.find("Game").getComponent(GameManager);
 
             if(group_name == "Pipe"){
                 //碰到了 水管 over
-                // this.state = State.Dead;
-                // game_m.stop_game();
+                this.state = State.Dead;
+                game_m.stop_game();
+
+                cc.audioEngine.play(this.deadAudio);
             }
             else if(group_name == "NextPipe"){
                 //过了一根水管
                 game_m.score_add();
+
+                cc.audioEngine.play(this.getAudio);
             }
         }
     },
@@ -163,7 +182,6 @@ cc.Class({
 
                 // console.log("点击了按钮"+keycode);
                 self.jump_action();
-
             },
         };
 
@@ -175,9 +193,14 @@ cc.Class({
     //跳起动作
     jump_action:function(){
 
-        this.state = State.Jump;
+        var GameManager = require("GameManager");
+        let game_m = cc.find("Game").getComponent(GameManager);
+        if (game_m.game_state === GameManager.GameState.Run)
+        {
+            this.state = State.Jump;
 
-        this.currentSpeed = this.jumpSpeed;
+            this.currentSpeed = this.jumpSpeed;
+        }
 
     },
 
@@ -213,6 +236,10 @@ cc.Class({
 
     //掉到地面上的时候回调 这个回调在动画编辑器里面添加事件
     onDropFinished:function(){
+        this.state = State.Run;
+    },
+
+    reRun:function(){
         this.state = State.Run;
     },
 
