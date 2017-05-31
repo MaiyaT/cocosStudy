@@ -12,32 +12,36 @@ cc.Class({
         //    readonly: false,    // optional, default is false
         // },
         // ...
-
-
-        audio_btn:{
+        bg_music:{
             default:null,
-            url:cc.AudioClip,
+            url:cc.AudioClip
         },
-
-        audio_bg:{
-            default:null,
-            url:cc.AudioClip,
-        }
     },
     
-    //播放按钮的声音
-    play_btn_audio:function(){
-        if(this.audio_btn){
-            cc.audioEngine.play(this.audio_btn);
-        }
-    },
-
-
 
     // use this for initialization
     onLoad: function () {
 
+        // this.bg_music_id = cc.audioEngine.play(this.bg_music,false,0.8);
+
+        cc.director.preloadScene("game",function(){
+
+            console.log("预加载完成");
+
+        });
+
     },
+
+    stop_bg_audio:function(){
+        cc.audioEngine.stop(this.bg_music_id);
+    },
+
+    play_game:function(){
+        cc.director.loadScene("game");
+
+        this.stop_bg_audio();
+    },
+
 
     // called every frame, uncomment this function to activate update callback
     // update: function (dt) {
