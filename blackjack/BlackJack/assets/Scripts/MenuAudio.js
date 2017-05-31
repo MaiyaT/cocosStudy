@@ -18,11 +18,6 @@ cc.Class({
             default:null,
             url:cc.AudioClip,
         },
-
-        audio_bg:{
-            default:null,
-            url:cc.AudioClip,
-        }
     },
     
     //播放按钮的声音

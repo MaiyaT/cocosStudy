@@ -17,8 +17,11 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
 
-        let menu = cc.find("Menu");
-        let audio_m = menu.getComponent("MenuAudio");
+        let menu = cc.find("Menu") || cc.find("Game");
+        let audio_m = null;
+        if(menu){
+            audio_m = menu.getComponent("MenuAudio");
+        }
 
         let ani_scale1 = cc.scaleTo(0.1,0.8);
         let ani_scale2 = cc.scaleTo(0.2,1);
