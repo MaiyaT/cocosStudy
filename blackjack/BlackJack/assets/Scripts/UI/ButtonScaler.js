@@ -17,7 +17,7 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
 
-        let menu = cc.find("Menu") || cc.find("Game");
+        let menu = cc.find("Menu") || cc.find("Game/Audio");
         let audio_m = null;
         if(menu){
             audio_m = menu.getComponent("MenuAudio");
@@ -65,7 +65,7 @@ cc.Class({
    
         function onTouchDown (event) {
             // console.log("onTouchDown");            
-            audio_m.play_btn_audio();
+            audio_m.play_audio_btn();
             self.node.stopAllActions();
             self.node.runAction(ani_scale1);
         }
