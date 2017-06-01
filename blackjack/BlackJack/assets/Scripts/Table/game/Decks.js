@@ -14,9 +14,34 @@ Decks.prototype.reset = function(){
     var index = 0;
     var fromId = Types.Card.fromId;
 
+    for (var i = 0; i < this._numberOfDecks; ++i) {
+        for (var cardId = 0; cardId < 52; ++cardId) {
+            this._cardIds[index] = fromId(cardId);
+            ++index;
+        }
+    }
 }
 
 
+Decks.prototype.draw = function(){
+
+    var cardIds = this._cardIds;
+    var len = cardIds.length;
+    if(len === 0){
+        return null;
+    }
+
+    var random = Math.random();
+    var index = (random*len) | 0;
+    var result = cardIds[index];
+
+    // 保持数组紧凑
+    var last = cardIds[len - 1];
+    cardIds[index] = last;
+    cardIds.length = len - 1;
+    return result;
+};
+....
 
 cc.Class({
     extends: cc.Component,
