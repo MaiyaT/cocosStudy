@@ -23,7 +23,13 @@ cc.Class({
     onLoad: function onLoad() {
 
         // this.click_add();
-        this.boxItem = new BoxItem();
+
+    },
+
+    initBoxItem: function initBoxItem() {
+        if (!this.boxItem) {
+            this.boxItem = new BoxItem();
+        }
     },
 
     click_action: function click_action() {

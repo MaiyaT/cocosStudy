@@ -22,11 +22,11 @@ cc.Class({
         
     },
 
-
-    init:function(){
-
+    initBoxItem:function(){
+        if(!this.boxItem){
+            this.boxItem = new BoxItem();    
+        }
     },
-
 
     click_action:function(){
         
