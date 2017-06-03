@@ -1,0 +1,41 @@
+{
+  "version": 3,
+  "sources": [
+    "unknown"
+  ],
+  "names": [
+    "Color_Box",
+    "cc",
+    "Enum",
+    "Red",
+    "Green",
+    "Blue",
+    "Black",
+    "White",
+    "Class",
+    "extends",
+    "Component",
+    "properties",
+    "begin_x",
+    "begin_y",
+    "end_y",
+    "color_type",
+    "color_show",
+    "get",
+    "Color",
+    "WHITE",
+    "RED",
+    "GREEN",
+    "BLUE",
+    "BLACK",
+    "YELLOW",
+    "rank",
+    "row",
+    "onLoad"
+  ],
+  "mappings": ";;AAGA,IAAIA,YAAYC,GAAGC,IAAH,CAAQ;;AAEpBC,SAAM,CAAC,CAFa;AAGpBC,WAAQ,CAAC,CAHW;AAIpBC,UAAO,CAAC,CAJY;AAKpBC,WAAQ,CAAC,CALW;AAMpBC,WAAQ,CAAC;;AANW,CAAR,CAAhB;;AAcAN,GAAGO,KAAH,CAAS;AACLC,aAASR,GAAGS,SADP;;AAGLC,gBAAY;;AAER;AACAC,iBAAQ,CAHA;AAIR;AACAC,iBAAU,CALF;AAMR;AACAC,eAAQ,CAAC,IAPD;AAQR;AACAC,oBAAaf,UAAUO,KATf;;AAWRS,oBAAW;AACPC,iBAAI,eAAU;AACV,wBAAO,KAAKF,UAAZ;AACI,yBAAKf,UAAUO,KAAf;AAAqB,+BAAON,GAAGiB,KAAH,CAASC,KAAhB;AACrB,yBAAKnB,UAAUG,GAAf;AAAmB,+BAAOF,GAAGiB,KAAH,CAASE,GAAhB;AACnB,yBAAKpB,UAAUI,KAAf;AAAqB,+BAAOH,GAAGiB,KAAH,CAASG,KAAhB;AACrB,yBAAKrB,UAAUK,IAAf;AAAoB,+BAAOJ,GAAGiB,KAAH,CAASI,IAAhB;AACpB,yBAAKtB,UAAUM,KAAf;AAAqB,+BAAOL,GAAGiB,KAAH,CAASK,KAAhB;AACrB;AAAQ,+BAAOtB,GAAGiB,KAAH,CAASM,MAAhB;AANZ;AAQH;AAVM,SAXH;;AAwBR;AACAC,cAAO,CAzBC;AA0BR;AACAC,aAAM;;AA3BE,KAHP;;AAoCL;AACAC,YAAQ,kBAAY,CAEnB;;AAvCI,CAAT;;AAgDA;AACA;AACA",
+  "file": "unknown",
+  "sourcesContent": [
+    "\r\n\r\n\r\nvar Color_Box = cc.Enum({\r\n\r\n    Red : -1,\r\n    Green : -1,\r\n    Blue : -1,\r\n    Black : -1,\r\n    White : -1,\r\n\r\n\r\n    // Count:-1,\r\n});\r\n\r\n\r\n\r\ncc.Class({\r\n    extends: cc.Component,\r\n\r\n    properties: {\r\n\r\n        //开始掉落的位置x\r\n        begin_x:0,\r\n        //开始掉落的位置y\r\n        begin_y : 0,\r\n        //要抵达的位置Y\r\n        end_y : -1000,\r\n        //显示的颜色\r\n        color_type : Color_Box.White,\r\n\r\n        color_show:{\r\n            get:function(){\r\n                switch(this.color_type){\r\n                    case Color_Box.White:return cc.Color.WHITE;\r\n                    case Color_Box.Red:return cc.Color.RED;\r\n                    case Color_Box.Green:return cc.Color.GREEN;\r\n                    case Color_Box.Blue:return cc.Color.BLUE;\r\n                    case Color_Box.Black:return cc.Color.BLACK;\r\n                    default:return cc.Color.YELLOW;\r\n                }\r\n            }\r\n        },\r\n\r\n        //行\r\n        rank : 0,\r\n        //列\r\n        row : 0,\r\n\r\n    },\r\n\r\n\r\n\r\n    // use this for initialization\r\n    onLoad: function () {\r\n\r\n    },\r\n\r\n    // called every frame, uncomment this function to activate update callback\r\n    // update: function (dt) {\r\n\r\n    // },\r\n});\r\n\r\n\r\n// module.exports = {\r\n//     Color_Box : Color_Box\r\n// };"
+  ]
+}

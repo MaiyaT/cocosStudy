@@ -1,0 +1,118 @@
+2017-06-03T12:37:49.567Z - normal: Load ~/.CocosCreator/settings.json
+2017-06-03T12:37:49.570Z - normal: checking language setting...
+2017-06-03T12:37:49.571Z - normal: Language: zh
+2017-06-03T12:37:50.055Z - success: protocol editor-framework registered
+2017-06-03T12:37:50.055Z - success: protocol app registered
+2017-06-03T12:37:50.055Z - success: protocol theme registered
+2017-06-03T12:37:50.055Z - success: protocol profile registered
+2017-06-03T12:37:50.055Z - success: protocol packages registered
+2017-06-03T12:37:50.057Z - success: protocol unpack registerred
+2017-06-03T12:37:50.057Z - success: protocol disable-commonjs registerred
+2017-06-03T12:37:50.398Z - normal: connected!
+2017-06-03T12:37:50.401Z - normal: Check project /Users/linningning/Documents/000/YH_Cocos/Eliminate
+2017-06-03T12:37:50.403Z - normal: Initializing Cocos2d
+2017-06-03T12:37:50.697Z - normal: Initializing Asset Database
+2017-06-03T12:37:50.733Z - success: protocol uuid registerred
+2017-06-03T12:37:50.733Z - success: protocol db registerred
+2017-06-03T12:37:50.733Z - success: protocol thumbnail registerred
+2017-06-03T12:37:50.733Z - normal: Loading editor/builtin packages
+2017-06-03T12:37:50.760Z - success: anysdk loaded
+2017-06-03T12:37:50.904Z - success: assets loaded
+2017-06-03T12:37:50.907Z - success: builder loaded
+2017-06-03T12:37:50.910Z - success: hierarchy loaded
+2017-06-03T12:37:50.914Z - success: inspector loaded
+2017-06-03T12:37:50.915Z - success: keystore loaded
+2017-06-03T12:37:50.917Z - success: node-library loaded
+2017-06-03T12:37:50.932Z - success: package-asset loaded
+2017-06-03T12:37:50.934Z - success: preferences loaded
+2017-06-03T12:37:50.944Z - success: project-importer loaded
+2017-06-03T12:37:50.946Z - success: project-settings loaded
+2017-06-03T12:37:50.955Z - success: ui-kit loaded
+2017-06-03T12:37:50.959Z - success: ui-grid loaded
+2017-06-03T12:37:50.962Z - success: scene loaded
+2017-06-03T12:37:50.963Z - success: sprite-editor loaded
+2017-06-03T12:37:50.967Z - success: store loaded
+2017-06-03T12:37:50.971Z - success: timeline loaded
+2017-06-03T12:37:50.971Z - normal: Loading builtin packages
+2017-06-03T12:37:50.983Z - success: asset-db-debugger loaded
+2017-06-03T12:37:50.986Z - success: code-editor loaded
+2017-06-03T12:37:50.991Z - success: color-picker loaded
+2017-06-03T12:37:50.994Z - success: console loaded
+2017-06-03T12:37:50.998Z - success: package-manager loaded
+2017-06-03T12:37:51.005Z - success: sdkbox loaded
+2017-06-03T12:37:51.008Z - success: tester loaded
+2017-06-03T12:37:51.012Z - success: ui-kit-preview-extra loaded
+2017-06-03T12:37:51.017Z - success: ui-kit-preview loaded
+2017-06-03T12:37:51.020Z - success: ui-tree loaded
+2017-06-03T12:37:51.058Z - normal: Initializing project /Users/linningning/Documents/000/YH_Cocos/Eliminate
+2017-06-03T12:37:51.059Z - normal: Loading packages
+2017-06-03T12:37:51.064Z - normal: Watching packages
+2017-06-03T12:37:51.074Z - normal: Run Application
+2017-06-03T12:37:53.339Z - success: preview server running at http://localhost:7456
+2017-06-03T12:37:53.339Z - normal: Compiling scripts...
+2017-06-03T12:37:55.127Z - normal: Compiled project javascript file successfully
+2017-06-03T12:37:57.038Z - warn: 会话不存在或已过期
+2017-06-03T12:37:58.030Z - normal: 1.5.0
+2017-06-03T12:40:48.330Z - normal: Compiled project javascript file successfully
+2017-06-03T12:40:58.859Z - normal: Compiled project javascript file successfully
+2017-06-03T12:41:34.928Z - normal: Compiled project javascript file successfully
+2017-06-03T12:53:53.892Z - normal: Compiled project javascript file successfully
+2017-06-03T12:56:09.214Z - normal: Compiled project javascript file successfully
+2017-06-03T12:57:12.423Z - normal: Compiled project javascript file successfully
+2017-06-03T12:58:57.913Z - normal: Compiled project javascript file successfully
+2017-06-03T12:59:47.307Z - normal: Compiled project javascript file successfully
+2017-06-03T13:02:45.450Z - normal: Compiled project javascript file successfully
+2017-06-03T13:09:08.318Z - failed: [db-task][sync-changes] Failed to import asset /Users/linningning/Documents/000/YH_Cocos/Eliminate/assets/script/View/BoxPanel.js, message: Compile error: SyntaxError: unknown: Unexpected token (124:13)
+  122 |         let list = this.rankList[box.boxItem.rank];
+  123 | 
+> 124 |         for ()
+      |              ^
+  125 |         console.log("list = "+ list);
+  126 | 
+  127 |     },
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4443:13)
+    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1755:8)
+    at Parser.pp$3.parseExprAtom (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3740:12)
+    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3484:19)
+    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3464:19)
+    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3394:19)
+    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3371:19)
+    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3334:19)
+    at Parser.pp$3.parseExpression (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3296:19)
+    at Parser.pp$1.parseForStatement (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:2030:19)
+2017-06-03T13:09:57.203Z - normal: Compiled project javascript file successfully
+2017-06-03T13:10:37.181Z - normal: Compiled project javascript file successfully
+2017-06-03T13:11:59.142Z - normal: Compiled project javascript file successfully
+2017-06-03T13:13:24.472Z - normal: Compiled project javascript file successfully
+2017-06-03T13:14:01.720Z - normal: Compiled project javascript file successfully
+2017-06-03T13:14:01.771Z - error: TypeError: Cannot read property 'boxItem' of undefined
+    at Object.require.BoxDrop.BoxItem: "boxItem : this.boxItem" (assets/script/View/BoxDrop.js:70:4)
+    at s (file:///Users/linningning/Documents/000/YH_Cocos/Eliminate/library/bundle.project.js?015:1:262)
+    at file:///Users/linningning/Documents/000/YH_Cocos/Eliminate/library/bundle.project.js?015:1:313
+    at Object.require.Eliminate.BoxDrop (assets/script/Module/Eliminate.js:2)
+    at s (file:///Users/linningning/Documents/000/YH_Cocos/Eliminate/library/bundle.project.js?015:1:262)
+    at e (file:///Users/linningning/Documents/000/YH_Cocos/Eliminate/library/bundle.project.js?015:1:433)
+    at file:///Users/linningning/Documents/000/YH_Cocos/Eliminate/library/bundle.project.js?015:1:451
+2017-06-03T13:14:03.748Z - warn: Script attached to "Eliminate" is missing or invalid. Detailed information:
+Node path: "Game/Eliminate"
+Script UUID: "7b91087d-0c19-4431-898c-d93daa435c6f"
+Class ID: "7b910h9DBlEMYmM2T2qQ1xv"
+
+2017-06-03T13:14:03.749Z - warn: Script attached to "Panel" is missing or invalid. Detailed information:
+Node path: "Game/Panel"
+Script UUID: "ec917de0-c8aa-4110-9614-dba61ed5e39e"
+Class ID: "ec9173gyKpBEJYU26Ye1eOe"
+
+2017-06-03T13:14:07.737Z - warn: Script attached to "Eliminate" is missing or invalid. Detailed information:
+Node path: "Game/Eliminate"
+Script UUID: "7b91087d-0c19-4431-898c-d93daa435c6f"
+Class ID: "7b910h9DBlEMYmM2T2qQ1xv"
+
+2017-06-03T13:14:07.737Z - warn: Script attached to "Panel" is missing or invalid. Detailed information:
+Node path: "Game/Panel"
+Script UUID: "ec917de0-c8aa-4110-9614-dba61ed5e39e"
+Class ID: "ec9173gyKpBEJYU26Ye1eOe"
+
+2017-06-03T13:14:38.357Z - normal: Compiled project javascript file successfully
+2017-06-03T13:15:03.446Z - normal: Compiled project javascript file successfully
+2017-06-03T13:15:54.142Z - normal: Compiled project javascript file successfully
