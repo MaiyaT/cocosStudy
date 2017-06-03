@@ -1,3 +1,14 @@
+
+
+var player = require("PlayerData").player;
+var Decks = require("Decks");
+var Types = require("Types");
+var ActorPlayingState = Types.ActorPlayingState;
+var Fsm = require("game-fsm");
+
+
+
+
 cc.Class({
     extends: cc.Component,
 
