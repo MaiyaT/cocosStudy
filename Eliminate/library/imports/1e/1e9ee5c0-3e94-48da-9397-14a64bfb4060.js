@@ -2,7 +2,7 @@
 
 var Color_Box = cc.Enum({
 
-    Red: -1,
+    YELLOW: -1,
     Green: -1,
     Blue: -1,
     Black: -1,
@@ -29,8 +29,8 @@ cc.Class({
                 switch (this.color_type) {
                     case Color_Box.White:
                         return cc.Color.WHITE;
-                    case Color_Box.Red:
-                        return cc.Color.RED;
+                    case Color_Box.YELLOW:
+                        return cc.Color.YELLOW;
                     case Color_Box.Green:
                         return cc.Color.GREEN;
                     case Color_Box.Blue:
@@ -38,7 +38,7 @@ cc.Class({
                     case Color_Box.Black:
                         return cc.Color.BLACK;
                     default:
-                        return cc.Color.YELLOW;
+                        return cc.Color.RED;
                 }
             }
         },
@@ -46,8 +46,13 @@ cc.Class({
         //行
         rank: 0,
         //列
-        row: 0
+        row: 0,
 
+        id: {
+            get: function get() {
+                return this.rank.toString() + this.row.toString();
+            }
+        }
     },
 
     // use this for initialization

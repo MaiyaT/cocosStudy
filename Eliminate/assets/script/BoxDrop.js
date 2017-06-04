@@ -8,10 +8,15 @@ cc.Class({
         
         speed:0,
 
+        select_item:{
+            default:null,
+            type:cc.Node
+        },
+
         boxItem:{
             default:null,
             type:BoxItem,
-            // visible:false,
+            //visible:false,
         }
     },
 
@@ -30,11 +35,21 @@ cc.Class({
 
     click_action:function(){
         
-        console.log("dianjile   "+"rank="+this.boxItem.rank+"row="+this.boxItem.row);
+        console.log("点击了   "+"rank="+this.boxItem.rank+"row="+this.boxItem.row);
 
         let eliminate = cc.find("Game/Eliminate").getComponent("Eliminate");
         eliminate.click_item(this);
     },
+
+
+    boxIsSelectState:function(isSelect){
+
+        this.select_item.active = isSelect;
+
+    },
+
+
+
 
 
 
@@ -44,6 +59,8 @@ cc.Class({
 
     reuse:function(){
         console.log("chongyong");
+
+        this.select_item.active = false;
     },
 
 
@@ -68,10 +85,16 @@ cc.Class({
         if(this.node.y < this.boxItem.end_y){
             this.node.y = this.boxItem.end_y;
         }
+
+
+
+        if(this.node.x > this.boxItem.begin_x){
+            this.node.x -= this.speed*dt;
+        }
+
+        if(this.node.x < this.boxItem.begin_x){
+            this.node.x = this.boxItem.begin_x;
+        }
     },
 });
 
-
-// module.exports = {
-//     boxItem : this.boxItem
-// };

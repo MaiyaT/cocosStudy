@@ -29,7 +29,7 @@ cc.Class({
         },
 
         num_row: {
-            default: 20,
+            default: 10,
             tooltip: "行数"
         },
 
@@ -52,6 +52,24 @@ cc.Class({
                 }
             }
         };
+
+        // Array.prototype.filterRepeat = function(){  
+        //     //直接定义结果数组  
+        //     var arr = [];
+        //     if(arr.length > 0){
+        //         arr.push(this[0]);
+        //     }
+
+        //     for(var i = 1; i < this.length; i++){    //从数组第二项开始循环遍历此数组  
+        //         //对元素进行判断：  
+        //         //如果数组当前元素在此数组中第一次出现的位置不是i  
+        //         //那么我们可以判断第i项元素是重复的，否则直接存入结果数组  
+        //         if(this.indexOf(this[i]) == i){  
+        //             arr.push(this[i]);  
+        //         }  
+        //     }  
+        //     return arr;  
+        // }  
 
         this.rankList = [];
 
@@ -78,6 +96,29 @@ cc.Class({
         for (var index = 0; index < this.num_rank; index++) {
             this.createRankContent(index);
         }
+
+        this.checkPanelEliminatable();
+    },
+
+    //重新开始游戏
+    replayGame: function replayGame() {
+
+        var children = this.super_node.children;
+
+        while (children.length > 0) {
+
+            for (var i = 0; i < children.length; ++i) {
+                this.boxDrop_destroy(children[i].getComponent("BoxDrop"));
+            }
+        }
+
+        //清空ranklist
+        var item;
+        while (item = this.rankList.shift()) {}
+
+        console.log("清空成功");
+
+        this.creaePanleContent();
     },
 
     //创建每一列的数据
@@ -116,10 +157,12 @@ cc.Class({
     },
 
     //更新某一列 end y的数据
-    updateRankEndY: function updateRankEndY(box) {
+    updateAllRankEndY: function updateAllRankEndY() {
 
         //看该列的数量是否 小于 this.num_row  少于的话则补充
-        for (var i = 0; i < this.rankList.length; i++) {
+        for (var i = 0; i < this.num_rank; i++) {
+
+            var origin_x = this.margin_left + (this.itemWidth + this.itemSpace) * i;
 
             var list_sub = this.rankList[i];
 
@@ -129,12 +172,11 @@ cc.Class({
                 new_box.active = true;
 
                 var box_c = new_box.getComponent("BoxDrop");
-                var old_box = box.getComponent("BoxDrop");
 
-                box_c.boxItem.begin_x = old_box.boxItem.begin_x;
-                box_c.boxItem.begin_y = old_box.boxItem.begin_y;
-                box_c.boxItem.rank = old_box.boxItem.rank;
-                box_c.boxItem.row = old_box.boxItem.row;
+                box_c.boxItem.begin_x = origin_x;
+                box_c.boxItem.begin_y = this.margin_top;
+                box_c.boxItem.rank = i;
+                box_c.boxItem.row = 0;
                 box_c.boxItem.color_type = cc.random0To1() * 5 | 0;
                 box_c.resetOriginPos();
 
@@ -142,18 +184,202 @@ cc.Class({
 
                 list_sub.push(new_box);
             }
+
+            // let list = this.rankList[index];
+
+            //更新每个元素的end y 位置
+            for (var _i = 0; _i < list_sub.length; _i++) {
+
+                var item_box = list_sub[_i];
+                var _box_c = item_box.getComponent("BoxDrop");
+
+                _box_c.boxItem.row = _i;
+                _box_c.boxItem.end_y = this.margin_bottom + (this.itemHeight + this.itemSpace) * (_i + 1);
+            }
         }
 
-        var list = this.rankList[box.boxItem.rank];
+        this.checkPanelEliminatable();
+    },
 
-        //更新每个元素的end y 位置
-        for (var _i = 0; _i < list.length; _i++) {
+    //交换两个方块的位置
+    exchangeBoxItem: function exchangeBoxItem(boxItem1, boxItem2) {
+        var toCheckViable = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
 
-            var _box = list[_i];
-            var _box_c = _box.getComponent("BoxDrop");
 
-            _box_c.boxItem.end_y = this.margin_bottom + (this.itemHeight + this.itemSpace) * (_i + 1);
+        if (boxItem1.rank === boxItem2.rank) {
+            //同一列的
+            var list = this.rankList[boxItem1.rank];
+
+            //交换位置
+            var temp_endy = boxItem2.end_y;
+            boxItem2.end_y = boxItem1.end_y;
+            boxItem1.end_y = temp_endy;
+
+            //交换信息
+            var temp_row = boxItem2.row;
+
+            boxItem2.row = boxItem1.row;
+            boxItem1.row = temp_row;
+
+            var temp_node = list[boxItem1.row];
+            list[boxItem1.row] = list[boxItem2.row];
+            list[boxItem2.row] = temp_node;
+        } else if (boxItem1.row === boxItem2.row) {
+            //同一行的
+            var list1 = this.rankList[boxItem1.rank];
+            var list2 = this.rankList[boxItem2.rank];
+
+            //交换位置
+            var temp_beginx = boxItem2.begin_x;
+            boxItem2.begin_x = boxItem1.begin_x;
+            boxItem1.begin_x = temp_beginx;
+
+            //交换信息
+            var temp_rank = boxItem2.rank;
+            boxItem2.rank = boxItem1.rank;
+            boxItem1.rank = temp_rank;
+
+            var row_index = boxItem1.row;
+            var _temp_node = list1[row_index];
+            list1[row_index] = list2[row_index];
+            list2[row_index] = _temp_node;
         }
+
+        if (toCheckViable) {
+
+            var isViable = this.checkPanelEliminatable();
+
+            if (!isViable) {
+
+                //不可消除的话 位置再互换回来
+                console.log("不可消除");
+                setTimeout(function () {
+                    this.exchangeBoxItem(boxItem2, boxItem1, false);
+                }.bind(this), 300);
+            }
+        }
+    },
+
+    //检测面板所有方块 是否可消除
+    checkPanelEliminatable: function checkPanelEliminatable() {
+
+        var wipe_list = [];
+
+        //判断列 是否有三个以及三个以上的一样的色块连在一起
+        for (var i = 0; i < this.num_rank; i++) {
+            var list = this.rankList[i];
+            var tempList = [];
+            var pre_box = null;
+            for (var j = 0; j < this.num_row; j++) {
+                var box = list[j];
+                if (!pre_box) {
+                    pre_box = box;
+                    tempList.push(box);
+                } else {
+                    var item_pre = pre_box.getComponent("BoxDrop").boxItem;
+                    var item_box = box.getComponent("BoxDrop").boxItem;
+
+                    var toAdd = false;
+                    if (item_pre.color_type === item_box.color_type) {
+                        tempList.push(box);
+                        if (j == this.num_row - 1) {
+                            toAdd = true;
+                        }
+                    } else {
+                        toAdd = true;
+                    }
+
+                    if (toAdd) {
+                        if (tempList.length >= 3) {
+                            //追加到wipe里面
+                            Array.prototype.push.apply(wipe_list, tempList);
+
+                            tempList.forEach(function (elem) {
+
+                                elem.getComponent("BoxDrop").boxIsSelectState(true);
+                            });
+                        }
+                        //清空数组
+                        tempList = [];
+
+                        pre_box = box;
+                        tempList.push(box);
+                    }
+                }
+            }
+        }
+
+        function isRepeatItemInWipe(item) {
+            for (var _i2 = 0; _i2 < wipe_list.length; _i2++) {
+                if (wipe_list[_i2].getComponent("BoxDrop").boxItem.id === item.getComponent("BoxDrop").boxItem.id) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        //判断行 是否有三个以及三个以上的一样的色块连在一起
+        for (var _i3 = 0; _i3 < this.num_row; _i3++) {
+
+            var _tempList = [];
+            var _pre_box = null;
+            for (var _j = 0; _j < this.num_rank; _j++) {
+                var _box = this.rankList[_j][_i3];
+                if (!_pre_box) {
+                    _pre_box = _box;
+                    _tempList.push(_box);
+                } else {
+                    var _item_pre = _pre_box.getComponent("BoxDrop").boxItem;
+                    var _item_box = _box.getComponent("BoxDrop").boxItem;
+
+                    var _toAdd = false;
+                    if (_item_pre.color_type === _item_box.color_type) {
+                        _tempList.push(_box);
+                        if (_j == this.num_rank - 1) {
+                            _toAdd = true;
+                        }
+                    } else {
+                        _toAdd = true;
+                    }
+
+                    if (_toAdd) {
+                        if (_tempList.length >= 3) {
+                            //追加到wipe里面
+                            _tempList.forEach(function (elem) {
+
+                                if (!isRepeatItemInWipe(elem)) {
+                                    wipe_list.push(elem);
+                                }
+                            });
+
+                            _tempList.forEach(function (elem) {
+
+                                elem.getComponent("BoxDrop").boxIsSelectState(true);
+                            });
+                        }
+                        //清空数组
+                        _tempList = [];
+
+                        _pre_box = _box;
+                        _tempList.push(_box);
+                    }
+                }
+            }
+        }
+
+        if (wipe_list.length > 0) {
+
+            //消除掉
+            wipe_list.forEach(function (elem) {
+
+                this.boxDrop_destroy(elem.getComponent("BoxDrop"));
+            }.bind(this));
+
+            this.updateAllRankEndY();
+
+            return true;
+        }
+        return false;
     },
 
     boxDrop_get: function boxDrop_get() {
