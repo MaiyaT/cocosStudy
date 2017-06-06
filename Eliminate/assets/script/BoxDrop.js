@@ -71,6 +71,7 @@ cc.Class({
 
 
         this.node.color = this.boxItem.color_show;
+
     },
 
 

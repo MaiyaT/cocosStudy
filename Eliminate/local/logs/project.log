@@ -1,52 +1,72 @@
-2017-06-06T00:19:55.776Z - normal: Load ~/.CocosCreator/settings.json
-2017-06-06T00:19:55.780Z - normal: checking language setting...
-2017-06-06T00:19:55.780Z - normal: Language: zh
-2017-06-06T00:19:56.804Z - success: protocol editor-framework registered
-2017-06-06T00:19:56.805Z - success: protocol app registered
-2017-06-06T00:19:56.805Z - success: protocol theme registered
-2017-06-06T00:19:56.805Z - success: protocol profile registered
-2017-06-06T00:19:56.805Z - success: protocol packages registered
-2017-06-06T00:19:56.808Z - success: protocol unpack registerred
-2017-06-06T00:19:56.808Z - success: protocol disable-commonjs registerred
-2017-06-06T00:19:57.078Z - normal: connected!
-2017-06-06T00:19:57.080Z - normal: Check project /Users/linningning/Documents/000/YH_Cocos/Eliminate
-2017-06-06T00:19:57.081Z - normal: Initializing Cocos2d
-2017-06-06T00:19:57.370Z - normal: Initializing Asset Database
-2017-06-06T00:19:57.425Z - success: protocol uuid registerred
-2017-06-06T00:19:57.426Z - success: protocol db registerred
-2017-06-06T00:19:57.426Z - success: protocol thumbnail registerred
-2017-06-06T00:19:57.426Z - normal: Loading editor/builtin packages
-2017-06-06T00:19:57.517Z - success: anysdk loaded
-2017-06-06T00:19:57.686Z - success: assets loaded
-2017-06-06T00:19:57.690Z - success: builder loaded
-2017-06-06T00:19:57.696Z - success: hierarchy loaded
-2017-06-06T00:19:57.701Z - success: inspector loaded
-2017-06-06T00:19:57.702Z - success: keystore loaded
-2017-06-06T00:19:57.707Z - success: node-library loaded
-2017-06-06T00:19:57.709Z - success: package-asset loaded
-2017-06-06T00:19:57.711Z - success: preferences loaded
-2017-06-06T00:19:57.728Z - success: project-importer loaded
-2017-06-06T00:19:57.731Z - success: project-settings loaded
-2017-06-06T00:19:57.734Z - success: ui-kit loaded
-2017-06-06T00:19:57.744Z - success: ui-grid loaded
-2017-06-06T00:19:57.749Z - success: scene loaded
-2017-06-06T00:19:57.750Z - success: sprite-editor loaded
-2017-06-06T00:19:57.754Z - success: store loaded
-2017-06-06T00:19:57.760Z - success: timeline loaded
-2017-06-06T00:19:57.760Z - normal: Loading builtin packages
-2017-06-06T00:19:57.772Z - success: asset-db-debugger loaded
-2017-06-06T00:19:57.775Z - success: code-editor loaded
-2017-06-06T00:19:57.780Z - success: color-picker loaded
-2017-06-06T00:19:57.784Z - success: console loaded
-2017-06-06T00:19:57.788Z - success: package-manager loaded
-2017-06-06T00:19:57.796Z - success: sdkbox loaded
-2017-06-06T00:19:57.800Z - success: tester loaded
-2017-06-06T00:19:57.804Z - success: ui-kit-preview-extra loaded
-2017-06-06T00:19:57.808Z - success: ui-kit-preview loaded
-2017-06-06T00:19:57.812Z - success: ui-tree loaded
-2017-06-06T00:19:57.857Z - normal: Initializing project /Users/linningning/Documents/000/YH_Cocos/Eliminate
-2017-06-06T00:19:57.859Z - normal: Loading packages
-2017-06-06T00:19:57.862Z - normal: Watching packages
-2017-06-06T00:19:57.873Z - normal: Run Application
-2017-06-06T00:19:58.755Z - success: preview server running at http://localhost:7456
-2017-06-06T00:20:02.689Z - normal: 1.5.0
+2017-06-06T09:27:02.003Z - normal: Load ~/.CocosCreator/settings.json
+2017-06-06T09:27:02.007Z - normal: checking language setting...
+2017-06-06T09:27:02.008Z - normal: Language: zh
+2017-06-06T09:27:02.446Z - success: protocol editor-framework registered
+2017-06-06T09:27:02.446Z - success: protocol app registered
+2017-06-06T09:27:02.447Z - success: protocol theme registered
+2017-06-06T09:27:02.447Z - success: protocol profile registered
+2017-06-06T09:27:02.447Z - success: protocol packages registered
+2017-06-06T09:27:02.450Z - success: protocol unpack registerred
+2017-06-06T09:27:02.450Z - success: protocol disable-commonjs registerred
+2017-06-06T09:27:02.695Z - normal: connected!
+2017-06-06T09:27:02.698Z - normal: Check project /Users/linningning/Documents/000/YH_Cocos/Eliminate
+2017-06-06T09:27:02.700Z - normal: Initializing Cocos2d
+2017-06-06T09:27:02.912Z - normal: Initializing Asset Database
+2017-06-06T09:27:02.944Z - success: protocol uuid registerred
+2017-06-06T09:27:02.945Z - success: protocol db registerred
+2017-06-06T09:27:02.945Z - success: protocol thumbnail registerred
+2017-06-06T09:27:02.945Z - normal: Loading editor/builtin packages
+2017-06-06T09:27:02.970Z - success: anysdk loaded
+2017-06-06T09:27:03.122Z - success: assets loaded
+2017-06-06T09:27:03.126Z - success: builder loaded
+2017-06-06T09:27:03.131Z - success: hierarchy loaded
+2017-06-06T09:27:03.136Z - success: inspector loaded
+2017-06-06T09:27:03.137Z - success: keystore loaded
+2017-06-06T09:27:03.141Z - success: node-library loaded
+2017-06-06T09:27:03.144Z - success: package-asset loaded
+2017-06-06T09:27:03.146Z - success: preferences loaded
+2017-06-06T09:27:03.160Z - success: project-importer loaded
+2017-06-06T09:27:03.163Z - success: project-settings loaded
+2017-06-06T09:27:03.167Z - success: ui-kit loaded
+2017-06-06T09:27:03.171Z - success: ui-grid loaded
+2017-06-06T09:27:03.176Z - success: scene loaded
+2017-06-06T09:27:03.177Z - success: sprite-editor loaded
+2017-06-06T09:27:03.181Z - success: store loaded
+2017-06-06T09:27:03.187Z - success: timeline loaded
+2017-06-06T09:27:03.187Z - normal: Loading builtin packages
+2017-06-06T09:27:03.192Z - success: asset-db-debugger loaded
+2017-06-06T09:27:03.194Z - success: code-editor loaded
+2017-06-06T09:27:03.195Z - success: color-picker loaded
+2017-06-06T09:27:03.201Z - success: console loaded
+2017-06-06T09:27:03.205Z - success: package-manager loaded
+2017-06-06T09:27:03.214Z - success: sdkbox loaded
+2017-06-06T09:27:03.219Z - success: tester loaded
+2017-06-06T09:27:03.224Z - success: ui-kit-preview-extra loaded
+2017-06-06T09:27:03.228Z - success: ui-kit-preview loaded
+2017-06-06T09:27:03.232Z - success: ui-tree loaded
+2017-06-06T09:27:03.282Z - normal: Initializing project /Users/linningning/Documents/000/YH_Cocos/Eliminate
+2017-06-06T09:27:03.285Z - normal: Loading packages
+2017-06-06T09:27:03.290Z - normal: Watching packages
+2017-06-06T09:27:03.303Z - normal: Run Application
+2017-06-06T09:27:04.364Z - failed: [db-task][init] Failed to import asset /Users/linningning/Documents/000/YH_Cocos/Eliminate/assets/script/BoxPanel.js, message: Compile error: SyntaxError: unknown: Unexpected character '。' (235:20)
+  233 |                     off_top += box_c.node.height;
+  234 | 
+> 235 |                     。。。。。。。。。。。。。。
+      |                     ^
+  236 |                 }
+  237 |             }
+  238 |         }
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4443:13)
+    at Parser.getTokenFromCode (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1147:10)
+    at Parser.readToken (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:776:19)
+    at Parser.nextToken (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:766:19)
+    at Parser.next (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:691:10)
+    at Parser.eat (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:698:12)
+    at Parser.pp.isLineTerminator (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1729:15)
+    at Parser.pp.semicolon (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1736:13)
+    at Parser.pp$1.parseExpressionStatement (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:2230:8)
+    at Parser.pp$1.parseStatement (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1905:17)
+2017-06-06T09:27:04.624Z - success: preview server running at http://localhost:7456
+2017-06-06T09:27:08.429Z - normal: 1.5.0
+2017-06-06T09:32:33.919Z - normal: Compiled project javascript file successfully
+2017-06-06T09:33:31.900Z - normal: Compiled project javascript file successfully

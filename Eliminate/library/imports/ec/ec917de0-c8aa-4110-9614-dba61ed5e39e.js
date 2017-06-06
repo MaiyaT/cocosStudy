@@ -7,16 +7,6 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //    default: null,      // The default value will be used only when the component attaching
-        //                           to a node for the first time
-        //    url: cc.Texture2D,  // optional, default is typeof default
-        //    serializable: true, // optional, default is true
-        //    visible: true,      // optional, default is true
-        //    displayName: 'Foo', // optional
-        //    readonly: false,    // optional, default is false
-        // },
-        // ...
 
         box_prefab: {
             default: null,
@@ -78,7 +68,8 @@ cc.Class({
 
         this.itemSpace = 5;
 
-        this.margin_top = cc.director.getWinSize().height * 0.5 + this.itemHeight * 0.5;
+        // this.margin_top = (cc.director.getWinSize().height)*0.5 + this.itemHeight*0.5;
+        this.margin_top = -cc.director.getWinSize().height * 0.5 + this.itemHeight * this.num_row + this.itemSpace * (this.num_row - 1) + this.itemHeight * 0.5;
         this.margin_bottom = -cc.director.getWinSize().height * 0.5 - this.itemHeight * 0.5;
         this.margin_left = -this.itemWidth * this.num_rank * 0.5 + this.itemSpace * (this.num_rank * 0.5 - 1);
         this.margin_right = this.itemWidth * this.num_rank * 0.5 - this.itemSpace * (this.num_rank * 0.5 - 1);
@@ -96,6 +87,8 @@ cc.Class({
         for (var index = 0; index < this.num_rank; index++) {
             this.createRankContent(index);
         }
+
+        this.updateBeginOriginY();
 
         this.checkPanelEliminatable();
     },
@@ -198,7 +191,41 @@ cc.Class({
             }
         }
 
+        this.updateBeginOriginY();
+
         this.checkPanelEliminatable();
+    },
+
+    /**
+     * 更新每一列他们中的每个元素的初始的origin y的值
+     */
+    updateBeginOriginY: function updateBeginOriginY() {
+
+        /**
+         * 某一列中 从最后开始遍历返回
+         * 算出开始掉了的位置
+         */
+        for (var i = 0; i < this.num_rank; i++) {
+            var list = this.rankList[i];
+
+            //判断是否 已达到他的endy 如果还未达到就是 正要掉落
+            var off_top = 0;
+
+            for (var j = this.num_row - 1; j >= 0; j--) {
+                var box = list[j];
+
+                var box_c = box.getComponent("BoxDrop");
+                //box_c.boxItem.begin_y = this.margin_top;
+
+                if (box_c.node.y !== box_c.boxItem.end_y) {
+
+                    box_c.boxItem.begin_y = this.margin_top - off_top;
+                    box_c.node.y = box_c.boxItem.begin_y;
+
+                    off_top += box_c.node.height;
+                }
+            }
+        }
     },
 
     //交换两个方块的位置
@@ -282,7 +309,7 @@ cc.Class({
                     var toAdd = false;
                     if (item_pre.color_type === item_box.color_type) {
                         tempList.push(box);
-                        if (j == this.num_row - 1) {
+                        if (j === this.num_row - 1) {
                             toAdd = true;
                         }
                     } else {
@@ -335,7 +362,7 @@ cc.Class({
                     var _toAdd = false;
                     if (_item_pre.color_type === _item_box.color_type) {
                         _tempList.push(_box);
-                        if (_j == this.num_rank - 1) {
+                        if (_j === this.num_rank - 1) {
                             _toAdd = true;
                         }
                     } else {

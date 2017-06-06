@@ -76,6 +76,8 @@ var Sheep = cc.Class({
     startRun () {
         this.state = State.Run;
         this.enableInput(true);
+
+
     },
     //-- 初始化
     registerInput () {

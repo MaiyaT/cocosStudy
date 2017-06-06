@@ -53,7 +53,8 @@ cc.Class({
                         this._select_box = null;
                     }
                 }
-            }
+            },
+            visible: false
         }
 
     },
