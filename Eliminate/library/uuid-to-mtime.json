@@ -220,8 +220,8 @@
     "relativePath": "prefab/webview.prefab"
   },
   "45eb1a7b-c713-4244-b94f-2177ec612048": {
-    "asset": 1496493425000,
-    "meta": 1496493471000,
+    "asset": 1496674214000,
+    "meta": 1496708398000,
     "relativePath": "script"
   },
   "54e471f9-0182-4ba6-9a42-4d8c80ef83c3": {
@@ -264,19 +264,19 @@
     "meta": 1496501904000,
     "relativePath": "script/BoxItem.js"
   },
-  "89bc7089-446c-4905-9b0e-1c39d48c316e": {
-    "asset": 1496540908000,
-    "meta": 1496540909000,
-    "relativePath": "script/BoxDrop.js"
-  },
-  "7b91087d-0c19-4431-898c-d93daa435c6f": {
-    "asset": 1496545543000,
-    "meta": 1496545543000,
-    "relativePath": "script/Eliminate.js"
-  },
   "ec917de0-c8aa-4110-9614-dba61ed5e39e": {
     "asset": 1496554957000,
     "meta": 1496554957000,
     "relativePath": "script/BoxPanel.js"
+  },
+  "89bc7089-446c-4905-9b0e-1c39d48c316e": {
+    "asset": 1496673866000,
+    "meta": 1496674068000,
+    "relativePath": "script/BoxDrop.js"
+  },
+  "7b91087d-0c19-4431-898c-d93daa435c6f": {
+    "asset": 1496674214000,
+    "meta": 1496674422000,
+    "relativePath": "script/Eliminate.js"
   }
 }

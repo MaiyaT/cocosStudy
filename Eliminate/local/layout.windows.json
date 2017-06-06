@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 905,
-      "y": 307,
-      "width": 1606,
-      "height": 1018,
+      "x": 506,
+      "y": 100,
+      "width": 1914,
+      "height": 1250,
       "layout": {
         "children": [
           {
@@ -18,32 +18,32 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 356,
+                "height": 445,
                 "type": "panel",
-                "width": 220
+                "width": 264
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 568,
+                "height": 711,
                 "type": "panel",
-                "width": 220
+                "width": 264
               }
             ],
-            "height": 927,
+            "height": 1159,
             "type": "dock-v",
-            "width": 220
+            "width": 264
           },
           {
             "active": 0,
             "children": [
               "inspector"
             ],
-            "height": 927,
+            "height": 1159,
             "type": "panel",
-            "width": 329
+            "width": 389
           },
           {
             "children": [
@@ -52,9 +52,9 @@
                 "children": [
                   "scene"
                 ],
-                "height": 656,
+                "height": 822,
                 "type": "panel",
-                "width": 1045
+                "width": 1249
               },
               {
                 "active": 0,
@@ -62,14 +62,14 @@
                   "console",
                   "timeline"
                 ],
-                "height": 268,
+                "height": 334,
                 "type": "panel",
-                "width": 1045
+                "width": 1249
               }
             ],
-            "height": 927,
+            "height": 1159,
             "type": "dock-v",
-            "width": 1045
+            "width": 1249
           }
         ],
         "type": "dock-h"
@@ -82,8 +82,7 @@
         "scene",
         "timeline"
       ]
-    },
-    "worker": {}
+    }
   },
   "panels": {
     "sprite-editor": {

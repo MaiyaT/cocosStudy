@@ -69,6 +69,7 @@ cc.Class({
         this.node.x = this.boxItem.begin_x;
         this.node.y = this.boxItem.begin_y;
 
+
         this.node.color = this.boxItem.color_show;
     },
 
@@ -76,23 +77,22 @@ cc.Class({
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
 
-        let box_bottom = this.node.y + this.node.height*0.5;
+        let box_bottom = this.node.y + this.node.height * 0.5;
 
-        if(box_bottom > this.boxItem.end_y){
-            this.node.y -= this.speed*dt;
+        if (box_bottom > this.boxItem.end_y) {
+            this.node.y -= this.speed * dt;
         }
 
-        if(this.node.y < this.boxItem.end_y){
+        if (this.node.y < this.boxItem.end_y) {
             this.node.y = this.boxItem.end_y;
         }
 
 
-
-        if(this.node.x > this.boxItem.begin_x){
-            this.node.x -= this.speed*dt;
+        if (this.node.x > this.boxItem.begin_x) {
+            this.node.x -= this.speed * dt;
         }
 
-        if(this.node.x < this.boxItem.begin_x){
+        if (this.node.x < this.boxItem.begin_x) {
             this.node.x = this.boxItem.begin_x;
         }
     },
