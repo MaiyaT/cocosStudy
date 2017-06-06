@@ -70,6 +70,7 @@ cc.Class({
         this.node.y = this.boxItem.begin_y;
 
         this.node.color = this.boxItem.color_show;
+
     },
 
 

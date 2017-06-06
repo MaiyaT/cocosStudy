@@ -57,6 +57,7 @@ cc.Class({
                     }
                 }
             },
+            visible:false
         }
         
     },
