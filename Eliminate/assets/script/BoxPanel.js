@@ -220,7 +220,8 @@ cc.Class({
             //判断是否 已达到他的endy 如果还未达到就是 正要掉落
             let off_top = 0;
 
-            for(let j = this.num_row-1; j>=0; j--){
+            // for(let j = this.num_row-1; j>=0; j--){
+            for(let j = 0; j<this.num_row; j++){
                 let box = list[j];
 
                 let box_c = box.getComponent("BoxDrop");
@@ -228,7 +229,7 @@ cc.Class({
 
                 if(box_c.node.y !== box_c.boxItem.end_y){
 
-                    box_c.boxItem.begin_y = this.margin_top - off_top;
+                    box_c.boxItem.begin_y = this.margin_top + off_top;
                     box_c.node.y = box_c.boxItem.begin_y;
 
                     off_top += box_c.node.height;
