@@ -70,3 +70,5 @@
 2017-06-06T09:27:08.429Z - normal: 1.5.0
 2017-06-06T09:32:33.919Z - normal: Compiled project javascript file successfully
 2017-06-06T09:33:31.900Z - normal: Compiled project javascript file successfully
+2017-06-07T00:31:27.610Z - success: Compiling task has been added to .vscode/tasks.json, please run "compile" task in VS Code to trigger compile in Cocos Creator.
+2017-06-07T00:31:30.051Z - success: Chrome debug setting has been updated to .vscode/launch.json, please install Debugger for Chrome VS Code extension to debug your project.
