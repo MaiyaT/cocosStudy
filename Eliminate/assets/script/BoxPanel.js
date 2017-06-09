@@ -1,13 +1,9 @@
 
-
 var Game_State = cc.Enum({
-
     Start : -1,
     Play : -1,
     Over : -1,
-
 });
-
 
 var BoxDrop = require("BoxDrop");
 var BoxItem = require("BoxItem");
@@ -37,9 +33,9 @@ cc.Class({
             type:cc.Node,
         },
 
-        state: {
-            default: Game_State.Start,
-            type: Game_State,
+        gamestate:{
+            default:Game_State.Start,
+            type:Game_State,
             visible:false
         },
 
@@ -87,7 +83,7 @@ cc.Class({
         this.margin_top = -(cc.director.getWinSize().height)*0.5 + this.itemHeight*this.num_row + this.itemSpace * (this.num_row - 1) + this.itemHeight*0.5;
         this.margin_bottom = -(cc.director.getWinSize().height)*0.5 - this.itemHeight*0.5;
         this.margin_left =  -this.itemWidth*this.num_rank*0.5 + this.itemSpace*(this.num_rank*0.5-1);
-        this.margin_right = this.itemWidth*this.num_rank*0.5 - this.itemSpace*(this.num_rank*0.5-1);
+        this.margin_right = this.itemWidth * this.num_rank * 0.5 - this.itemSpace * (this.num_rank * 0.5 - 1);
 
         //console.log("asds  " + this.margin_top+"  "+this.margin_bottom);
 
@@ -96,12 +92,10 @@ cc.Class({
         this.replayGame();
     },
 
-
-
     //重新开始游戏
     replayGame:function(){
 
-        this.state = Game_State.Start;
+        this.gamestate = Game_State.Start;
 
         var children = this.super_node.children;
 
@@ -135,7 +129,6 @@ cc.Class({
 
         this.checkPanelEliminatable();
     },
-
 
     //创建每一列的数据
     createRankContent:function(index){
@@ -229,6 +222,7 @@ cc.Class({
      */
     updateBeginOriginY:function () {
 
+
         /**
          * 某一列中 从最后开始遍历返回
          * 算出开始掉了的位置
@@ -248,12 +242,16 @@ cc.Class({
 
                 if(box_c.node.y !== box_c.boxItem.end_y){
 
-                    box_c.boxItem.begin_y = this.margin_top + off_top;
+                    /**
+                     * 1.实例游戏的时候 初始开始的位置
+                     * 2.消除的 方块不在界面中的设置他的开始位置 已在界面中的不去设置他
+                     */
+                    if((this.gamestate === Game_State.Start) || (box_c.node.y >= box_c.boxItem.begin_y)){
+                        box_c.boxItem.begin_y = this.margin_top + off_top;
+                        box_c.node.y = box_c.boxItem.begin_y;
 
-                    // console.log(i + "  " + box_c.boxItem.begin_y);
-                    box_c.node.y = box_c.boxItem.begin_y;
-
-                    off_top += box_c.node.height;
+                        off_top += box_c.node.height;
+                    }
                 }
             }
         }
@@ -371,9 +369,7 @@ cc.Class({
             }
         }
 
-        /**
-         * 判断是否已存在 横竖两边都用到的
-         */
+
         function isRepeatItemInWipe(item){
             for(let i = 0; i<wipe_list.length; i++){
                 if(wipe_list[i].getComponent("BoxDrop").boxItem.id === item.getComponent("BoxDrop").boxItem.id){
@@ -437,28 +433,31 @@ cc.Class({
         }
 
 
-        // if(wipe_list.length > 0){
+        if(wipe_list.length > 0){
 
-        //     //消除掉
-        //     wipe_list.forEach(function(elem){
+            let showDelayAnimation = false;
+            if(this.gamestate === Game_State.Start){
+                //不显示消除动画
+                showDelayAnimation = true;
+            }
 
-        //         this.boxDrop_destroy(elem.getComponent("BoxDrop"));
+            //不是初始化的 停留一会儿再消除
+            this.schedule(function () {
 
-        //     }.bind(this));
+                //消除掉
+                wipe_list.forEach(function(elem){
 
-        //     this.updateAllRankEndY();    
+                    this.boxDrop_destroy(elem.getComponent("BoxDrop"));
+                }.bind(this));
 
-        //     //是初始化游戏
-        //     if(this.state === Game_State.Play){
-        //         //不需要显示消除动画
-        //     }else {
-        //         //显示消除动画
-        //     }
+                this.updateAllRankEndY();
 
-        //     return true;
-        // }
+            }.bind(this),showDelayAnimation?0:1,false);
 
-        // this.state = Game_State.Play;
+            return true;
+        }
+
+        this.gamestate = Game_State.Play;
 
         return false;
     },
@@ -500,3 +499,5 @@ cc.Class({
 
     // },
 });
+
+

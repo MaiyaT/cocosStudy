@@ -1,0 +1,12 @@
+<div v-on:keyup.down="_onKeyUp" v-on:keyup.up="_onKeyUp" v-on:keyup.enter="_onConfirm">
+<header>
+    <ui-input id="search" v-el:search class="big input" placeholder="Type file name here" v-value="searchText" v-on:change="search" v-on:confirm="_onConfirm"></ui-input>
+</header>
+
+<section>
+    <ol id="filesList" v-el:fileslist class="file-list">
+        <li class="item" v-for="item in fileItems" :selected="item.selected">    {{item.path}}
+        </li>
+    </ol>
+</section>
+</div>

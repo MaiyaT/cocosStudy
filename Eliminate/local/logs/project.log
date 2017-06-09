@@ -1,199 +1,69 @@
-2017-06-06T12:19:10.703Z - normal: Load ~/.CocosCreator/settings.json
-2017-06-06T12:19:10.707Z - normal: checking language setting...
-2017-06-06T12:19:10.707Z - normal: Language: zh
-2017-06-06T12:19:11.629Z - success: protocol editor-framework registered
-2017-06-06T12:19:11.629Z - success: protocol app registered
-2017-06-06T12:19:11.629Z - success: protocol theme registered
-2017-06-06T12:19:11.630Z - success: protocol profile registered
-2017-06-06T12:19:11.630Z - success: protocol packages registered
-2017-06-06T12:19:11.632Z - success: protocol unpack registerred
-2017-06-06T12:19:11.632Z - success: protocol disable-commonjs registerred
-2017-06-06T12:19:11.908Z - normal: connected!
-2017-06-06T12:19:11.911Z - normal: Check project /Users/linningning/Documents/000/YH_Cocos/Eliminate
-2017-06-06T12:19:11.913Z - normal: Initializing Cocos2d
-2017-06-06T12:19:12.192Z - normal: Initializing Asset Database
-2017-06-06T12:19:12.260Z - success: protocol uuid registerred
-2017-06-06T12:19:12.260Z - success: protocol db registerred
-2017-06-06T12:19:12.260Z - success: protocol thumbnail registerred
-2017-06-06T12:19:12.260Z - normal: Loading editor/builtin packages
-2017-06-06T12:19:12.352Z - success: anysdk loaded
-2017-06-06T12:19:12.529Z - success: assets loaded
-2017-06-06T12:19:12.533Z - success: builder loaded
-2017-06-06T12:19:12.538Z - success: hierarchy loaded
-2017-06-06T12:19:12.544Z - success: inspector loaded
-2017-06-06T12:19:12.546Z - success: keystore loaded
-2017-06-06T12:19:12.550Z - success: node-library loaded
-2017-06-06T12:19:12.552Z - success: package-asset loaded
-2017-06-06T12:19:12.554Z - success: preferences loaded
-2017-06-06T12:19:12.571Z - success: project-importer loaded
-2017-06-06T12:19:12.574Z - success: project-settings loaded
-2017-06-06T12:19:12.577Z - success: ui-kit loaded
-2017-06-06T12:19:12.597Z - success: ui-grid loaded
-2017-06-06T12:19:12.602Z - success: scene loaded
-2017-06-06T12:19:12.604Z - success: sprite-editor loaded
-2017-06-06T12:19:12.607Z - success: store loaded
-2017-06-06T12:19:12.614Z - success: timeline loaded
-2017-06-06T12:19:12.614Z - normal: Loading builtin packages
-2017-06-06T12:19:12.624Z - success: asset-db-debugger loaded
-2017-06-06T12:19:12.626Z - success: code-editor loaded
-2017-06-06T12:19:12.632Z - success: color-picker loaded
-2017-06-06T12:19:12.636Z - success: console loaded
-2017-06-06T12:19:12.639Z - success: package-manager loaded
-2017-06-06T12:19:12.648Z - success: sdkbox loaded
-2017-06-06T12:19:12.651Z - success: tester loaded
-2017-06-06T12:19:12.655Z - success: ui-kit-preview-extra loaded
-2017-06-06T12:19:12.660Z - success: ui-kit-preview loaded
-2017-06-06T12:19:12.662Z - success: ui-tree loaded
-2017-06-06T12:19:12.702Z - normal: Initializing project /Users/linningning/Documents/000/YH_Cocos/Eliminate
-2017-06-06T12:19:12.704Z - normal: Loading packages
-2017-06-06T12:19:12.709Z - normal: Watching packages
-2017-06-06T12:19:12.720Z - normal: Run Application
-2017-06-06T12:19:15.708Z - success: preview server running at http://localhost:7456
-2017-06-06T12:19:15.708Z - normal: Compiling scripts...
-2017-06-06T12:19:17.365Z - normal: Compiled project javascript file successfully
-2017-06-06T12:19:20.697Z - normal: 1.5.0
-2017-06-06T12:37:33.444Z - normal: Compiled project javascript file successfully
-2017-06-06T12:38:14.886Z - normal: Compiled project javascript file successfully
-2017-06-06T12:39:11.183Z - normal: Compiled project javascript file successfully
-2017-06-06T12:45:43.024Z - normal: Compiled project javascript file successfully
-2017-06-06T13:02:43.577Z - normal: Compiled project javascript file successfully
-2017-06-06T13:11:15.770Z - normal: Compiled project javascript file successfully
-2017-06-06T13:12:12.872Z - success: Compiling task has been added to .vscode/tasks.json, please run "compile" task in VS Code to trigger compile in Cocos Creator.
-2017-06-06T13:19:22.899Z - success: Chrome debug setting has been updated to .vscode/launch.json, please install Debugger for Chrome VS Code extension to debug your project.
-2017-06-06T13:25:37.544Z - normal: Compiled project javascript file successfully
-2017-06-06T13:35:53.318Z - normal: Compiled project javascript file successfully
-2017-06-06T13:36:12.213Z - normal: Compiled project javascript file successfully
-2017-06-06T13:49:13.022Z - success: VS Code extension installed to /Users/linningning/.vscode/extensions
-2017-06-06T13:51:48.211Z - normal: Simulator: WORKAREA WIDTH 2560.00, HEIGHT 1331.00
-2017-06-06T13:51:48.212Z - normal: Simulator: FRAME SCALE = 1.00
-2017-06-06T13:51:48.229Z - normal: Simulator: GLFWError #65544 Happen, Cocoa: Failed to retrieve display name
-2017-06-06T13:51:48.298Z - normal: Simulator: 
-2017-06-06T13:51:48.309Z - normal: Simulator: {
-2017-06-06T13:51:48.309Z - normal: Simulator: 	gl.supports_OES_map_buffer: false
-2017-06-06T13:51:48.309Z - normal: Simulator: 	gl.supports_vertex_array_object: true
-2017-06-06T13:51:48.309Z - normal: Simulator: 	cocos2d.x.version: 1.5.0
-2017-06-06T13:51:48.309Z - normal: Simulator: 	gl.vendor: ATI Technologies Inc.
-2017-06-06T13:51:48.309Z - normal: Simulator: 	gl.supports_PVRTC: false
-2017-06-06T13:51:48.310Z - normal: Simulator: 	gl.renderer: AMD Radeon R9 M390 OpenGL Engine
-2017-06-06T13:51:48.310Z - normal: Simulator: 	cocos2d.x.compiled_with_profiler: false
-2017-06-06T13:51:48.310Z - normal: Simulator: 	gl.max_texture_size: 16384
-2017-06-06T13:51:48.310Z - normal: Simulator: 	gl.supports_ETC1: false
-2017-06-06T13:51:48.310Z - normal: Simulator: 	gl.supports_BGRA8888: false
-2017-06-06T13:51:48.310Z - normal: Simulator: 	cocos2d.x.build_type: DEBUG
-2017-06-06T13:51:48.310Z - normal: Simulator: 	gl.max_texture_units: 16
-2017-06-06T13:51:48.310Z - normal: Simulator: 	gl.supports_OES_packed_depth_stencil: false
-2017-06-06T13:51:48.311Z - normal: Simulator: 	gl.supports_discard_framebuffer: false
-2017-06-06T13:51:48.311Z - normal: Simulator: 	gl.supports_NPOT: true
-2017-06-06T13:51:48.311Z - normal: Simulator: 	gl.version: 2.1 ATI-1.51.8
-2017-06-06T13:51:48.311Z - normal: Simulator: 	cocos2d.x.compiled_with_gl_state_cache: true
-2017-06-06T13:51:48.311Z - normal: Simulator: 	gl.supports_OES_depth24: false
-2017-06-06T13:51:48.312Z - normal: Simulator: }
-2017-06-06T13:51:48.312Z - normal: Simulator: 
-2017-06-06T13:51:48.312Z - normal: Simulator: 
-2017-06-06T13:51:48.312Z - normal: Simulator: cocos2d: warning, Director::setProjection() failed because size is 0
-2017-06-06T13:51:48.315Z - normal: Simulator: Project Config:
-2017-06-06T13:51:48.315Z - normal: Simulator:     project dir: /Applications/CocosCreator.app/Contents/Resources/cocos2d-x/simulator/mac/Simulator.app/Contents/Resources/
-2017-06-06T13:51:48.315Z - normal: Simulator:     writable path: $(PROJDIR)/
-2017-06-06T13:51:48.316Z - normal: Simulator:     script file: $(PROJDIR)/main.js
-2017-06-06T13:51:48.316Z - normal: Simulator:     frame size: 960 x 640
-2017-06-06T13:51:48.316Z - normal: Simulator:     frame scale: 1.00
-2017-06-06T13:51:48.316Z - normal: Simulator:     show console: NO
-2017-06-06T13:51:48.316Z - normal: Simulator:     write debug log: NO ()
-2017-06-06T13:51:48.316Z - normal: Simulator:     listen: 
-2017-06-06T13:51:48.317Z - normal: Simulator:     debugger: none
-2017-06-06T13:51:48.317Z - normal: Simulator:     add searching path:
-2017-06-06T13:51:48.317Z - normal: Simulator: 
-2017-06-06T13:51:48.317Z - normal: Simulator: 
-2017-06-06T13:51:48.317Z - normal: Simulator: 
-2017-06-06T13:51:48.317Z - normal: Simulator: ------------------------------------------------
-2017-06-06T13:51:48.317Z - normal: Simulator: LOAD Js FILE: main.js
-2017-06-06T13:51:48.317Z - normal: Simulator: ------------------------------------------------
-2017-06-06T13:51:48.914Z - normal: Simulator: Cocos2d-JS v3.14
-2017-06-06T13:51:49.135Z - normal: Simulator: iShow!
-2017-06-06T13:51:49.391Z - normal: Simulator: 清空成功
-2017-06-06T13:51:49.468Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.469Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.469Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.469Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.470Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.470Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.471Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.471Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.471Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.475Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.475Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.476Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.476Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.476Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.476Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.476Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.476Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.476Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.477Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.477Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.477Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.478Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.478Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.478Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.478Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.478Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.478Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.479Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.479Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.479Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.479Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.480Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.480Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.481Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.481Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.481Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.482Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.482Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.482Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.482Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.482Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.482Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.482Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.486Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.486Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.486Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.486Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.486Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.486Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.487Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.487Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.487Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.487Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.487Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.487Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.487Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.488Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.488Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.488Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.488Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.488Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.488Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.493Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.493Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.493Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.493Z - normal: Simulator: xiaohui
-2017-06-06T13:51:49.493Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.493Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.493Z - normal: Simulator: chongyong
-2017-06-06T13:51:49.494Z - normal: Simulator: chongyong
-2017-06-06T13:53:35.939Z - normal: Simulator: basic_object_finalize 0x13742af0 ...
-2017-06-06T13:53:35.941Z - normal: Simulator: jsbindings: finalizing JS object 0x13742b20 (WebSocket)
-2017-06-06T13:53:35.941Z - normal: Simulator: jsbindings: finalizing JS object 0x13742b50 (SocketIO)
-2017-06-06T13:53:35.941Z - normal: Simulator: basic_object_finalize 0x13742be0 ...
-2017-06-06T13:53:35.941Z - normal: Simulator: basic_object_finalize 0x13742e80 ...
-2017-06-06T14:07:08.254Z - normal: Compiled project javascript file successfully
-2017-06-06T14:15:16.213Z - normal: Compiled project javascript file successfully
-2017-06-06T14:20:21.948Z - normal: Compiled project javascript file successfully
-2017-06-06T14:20:26.464Z - success: Compiling task has been added to .vscode/tasks.json, please run "compile" task in VS Code to trigger compile in Cocos Creator.
-2017-06-06T14:33:20.678Z - normal: Compiled project javascript file successfully
-2017-06-06T14:33:34.255Z - normal: Compiled project javascript file successfully
-2017-06-06T14:33:39.448Z - normal: Compiled project javascript file successfully
-2017-06-06T14:34:42.323Z - normal: Compiled project javascript file successfully
-2017-06-06T14:35:33.070Z - normal: Compiled project javascript file successfully
-2017-06-06T14:36:53.529Z - normal: Compiled project javascript file successfully
-2017-06-06T14:36:59.103Z - normal: Compiled project javascript file successfully
+2017-06-09T06:44:22.825Z - normal: Load ~/.CocosCreator/settings.json
+2017-06-09T06:44:22.829Z - normal: checking language setting...
+2017-06-09T06:44:22.829Z - normal: Language: zh
+2017-06-09T06:44:23.306Z - success: protocol editor-framework registered
+2017-06-09T06:44:23.307Z - success: protocol app registered
+2017-06-09T06:44:23.307Z - success: protocol theme registered
+2017-06-09T06:44:23.307Z - success: protocol profile registered
+2017-06-09T06:44:23.307Z - success: protocol packages registered
+2017-06-09T06:44:23.310Z - success: protocol unpack registerred
+2017-06-09T06:44:23.310Z - success: protocol disable-commonjs registerred
+2017-06-09T06:44:23.613Z - normal: connected!
+2017-06-09T06:44:23.615Z - normal: Check project /Users/linningning/Documents/000/YH_Cocos/Eliminate
+2017-06-09T06:44:23.617Z - normal: Initializing Cocos2d
+2017-06-09T06:44:23.772Z - normal: Initializing Asset Database
+2017-06-09T06:44:23.806Z - success: protocol uuid registerred
+2017-06-09T06:44:23.806Z - success: protocol db registerred
+2017-06-09T06:44:23.806Z - success: protocol thumbnail registerred
+2017-06-09T06:44:23.806Z - normal: Loading editor/builtin packages
+2017-06-09T06:44:23.830Z - success: anysdk loaded
+2017-06-09T06:44:23.993Z - success: assets loaded
+2017-06-09T06:44:23.998Z - success: builder loaded
+2017-06-09T06:44:24.005Z - success: hierarchy loaded
+2017-06-09T06:44:24.010Z - success: inspector loaded
+2017-06-09T06:44:24.011Z - success: keystore loaded
+2017-06-09T06:44:24.015Z - success: node-library loaded
+2017-06-09T06:44:24.018Z - success: package-asset loaded
+2017-06-09T06:44:24.021Z - success: preferences loaded
+2017-06-09T06:44:24.039Z - success: project-importer loaded
+2017-06-09T06:44:24.042Z - success: project-settings loaded
+2017-06-09T06:44:24.046Z - success: ui-kit loaded
+2017-06-09T06:44:24.054Z - success: ui-grid loaded
+2017-06-09T06:44:24.059Z - success: scene loaded
+2017-06-09T06:44:24.060Z - success: sprite-editor loaded
+2017-06-09T06:44:24.064Z - success: store loaded
+2017-06-09T06:44:24.071Z - success: timeline loaded
+2017-06-09T06:44:24.071Z - normal: Loading builtin packages
+2017-06-09T06:44:24.075Z - success: asset-db-debugger loaded
+2017-06-09T06:44:24.078Z - success: code-editor loaded
+2017-06-09T06:44:24.079Z - success: color-picker loaded
+2017-06-09T06:44:24.084Z - success: console loaded
+2017-06-09T06:44:24.088Z - success: package-manager loaded
+2017-06-09T06:44:24.098Z - success: sdkbox loaded
+2017-06-09T06:44:24.105Z - success: tester loaded
+2017-06-09T06:44:24.109Z - success: ui-kit-preview-extra loaded
+2017-06-09T06:44:24.115Z - success: ui-kit-preview loaded
+2017-06-09T06:44:24.119Z - success: ui-tree loaded
+2017-06-09T06:44:24.160Z - normal: Initializing project /Users/linningning/Documents/000/YH_Cocos/Eliminate
+2017-06-09T06:44:24.162Z - normal: Loading packages
+2017-06-09T06:44:24.170Z - success: quick-open loaded
+2017-06-09T06:44:24.428Z - success: quick-preview loaded
+2017-06-09T06:44:24.428Z - normal: Watching packages
+2017-06-09T06:44:24.457Z - normal: Run Application
+2017-06-09T06:44:24.815Z - success: preview server running at http://localhost:7456
+2017-06-09T06:44:28.586Z - normal: 1.5.0
+2017-06-09T07:37:37.314Z - normal: Compiled project javascript file successfully
+2017-06-09T07:37:55.862Z - normal: Compiled project javascript file successfully
+2017-06-09T07:38:07.035Z - normal: Compiled project javascript file successfully
+2017-06-09T07:49:32.262Z - normal: Compiled project javascript file successfully
+2017-06-09T07:50:55.652Z - error: Particle system must specify a texture.
+    at CcParticleSystem._updateTexture (packages://inspector/inspectors/comps/particle-system.js:1:7378)
+    at CcParticleSystem._updateTexture (app://bower_components/vue/dist/vue.js:220:72)
+    at CcParticleSystem.compiled (packages://inspector/inspectors/comps/particle-system.js:1:6710)
+    at CcParticleSystem.Vue._callHook (app://bower_components/vue/dist/vue.js:8396:21)
+    at CcParticleSystem.Vue._compile (app://bower_components/vue/dist/vue.js:8789:10)
+    at CcParticleSystem.Vue.$mount (app://bower_components/vue/dist/vue.js:9607:10)
+    at CcParticleSystem.Vue._init (app://bower_components/vue/dist/vue.js:2587:12)
+    at new CcParticleSystem (eval at createClass (app://bower_components/vue/dist/vue.js:10148:12), <anonymous>:2:51)
+    at CcCompSection.n (packages://inspector/share/comp-section.js:1:2118)
+2017-06-09T11:02:20.040Z - info: shutdown preview server
