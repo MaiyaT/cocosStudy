@@ -67,6 +67,10 @@ cc.Class({
     // called every frame, uncomment this function to activate update callback
     update: function update(dt) {
 
+        if (this.node.y === this.boxItem.end_y && this.node.x === this.boxItem.begin_x) {
+            return;
+        }
+
         var box_bottom = this.node.y + this.node.height * 0.5;
 
         if (box_bottom > this.boxItem.end_y) {
@@ -74,7 +78,15 @@ cc.Class({
         }
 
         if (this.node.y < this.boxItem.end_y) {
+
+            /**
+             * 掉落到指定位置的时候弹动一下
+             */
+
             this.node.y = this.boxItem.end_y;
+
+            var animation = this.getComponent(cc.Animation);
+            animation.play("ani_box");
         }
 
         if (this.node.x > this.boxItem.begin_x) {

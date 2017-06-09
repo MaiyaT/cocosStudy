@@ -30,10 +30,13 @@
       },
       {
         "__id__": 7
+      },
+      {
+        "__id__": 9
       }
     ],
     "_prefab": {
-      "__id__": 9
+      "__id__": 10
     },
     "_id": "",
     "_opacity": 255,
@@ -266,6 +269,25 @@
     "component": "BoxDrop",
     "handler": "click_action",
     "customEventData": ""
+  },
+  {
+    "__type__": "cc.Animation",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_defaultClip": null,
+    "_clips": [
+      {
+        "__uuid__": "aa49a52e-2f73-4f40-9078-bfb560b92086"
+      },
+      {
+        "__uuid__": "002b9280-2676-4157-b9f8-0df108560480"
+      }
+    ],
+    "playOnLoad": false
   },
   {
     "__type__": "cc.PrefabInfo",

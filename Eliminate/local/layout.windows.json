@@ -52,7 +52,7 @@
                 "children": [
                   "scene"
                 ],
-                "height": 453,
+                "height": 409,
                 "type": "panel",
                 "width": 760
               },
@@ -62,7 +62,7 @@
                   "console",
                   "timeline"
                 ],
-                "height": 226,
+                "height": 270,
                 "type": "panel",
                 "width": 760
               }
@@ -82,8 +82,7 @@
         "scene",
         "timeline"
       ]
-    },
-    "worker": {}
+    }
   },
   "panels": {
     "sprite-editor": {
@@ -109,6 +108,12 @@
       "y": 125,
       "width": 584,
       "height": 548
+    },
+    "store": {
+      "x": 105,
+      "y": 35,
+      "width": 800,
+      "height": 622
     }
   }
 }

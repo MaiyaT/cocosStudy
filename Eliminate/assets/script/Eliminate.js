@@ -64,7 +64,10 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
 
+
+
     },
+
 
     //点击了 某个选项
     click_item:function(click_node){
