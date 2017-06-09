@@ -1,5 +1,14 @@
 
 
+var Game_State = cc.Enum({
+
+    Start : -1,
+    Play : -1,
+    Over : -1,
+
+});
+
+
 var BoxDrop = require("BoxDrop");
 var BoxItem = require("BoxItem");
 
@@ -28,6 +37,11 @@ cc.Class({
             type:cc.Node,
         },
 
+        state: {
+            default: Game_State.Start,
+            type: Game_State,
+            visible:false
+        },
 
     },
 
@@ -79,23 +93,15 @@ cc.Class({
 
         this.boxPool = new cc.NodePool("BoxDrop");
 
-        this.creaePanleContent();
+        this.replayGame();
     },
 
-    //创建所有面板的数据
-    creaePanleContent:function(){
 
-        for(let index = 0; index<this.num_rank; index++){
-            this.createRankContent(index);
-        }
-
-        this.updateBeginOriginY();
-
-        this.checkPanelEliminatable();
-    },
 
     //重新开始游戏
     replayGame:function(){
+
+        this.state = Game_State.Start;
 
         var children = this.super_node.children;
 
@@ -117,6 +123,19 @@ cc.Class({
 
         this.creaePanleContent();
     },
+
+    //创建所有面板的数据
+    creaePanleContent:function(){
+
+        for(let index = 0; index<this.num_rank; index++){
+            this.createRankContent(index);
+        }
+
+        this.updateBeginOriginY();
+
+        this.checkPanelEliminatable();
+    },
+
 
     //创建每一列的数据
     createRankContent:function(index){
@@ -220,7 +239,8 @@ cc.Class({
             //判断是否 已达到他的endy 如果还未达到就是 正要掉落
             let off_top = 0;
 
-            for(let j = this.num_row-1; j>=0; j--){
+            // for(let j = this.num_row-1; j>=0; j--){
+            for(let j = 0; j<this.num_row; j++){
                 let box = list[j];
 
                 let box_c = box.getComponent("BoxDrop");
@@ -228,7 +248,9 @@ cc.Class({
 
                 if(box_c.node.y !== box_c.boxItem.end_y){
 
-                    box_c.boxItem.begin_y = this.margin_top - off_top;
+                    box_c.boxItem.begin_y = this.margin_top + off_top;
+
+                    // console.log(i + "  " + box_c.boxItem.begin_y);
                     box_c.node.y = box_c.boxItem.begin_y;
 
                     off_top += box_c.node.height;
@@ -349,7 +371,9 @@ cc.Class({
             }
         }
 
-
+        /**
+         * 判断是否已存在 横竖两边都用到的
+         */
         function isRepeatItemInWipe(item){
             for(let i = 0; i<wipe_list.length; i++){
                 if(wipe_list[i].getComponent("BoxDrop").boxItem.id === item.getComponent("BoxDrop").boxItem.id){
@@ -413,19 +437,29 @@ cc.Class({
         }
 
 
-        if(wipe_list.length > 0){
+        // if(wipe_list.length > 0){
 
-            //消除掉
-            wipe_list.forEach(function(elem){
+        //     //消除掉
+        //     wipe_list.forEach(function(elem){
 
-                this.boxDrop_destroy(elem.getComponent("BoxDrop"));
+        //         this.boxDrop_destroy(elem.getComponent("BoxDrop"));
 
-            }.bind(this));
+        //     }.bind(this));
 
-            this.updateAllRankEndY();    
+        //     this.updateAllRankEndY();    
 
-            return true;
-        }
+        //     //是初始化游戏
+        //     if(this.state === Game_State.Play){
+        //         //不需要显示消除动画
+        //     }else {
+        //         //显示消除动画
+        //     }
+
+        //     return true;
+        // }
+
+        // this.state = Game_State.Play;
+
         return false;
     },
 
