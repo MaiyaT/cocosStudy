@@ -1,69 +1,137 @@
-2017-06-09T06:44:22.825Z - normal: Load ~/.CocosCreator/settings.json
-2017-06-09T06:44:22.829Z - normal: checking language setting...
-2017-06-09T06:44:22.829Z - normal: Language: zh
-2017-06-09T06:44:23.306Z - success: protocol editor-framework registered
-2017-06-09T06:44:23.307Z - success: protocol app registered
-2017-06-09T06:44:23.307Z - success: protocol theme registered
-2017-06-09T06:44:23.307Z - success: protocol profile registered
-2017-06-09T06:44:23.307Z - success: protocol packages registered
-2017-06-09T06:44:23.310Z - success: protocol unpack registerred
-2017-06-09T06:44:23.310Z - success: protocol disable-commonjs registerred
-2017-06-09T06:44:23.613Z - normal: connected!
-2017-06-09T06:44:23.615Z - normal: Check project /Users/linningning/Documents/000/YH_Cocos/Eliminate
-2017-06-09T06:44:23.617Z - normal: Initializing Cocos2d
-2017-06-09T06:44:23.772Z - normal: Initializing Asset Database
-2017-06-09T06:44:23.806Z - success: protocol uuid registerred
-2017-06-09T06:44:23.806Z - success: protocol db registerred
-2017-06-09T06:44:23.806Z - success: protocol thumbnail registerred
-2017-06-09T06:44:23.806Z - normal: Loading editor/builtin packages
-2017-06-09T06:44:23.830Z - success: anysdk loaded
-2017-06-09T06:44:23.993Z - success: assets loaded
-2017-06-09T06:44:23.998Z - success: builder loaded
-2017-06-09T06:44:24.005Z - success: hierarchy loaded
-2017-06-09T06:44:24.010Z - success: inspector loaded
-2017-06-09T06:44:24.011Z - success: keystore loaded
-2017-06-09T06:44:24.015Z - success: node-library loaded
-2017-06-09T06:44:24.018Z - success: package-asset loaded
-2017-06-09T06:44:24.021Z - success: preferences loaded
-2017-06-09T06:44:24.039Z - success: project-importer loaded
-2017-06-09T06:44:24.042Z - success: project-settings loaded
-2017-06-09T06:44:24.046Z - success: ui-kit loaded
-2017-06-09T06:44:24.054Z - success: ui-grid loaded
-2017-06-09T06:44:24.059Z - success: scene loaded
-2017-06-09T06:44:24.060Z - success: sprite-editor loaded
-2017-06-09T06:44:24.064Z - success: store loaded
-2017-06-09T06:44:24.071Z - success: timeline loaded
-2017-06-09T06:44:24.071Z - normal: Loading builtin packages
-2017-06-09T06:44:24.075Z - success: asset-db-debugger loaded
-2017-06-09T06:44:24.078Z - success: code-editor loaded
-2017-06-09T06:44:24.079Z - success: color-picker loaded
-2017-06-09T06:44:24.084Z - success: console loaded
-2017-06-09T06:44:24.088Z - success: package-manager loaded
-2017-06-09T06:44:24.098Z - success: sdkbox loaded
-2017-06-09T06:44:24.105Z - success: tester loaded
-2017-06-09T06:44:24.109Z - success: ui-kit-preview-extra loaded
-2017-06-09T06:44:24.115Z - success: ui-kit-preview loaded
-2017-06-09T06:44:24.119Z - success: ui-tree loaded
-2017-06-09T06:44:24.160Z - normal: Initializing project /Users/linningning/Documents/000/YH_Cocos/Eliminate
-2017-06-09T06:44:24.162Z - normal: Loading packages
-2017-06-09T06:44:24.170Z - success: quick-open loaded
-2017-06-09T06:44:24.428Z - success: quick-preview loaded
-2017-06-09T06:44:24.428Z - normal: Watching packages
-2017-06-09T06:44:24.457Z - normal: Run Application
-2017-06-09T06:44:24.815Z - success: preview server running at http://localhost:7456
-2017-06-09T06:44:28.586Z - normal: 1.5.0
-2017-06-09T07:37:37.314Z - normal: Compiled project javascript file successfully
-2017-06-09T07:37:55.862Z - normal: Compiled project javascript file successfully
-2017-06-09T07:38:07.035Z - normal: Compiled project javascript file successfully
-2017-06-09T07:49:32.262Z - normal: Compiled project javascript file successfully
-2017-06-09T07:50:55.652Z - error: Particle system must specify a texture.
-    at CcParticleSystem._updateTexture (packages://inspector/inspectors/comps/particle-system.js:1:7378)
-    at CcParticleSystem._updateTexture (app://bower_components/vue/dist/vue.js:220:72)
-    at CcParticleSystem.compiled (packages://inspector/inspectors/comps/particle-system.js:1:6710)
-    at CcParticleSystem.Vue._callHook (app://bower_components/vue/dist/vue.js:8396:21)
-    at CcParticleSystem.Vue._compile (app://bower_components/vue/dist/vue.js:8789:10)
-    at CcParticleSystem.Vue.$mount (app://bower_components/vue/dist/vue.js:9607:10)
-    at CcParticleSystem.Vue._init (app://bower_components/vue/dist/vue.js:2587:12)
-    at new CcParticleSystem (eval at createClass (app://bower_components/vue/dist/vue.js:10148:12), <anonymous>:2:51)
-    at CcCompSection.n (packages://inspector/share/comp-section.js:1:2118)
-2017-06-09T11:02:20.040Z - info: shutdown preview server
+2017-06-09T12:59:58.316Z - normal: Load ~/.CocosCreator/settings.json
+2017-06-09T12:59:58.319Z - normal: checking language setting...
+2017-06-09T12:59:58.319Z - normal: Language: zh
+2017-06-09T12:59:59.292Z - success: protocol editor-framework registered
+2017-06-09T12:59:59.292Z - success: protocol app registered
+2017-06-09T12:59:59.293Z - success: protocol theme registered
+2017-06-09T12:59:59.293Z - success: protocol profile registered
+2017-06-09T12:59:59.293Z - success: protocol packages registered
+2017-06-09T12:59:59.295Z - success: protocol unpack registerred
+2017-06-09T12:59:59.295Z - success: protocol disable-commonjs registerred
+2017-06-09T12:59:59.541Z - normal: connected!
+2017-06-09T12:59:59.543Z - normal: Check project /Users/linningning/Documents/000/YH_Cocos/Eliminate
+2017-06-09T12:59:59.544Z - normal: Initializing Cocos2d
+2017-06-09T12:59:59.817Z - normal: Initializing Asset Database
+2017-06-09T12:59:59.872Z - success: protocol uuid registerred
+2017-06-09T12:59:59.872Z - success: protocol db registerred
+2017-06-09T12:59:59.872Z - success: protocol thumbnail registerred
+2017-06-09T12:59:59.872Z - normal: Loading editor/builtin packages
+2017-06-09T12:59:59.964Z - success: anysdk loaded
+2017-06-09T13:00:00.108Z - success: assets loaded
+2017-06-09T13:00:00.112Z - success: builder loaded
+2017-06-09T13:00:00.117Z - success: hierarchy loaded
+2017-06-09T13:00:00.123Z - success: inspector loaded
+2017-06-09T13:00:00.124Z - success: keystore loaded
+2017-06-09T13:00:00.129Z - success: node-library loaded
+2017-06-09T13:00:00.131Z - success: package-asset loaded
+2017-06-09T13:00:00.133Z - success: preferences loaded
+2017-06-09T13:00:00.153Z - success: project-importer loaded
+2017-06-09T13:00:00.156Z - success: project-settings loaded
+2017-06-09T13:00:00.160Z - success: ui-kit loaded
+2017-06-09T13:00:00.176Z - success: ui-grid loaded
+2017-06-09T13:00:00.182Z - success: scene loaded
+2017-06-09T13:00:00.183Z - success: sprite-editor loaded
+2017-06-09T13:00:00.187Z - success: store loaded
+2017-06-09T13:00:00.193Z - success: timeline loaded
+2017-06-09T13:00:00.193Z - normal: Loading builtin packages
+2017-06-09T13:00:00.203Z - success: asset-db-debugger loaded
+2017-06-09T13:00:00.206Z - success: code-editor loaded
+2017-06-09T13:00:00.211Z - success: color-picker loaded
+2017-06-09T13:00:00.216Z - success: console loaded
+2017-06-09T13:00:00.219Z - success: package-manager loaded
+2017-06-09T13:00:00.228Z - success: sdkbox loaded
+2017-06-09T13:00:00.231Z - success: tester loaded
+2017-06-09T13:00:00.236Z - success: ui-kit-preview-extra loaded
+2017-06-09T13:00:00.240Z - success: ui-kit-preview loaded
+2017-06-09T13:00:00.243Z - success: ui-tree loaded
+2017-06-09T13:00:00.283Z - normal: Initializing project /Users/linningning/Documents/000/YH_Cocos/Eliminate
+2017-06-09T13:00:00.303Z - normal: Loading packages
+2017-06-09T13:00:00.312Z - success: quick-open loaded
+2017-06-09T13:00:00.798Z - success: quick-preview loaded
+2017-06-09T13:00:00.798Z - normal: Watching packages
+2017-06-09T13:00:00.827Z - normal: Run Application
+2017-06-09T13:00:04.145Z - success: preview server running at http://localhost:7456
+2017-06-09T13:00:04.145Z - normal: Compiling scripts...
+2017-06-09T13:00:05.974Z - normal: Compiled project javascript file successfully
+2017-06-09T13:00:09.506Z - normal: 1.5.0
+2017-06-09T13:14:42.968Z - normal: Compiled project javascript file successfully
+2017-06-09T13:41:00.125Z - normal: Compiled project javascript file successfully
+2017-06-09T13:44:18.672Z - normal: Compiled project javascript file successfully
+2017-06-09T13:44:52.815Z - normal: Compiled project javascript file successfully
+2017-06-09T13:45:33.005Z - normal: Compiled project javascript file successfully
+2017-06-09T13:45:57.260Z - normal: Compiled project javascript file successfully
+2017-06-09T14:33:53.216Z - normal: Compiled project javascript file successfully
+2017-06-09T14:37:36.951Z - normal: Compiled project javascript file successfully
+2017-06-09T14:40:00.777Z - failed: [db-task][sync-changes] Failed to import asset /Users/linningning/Documents/000/YH_Cocos/Eliminate/assets/script/BoxPanel.js, message: Compile error: SyntaxError: unknown: Unexpected token (425:61)
+  423 |                             tempList.forEach(function(elem){
+  424 | 
+> 425 |                                 elem.getComponent("BoxDrop")..state = BoxState.EDestroy;
+      |                                                              ^
+  426 | 
+  427 |                             });
+  428 | 
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4443:13)
+    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1755:8)
+    at Parser.pp$3.parseIdentifier (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4321:10)
+    at Parser.pp$3.parseSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3507:30)
+    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3494:15)
+    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3464:19)
+    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3394:19)
+    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3371:19)
+    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3334:19)
+    at Parser.pp$3.parseExpression (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3296:19)
+2017-06-09T14:40:20.225Z - normal: Compiled project javascript file successfully
+2017-06-09T14:40:57.457Z - normal: Compiled project javascript file successfully
+2017-06-09T14:43:15.260Z - normal: Compiled project javascript file successfully
+2017-06-09T14:43:46.187Z - normal: Compiled project javascript file successfully
+2017-06-09T14:44:08.815Z - normal: Compiled project javascript file successfully
+2017-06-09T14:44:50.483Z - normal: Compiled project javascript file successfully
+2017-06-09T14:45:34.558Z - normal: Compiled project javascript file successfully
+2017-06-09T14:45:34.653Z - error: The 'default' value of '5513.state' should not be used with a 'get' function.
+    at Object.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/CCDebugger.js:367:18)
+    at Object.exports.preprocessAttrs (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/preprocess-class.js:218:28)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:737:20)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/platform/CCClass.js:872:9)
+    at Object.require.BoxDrop.BoxItem (assets/script/BoxDrop.js:18)
+    at s (file:///Users/linningning/Documents/000/YH_Cocos/Eliminate/library/bundle.project.js?016:1:262)
+    at e (file:///Users/linningning/Documents/000/YH_Cocos/Eliminate/library/bundle.project.js?016:1:433)
+    at file:///Users/linningning/Documents/000/YH_Cocos/Eliminate/library/bundle.project.js?016:1:451
+2017-06-10T00:40:44.169Z - normal: Compiled project javascript file successfully
+2017-06-10T00:43:37.282Z - normal: Compiled project javascript file successfully
+2017-06-10T00:46:28.882Z - normal: Compiled project javascript file successfully
+2017-06-10T00:54:49.517Z - normal: Compiled project javascript file successfully
+2017-06-10T00:57:26.591Z - normal: Compiled project javascript file successfully
+2017-06-10T00:58:07.269Z - normal: Compiled project javascript file successfully
+2017-06-10T01:02:22.794Z - normal: Compiled project javascript file successfully
+2017-06-10T01:04:20.741Z - normal: Compiled project javascript file successfully
+2017-06-10T01:08:11.887Z - info: Path: Canvas/Box/sel, UUID: 8a2e9ygVSJJQpamXQgUlpC1
+2017-06-10T01:08:52.560Z - normal: Compiled project javascript file successfully
+2017-06-10T01:11:52.536Z - normal: Compiled project javascript file successfully
+2017-06-10T01:18:34.251Z - normal: Compiled project javascript file successfully
+2017-06-10T01:25:16.948Z - normal: Compiled project javascript file successfully
+2017-06-10T01:26:10.401Z - normal: Compiled project javascript file successfully
+2017-06-10T01:31:09.298Z - normal: Compiled project javascript file successfully
+2017-06-10T01:39:38.913Z - normal: Compiled project javascript file successfully
+2017-06-10T01:43:15.574Z - normal: Compiled project javascript file successfully
+2017-06-10T01:44:40.518Z - normal: Compiled project javascript file successfully
+2017-06-10T01:44:46.165Z - normal: Compiled project javascript file successfully
+2017-06-10T01:46:10.258Z - normal: Compiled project javascript file successfully
+2017-06-10T01:46:10.274Z - error: Compile error: Cannot require 'State' from '/Users/linningning/Documents/000/YH_Cocos/Eliminate/temp/scripts/assets/script'. Module not found.
+    at Readable.<anonymous> (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/compile-worker.js:1:3784)
+    at emitOne (events.js:96:13)
+    at Readable.emit (events.js:188:7)
+    at Labeled.<anonymous> (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/read-only-stream/index.js:28:44)
+    at emitOne (events.js:96:13)
+    at Labeled.emit (events.js:188:7)
+    at Labeled.<anonymous> (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/stream-splicer/index.js:130:18)
+    at emitOne (events.js:101:20)
+    at Labeled.emit (events.js:188:7)
+    at Deps.<anonymous> (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/stream-splicer/index.js:130:18)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/compiler.js:1:1022
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/compiler.js:1:466
+    at BrowserWindow.<anonymous> (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/compiler.js:1:2045)
+    at BrowserWindow.g (events.js:286:16)
+    at emitOne (events.js:101:20)
+    at BrowserWindow.emit (events.js:188:7)
+2017-06-10T01:46:33.649Z - normal: Compiled project javascript file successfully
+2017-06-10T01:47:11.209Z - normal: Compiled project javascript file successfully

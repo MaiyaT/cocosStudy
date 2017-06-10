@@ -21,7 +21,8 @@ cc.Class({
             },
             set: function set(value) {
                 if (!this.select_box) {
-                    value.boxIsSelectState(true);
+
+                    value.state_b = BoxState.ESelect;
                     this._select_box = value;
                 } else {
                     var boxItem_new = value.getComponent("BoxDrop").boxItem;
@@ -30,7 +31,7 @@ cc.Class({
                         // console.log("看是否要交互位置 还是说切换到这个选中的位置处理");
                         console.log("id1 = " + boxItem_new.id + "  id2= " + boxItem_old.id);
                         //旧的取消选择
-                        this._select_box.boxIsSelectState(false);
+                        this._select_box.state_b = BoxState.ENormal;
 
                         if (boxItem_new.rank === boxItem_old.rank && Math.abs(boxItem_new.row - boxItem_old.row) === 1 || boxItem_new.row === boxItem_old.row && Math.abs(boxItem_new.rank - boxItem_old.rank) === 1) {
                             // console.log("是相近的 交换位置");
@@ -42,13 +43,13 @@ cc.Class({
                         } else {
                             // console.log("不是相近的 取消上一个选择 选中新点击的");
 
-                            value.boxIsSelectState(true);
+                            value.state_b = BoxState.ESelect;
 
                             this._select_box = value;
                         }
                     } else {
                         // console.log("选中了同一个 取消选择");
-                        value.boxIsSelectState(false);
+                        value.state_b = BoxState.ENormal;
 
                         this._select_box = null;
                     }

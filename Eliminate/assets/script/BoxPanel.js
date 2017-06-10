@@ -7,6 +7,7 @@ var Game_State = cc.Enum({
 
 var BoxDrop = require("BoxDrop");
 var BoxItem = require("BoxItem");
+var BoxState = require("States").BoxState;
 
 cc.Class({
     extends: cc.Component,
@@ -232,6 +233,7 @@ cc.Class({
 
             //判断是否 已达到他的endy 如果还未达到就是 正要掉落
             let off_top = 0;
+            let space_top = 0;
 
             // for(let j = this.num_row-1; j>=0; j--){
             for(let j = 0; j<this.num_row; j++){
@@ -247,10 +249,14 @@ cc.Class({
                      * 2.消除的 方块不在界面中的设置他的开始位置 已在界面中的不去设置他
                      */
                     if((this.gamestate === Game_State.Start) || (box_c.node.y >= box_c.boxItem.begin_y)){
-                        box_c.boxItem.begin_y = this.margin_top + off_top;
+
+                        box_c.boxItem.begin_y = this.margin_top + off_top + space_top;
+
                         box_c.node.y = box_c.boxItem.begin_y;
 
                         off_top += box_c.node.height;
+
+                        space_top += space_top + 1;
                     }
                 }
             }
@@ -354,7 +360,7 @@ cc.Class({
 
                             tempList.forEach(function(elem){
 
-                                elem.getComponent("BoxDrop").boxIsSelectState(true);
+                                elem.getComponent("BoxDrop").state_b = BoxState.EDestroy;
 
                             });
 
@@ -417,7 +423,7 @@ cc.Class({
 
                             tempList.forEach(function(elem){
 
-                                elem.getComponent("BoxDrop").boxIsSelectState(true);
+                                elem.getComponent("BoxDrop").state_b = BoxState.EDestroy;
 
                             });
 
@@ -475,6 +481,7 @@ cc.Class({
             box = this.boxPool.get();
         }else{
             box = cc.instantiate(this.box_prefab);
+            box.getComponent("BoxDrop").init();
         }
 
         return box;

@@ -202,6 +202,7 @@
     },
     "_enabled": true,
     "speed": 700,
+    "acc_speed": 1600,
     "select_item": {
       "__id__": 2
     },

@@ -652,7 +652,7 @@
     "node": {
       "__id__": 15
     },
-    "_enabled": true,
+    "_enabled": false,
     "bomb": {
       "__uuid__": "32bc2ee9-9e10-41fc-902a-c40b625255b0"
     },
@@ -977,10 +977,9 @@
     },
     "_enabled": true,
     "speed": 700,
-    "select_item": {
-      "__id__": 22
-    },
-    "boxItem": null
+    "acc_speed": 1600,
+    "boxItem": null,
+    "_state_b": 1
   },
   {
     "__type__": "cc.Button",
@@ -1088,7 +1087,7 @@
       }
     ],
     "_tag": -1,
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 35

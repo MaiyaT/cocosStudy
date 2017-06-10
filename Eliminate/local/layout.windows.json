@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 105,
-      "y": 347,
-      "width": 1333,
-      "height": 931,
+      "x": 1089,
+      "y": 195,
+      "width": 1470,
+      "height": 1085,
       "layout": {
         "children": [
           {
@@ -18,32 +18,32 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 262,
+                "height": 322.96875,
                 "type": "panel",
-                "width": 204
+                "width": 212.53125
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 417,
+                "height": 514.03125,
                 "type": "panel",
-                "width": 204
+                "width": 212.53125
               }
             ],
-            "height": 682,
+            "height": 840,
             "type": "dock-v",
-            "width": 204
+            "width": 212.53125
           },
           {
             "active": 0,
             "children": [
               "inspector"
             ],
-            "height": 682,
+            "height": 840,
             "type": "panel",
-            "width": 304
+            "width": 316.703125
           },
           {
             "children": [
@@ -52,9 +52,9 @@
                 "children": [
                   "scene"
                 ],
-                "height": 409,
+                "height": 504.171875,
                 "type": "panel",
-                "width": 760
+                "width": 791.765625
               },
               {
                 "active": 0,
@@ -62,14 +62,14 @@
                   "console",
                   "timeline"
                 ],
-                "height": 270,
+                "height": 332.828125,
                 "type": "panel",
-                "width": 760
+                "width": 791.765625
               }
             ],
-            "height": 682,
+            "height": 840,
             "type": "dock-v",
-            "width": 760
+            "width": 791.765625
           }
         ],
         "type": "dock-h"
@@ -82,7 +82,8 @@
         "scene",
         "timeline"
       ]
-    }
+    },
+    "worker": {}
   },
   "panels": {
     "sprite-editor": {
@@ -98,8 +99,8 @@
       "height": 638
     },
     "preferences": {
-      "x": 406,
-      "y": 98,
+      "x": 369,
+      "y": 498,
       "width": 580,
       "height": 564
     },

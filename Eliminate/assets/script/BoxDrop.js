@@ -1,6 +1,8 @@
 
 var BoxItem = require("BoxItem");
 
+var BoxState = require("States").BoxState;
+
 cc.Class({
     extends: cc.Component,
 
@@ -8,22 +10,97 @@ cc.Class({
         
         speed:0,
 
-        select_item:{
-            default:null,
-            type:cc.Node
+        acc_speed:{
+            default:9.8,
+            tooltop:"加速度"
         },
 
         boxItem:{
             default:null,
             type:BoxItem,
             //visible:false,
-        }
+        },
+
+
+        _state_b:{
+            default:BoxState.ENone,
+            type:BoxState,
+            // visible:false
+        },
+
+        state_b:{
+
+            get:function () {
+                return this._state_b;
+            },
+
+            set:function (value) {
+
+                if(this._state_b !== value){
+
+                    this._state_b = value;
+
+                    switch (value) {
+                        case BoxState.ENormal:
+                            this.select_item.active = false;
+
+                            break;
+
+                        case BoxState.EFalling:
+                            this.select_item.active = false;
+
+                            break;
+
+                        case BoxState.ESelect:
+                            this.select_item.active = true;
+                            break;
+
+                        case BoxState.EDestroy:
+                            this.select_item.active = true;
+
+                            break;
+
+                        case BoxState.ESkillAround:
+                            break;
+
+                        case BoxState.ESkillColor:
+                            break;
+
+                        case BoxState.ESkillRank:
+                            break;
+
+                        case BoxState.ESkillRaw:
+                            break;
+                    }
+
+                }
+            },
+
+            type:BoxState,
+
+            // tooltop:"方块的状态"
+        },
+
+    },
+
+    statics:{
+        BoxState:BoxState
+    },
+
+    init(){
+
+        this.select_item = this.node.getChildByName("sel");
+
+        this.state_b = BoxState.ENormal;
+        this.currentSpeed = this.speed;
+
     },
 
     // use this for initialization
     onLoad: function () {
 
         // this.click_add();
+
         
     },
 
@@ -42,12 +119,6 @@ cc.Class({
     },
 
 
-    boxIsSelectState:function(isSelect){
-
-        this.select_item.active = isSelect;
-
-    },
-
 
 
 
@@ -60,7 +131,7 @@ cc.Class({
     reuse:function(){
         console.log("chongyong");
 
-        this.select_item.active = false;
+        this.state_b = BoxState.ENormal;
     },
 
 
@@ -86,7 +157,14 @@ cc.Class({
         let box_bottom = this.node.y + this.node.height * 0.5;
 
         if (box_bottom > this.boxItem.end_y) {
-            this.node.y -= this.speed * dt;
+            //加速度掉落
+
+            let speed_n = this.currentSpeed + this.acc_speed*dt;
+            let s = (speed_n + this.currentSpeed )*0.5 * dt;
+
+            this.currentSpeed = speed_n;
+
+            this.node.y -= s;
         }
 
         if (this.node.y < this.boxItem.end_y) {
@@ -112,3 +190,7 @@ cc.Class({
     },
 });
 
+
+module.exports = {
+  BoxState
+};
