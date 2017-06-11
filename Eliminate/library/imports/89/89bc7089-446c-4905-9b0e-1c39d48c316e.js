@@ -103,8 +103,9 @@ cc.Class({
 
                         case BoxState.EDestroy:
                             console.log("摧毁吹asd");
-                            this.node.color = cc.color(255, 255, 255, 255);
-                            animation.play("box_destroy");
+                            // this.node.color = cc.color(255,255,255,255);
+                            // animation.play("box_destroy");
+
 
                             break;
 
@@ -134,6 +135,10 @@ cc.Class({
 
     unuse: function unuse() {
         console.log("xiaohui");
+
+        this.state_b = BoxState.ENormal;
+        this.showType = BoxShowType.K_Normal;
+        this.node.y = -100000;
     },
 
     reuse: function reuse() {
@@ -169,7 +174,6 @@ cc.Class({
 
         //动画结束之后的回调
         this.node.opacity = 255;
-        // this.node.color = this.boxItem.color_show;
 
         console.log("摧毁动画完成");
     },
@@ -186,7 +190,9 @@ cc.Class({
     update: function update(dt) {
 
         //如果是正在掉落的 刷新endy 的坐标
-        if (this.state_b === BoxState.EFalling || this.state_b === BoxState.EDestroy) {
+        // if(this.state_b === BoxState.EFalling ||
+        //     this.state_b === BoxState.EDestroy){
+        if (this.state_b === BoxState.EFalling) {
 
             var box_bottom = this.node.y + this.node.height * 0.5;
 

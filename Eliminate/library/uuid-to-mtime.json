@@ -10,8 +10,8 @@
     "relativePath": "scenes"
   },
   "4cf6367e-ad66-485f-b6ad-d81e22dbbfe0": {
-    "asset": 1497176208000,
-    "meta": 1497176208000,
+    "asset": 1497193418000,
+    "meta": 1497193418000,
     "relativePath": "scenes/game.fire"
   },
   "689a1406-e46e-4da6-84e2-528ecdfab349": {
@@ -35,8 +35,8 @@
     "relativePath": "prefab"
   },
   "1a989054-19b0-487f-b409-997ad3b01f02": {
-    "asset": 1497175812000,
-    "meta": 1497175812000,
+    "asset": 1497190122000,
+    "meta": 1497190122000,
     "relativePath": "prefab/Box.prefab"
   },
   "1e9ee5c0-3e94-48da-9397-14a64bfb4060": {
@@ -305,13 +305,13 @@
     "relativePath": "Texture/white@2x.png"
   },
   "89bc7089-446c-4905-9b0e-1c39d48c316e": {
-    "asset": 1497176040000,
-    "meta": 1497176041000,
+    "asset": 1497193254000,
+    "meta": 1497193414000,
     "relativePath": "script/BoxDrop.js"
   },
   "ec917de0-c8aa-4110-9614-dba61ed5e39e": {
-    "asset": 1497176175000,
-    "meta": 1497176179000,
+    "asset": 1497193409000,
+    "meta": 1497193414000,
     "relativePath": "script/BoxPanel.js"
   }
 }

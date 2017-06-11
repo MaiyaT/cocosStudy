@@ -47,7 +47,10 @@ cc.Class({
                     if(value === Game_State.Play){
                         //开始掉落
                         this.updateBeginOriginY();
+                    }else  if(value === Game_State.Filling){
+                        this.fillInterval = 0;
                     }
+
                 }
             },
             type:Game_State
@@ -206,6 +209,7 @@ cc.Class({
                 new_box.parent = this.super_node;
 
                 list_sub.push(new_box);
+
             }
 
 
@@ -229,38 +233,39 @@ cc.Class({
         if(this.gamestate === Game_State.Start){
             this.checkPanelEliminatable();
         }
-        else if(this.gamestate === Game_State.Filling){
-            // cc.director.getScheduler().schedule(callback, this, interval, !this._isRunning);
-
-            this.callBackFilling = function () {
-
-                console.log("======定时器刷了=====");
-
-                for (let i = 0; i<this.num_rank; i++) {
-                    let list = this.rankList[i];
-
-                    for (let j = 0; j < this.num_row; j++) {
-                        let box = list[j];
-                        let box_c = box.getComponent("BoxDrop");
-                        if(box_c.state_b !== BoxState.EFalled){
-                            return;
-                        }
-                    }
-                }
-
-                // if(this.count_filling === 10){
-                //     this.unschedule(this.callBackFilling);
-                // }
-
-                this.unschedule(this.callBackFilling);
-                this.checkPanelEliminatable();
-            }
-
-
-            //判断他是否所有方块已掉落到指定位置
-            //这边如果bind this的话 定时器停不下来
-            this.schedule(this.callBackFilling,0.2);
-        }
+        // else if(this.gamestate === Game_State.Filling){
+        //     // cc.director.getScheduler().schedule(callback, this, interval, !this._isRunning);
+        //
+        //     let self = this;
+        //
+        //     this.callBackFilling = function () {
+        //
+        //         console.log("======定时器刷了=====");
+        //
+        //         for (let i = 0; i<self.num_rank; i++) {
+        //             let list = self.rankList[i];
+        //
+        //             for (let j = 0; j < self.num_row; j++) {
+        //                 let box = list[j];
+        //                 let box_c_i = box.getComponent("BoxDrop");
+        //                 if(box_c_i.state_b !== BoxState.EFalled){
+        //                     return;
+        //                 }
+        //             }
+        //         }
+        //
+        //         console.log("=========检测是否开消除=========");
+        //
+        //         self.unschedule(self.callBackFilling);
+        //
+        //         self.checkPanelEliminatable();
+        //     }
+        //
+        //
+        //     //判断他是否所有方块已掉落到指定位置
+        //     //这边如果bind this的话 定时器停不下来
+        //     this.schedule(this.callBackFilling,0.2);
+        // }
 
     },
 
@@ -307,7 +312,8 @@ cc.Class({
 
                     //是要掉落的
                     if(this.gamestate === Game_State.Play ||
-                        this.gamestate === Game_State.Filling){
+                        this.gamestate === Game_State.Filling ||
+                        this.gamestate === Game_State.Start){
                         box_c.state_b = BoxState.EFalling;
                     }
                 }
@@ -424,12 +430,6 @@ cc.Class({
                             //追加到wipe里面
                             Array.prototype.push.apply(wipe_list,tempList);
 
-                            tempList.forEach(function(elem){
-
-                                elem.getComponent("BoxDrop").state_b = BoxState.EDestroy;
-
-                            });
-
                         }
                         //清空数组
                         tempList = [];
@@ -487,12 +487,6 @@ cc.Class({
 
                             });
 
-                            tempList.forEach(function(elem){
-
-                                elem.getComponent("BoxDrop").state_b = BoxState.EDestroy;
-
-                            });
-
                         }
                         //清空数组
                         tempList = [];
@@ -513,11 +507,11 @@ cc.Class({
                 showDelayAnimation = false;
             }
 
-            if(showDelayAnimation){
-                //正在掉落填充
-                this.gamestate = Game_State.Filling;
-            }
 
+
+
+            #warn
+            //这一块 逻辑 有问题
 
             if(showDelayAnimation) {
                 this.schedule(function () {
@@ -528,7 +522,7 @@ cc.Class({
                         box.state_b = BoxState.EDestroy;
 
                     }.bind(this));
-                }, 0.1, 1);
+                }, 0.3, 1);
             }
 
 
@@ -540,11 +534,18 @@ cc.Class({
                 wipe_list.forEach(function(elem){
 
                     this.boxDrop_destroy(elem.getComponent("BoxDrop"));
+
                 }.bind(this));
+
+                //有销毁在掉落
+                if(showDelayAnimation){
+                    //正在掉落填充
+                    this.gamestate = Game_State.Filling;
+                }
 
                 this.updateAllRankEndY();
 
-            }.bind(this),showDelayAnimation?0.5:0,false);
+            }.bind(this),showDelayAnimation?0.6:0,false);
 
             return true;
         }
@@ -588,11 +589,42 @@ cc.Class({
 
 
     // called every frame, uncomment this function to activate update callback
-    // update: function (dt) {
-    //
-    //
-    //
-    // },
+    update: function (dt) {
+
+        if(this.gamestate === Game_State.Filling){
+            // cc.director.getScheduler().schedule(callback, this, interval, !this._isRunning);
+
+            let self = this;
+
+            if(this.fillInterval === 10){
+
+                this.fillInterval = 0;
+
+                console.log("======定时开始判断是否都已掉落到底部了=====");
+
+                for (let i = 0; i<self.num_rank; i++) {
+                    let list = self.rankList[i];
+
+                    for (let j = 0; j < self.num_row; j++) {
+                        let box = list[j];
+                        let box_c_i = box.getComponent("BoxDrop");
+                        if(box_c_i.state_b !== BoxState.EFalled){
+                            return;
+                        }
+                    }
+                }
+
+
+                console.log("=========检测是否开消除=========");
+
+                this.gamestate === Game_State.Play;
+                self.checkPanelEliminatable();
+            }
+
+            this.fillInterval += 1;
+        }
+
+    },
 });
 
 

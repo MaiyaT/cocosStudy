@@ -282,9 +282,6 @@
     "_clips": [
       {
         "__uuid__": "aa49a52e-2f73-4f40-9078-bfb560b92086"
-      },
-      {
-        "__uuid__": "203ced91-2b63-43de-8c2d-bd9d3809db7e"
       }
     ],
     "playOnLoad": true
