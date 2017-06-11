@@ -201,12 +201,11 @@
       "__id__": 1
     },
     "_enabled": true,
-    "speed": 700,
-    "acc_speed": 1600,
-    "select_item": {
-      "__id__": 2
-    },
-    "boxItem": null
+    "speed": 50,
+    "acc_speed": 1500,
+    "boxItem": null,
+    "_showType": 0,
+    "_state_b": 1
   },
   {
     "__type__": "cc.Button",
@@ -285,10 +284,10 @@
         "__uuid__": "aa49a52e-2f73-4f40-9078-bfb560b92086"
       },
       {
-        "__uuid__": "002b9280-2676-4157-b9f8-0df108560480"
+        "__uuid__": "203ced91-2b63-43de-8c2d-bd9d3809db7e"
       }
     ],
-    "playOnLoad": false
+    "playOnLoad": true
   },
   {
     "__type__": "cc.PrefabInfo",

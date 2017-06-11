@@ -1,0 +1,62 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "box_destroy",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.32,
+  "sample": 25,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "props": {},
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "135aed48-daf8-44e8-b528-49e720ab1530"
+            }
+          },
+          {
+            "frame": 0.04,
+            "value": {
+              "__uuid__": "d550951d-cc7e-48b9-9483-201404f89e59"
+            }
+          },
+          {
+            "frame": 0.08,
+            "value": {
+              "__uuid__": "2f9428fc-4c47-4348-a50d-357af8de8c29"
+            }
+          },
+          {
+            "frame": 0.12,
+            "value": {
+              "__uuid__": "6a15bd51-308d-444f-b05c-f4d9e147c901"
+            }
+          },
+          {
+            "frame": 0.16,
+            "value": {
+              "__uuid__": "94b1d6c3-1db7-4e32-a563-918ee63a86f3"
+            }
+          },
+          {
+            "frame": 0.2,
+            "value": {
+              "__uuid__": "79ffb514-fe12-4f74-8292-8477ff0195e9"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "frame": 0.32,
+      "func": "destroyFinish",
+      "params": []
+    }
+  ]
+}

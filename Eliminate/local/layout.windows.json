@@ -5,8 +5,8 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 1089,
-      "y": 195,
+      "x": 1127,
+      "y": 114,
       "width": 1470,
       "height": 1085,
       "layout": {
@@ -18,32 +18,32 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 322.96875,
+                "height": 381,
                 "type": "panel",
-                "width": 212.53125
+                "width": 234
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 514.03125,
+                "height": 610,
                 "type": "panel",
-                "width": 212.53125
+                "width": 234
               }
             ],
-            "height": 840,
+            "height": 994,
             "type": "dock-v",
-            "width": 212.53125
+            "width": 234
           },
           {
             "active": 0,
             "children": [
               "inspector"
             ],
-            "height": 840,
+            "height": 994,
             "type": "panel",
-            "width": 316.703125
+            "width": 349
           },
           {
             "children": [
@@ -52,9 +52,9 @@
                 "children": [
                   "scene"
                 ],
-                "height": 504.171875,
+                "height": 597,
                 "type": "panel",
-                "width": 791.765625
+                "width": 875
               },
               {
                 "active": 0,
@@ -62,14 +62,14 @@
                   "console",
                   "timeline"
                 ],
-                "height": 332.828125,
+                "height": 394,
                 "type": "panel",
-                "width": 791.765625
+                "width": 875
               }
             ],
-            "height": 840,
+            "height": 994,
             "type": "dock-v",
-            "width": 791.765625
+            "width": 875
           }
         ],
         "type": "dock-h"
@@ -115,6 +115,12 @@
       "y": 35,
       "width": 800,
       "height": 622
+    },
+    "timeline.event": {
+      "x": 1080,
+      "y": 465,
+      "width": 400,
+      "height": 422
     }
   }
 }

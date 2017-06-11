@@ -1,14 +1,9 @@
 "use strict";
 
-var Game_State = cc.Enum({
-    Start: -1,
-    Play: -1,
-    Over: -1
-});
-
 var BoxDrop = require("BoxDrop");
 var BoxItem = require("BoxItem");
 var BoxState = require("States").BoxState;
+var Game_State = require("States").Game_State;
 
 cc.Class({
     extends: cc.Component,
@@ -35,10 +30,26 @@ cc.Class({
             type: cc.Node
         },
 
-        gamestate: {
+        _gameState: {
             default: Game_State.Start,
-            type: Game_State,
-            visible: false
+            type: Game_State
+        },
+
+        gamestate: {
+            get: function get() {
+                return this._gameState;
+            },
+            set: function set(value) {
+
+                if (this._gameState !== value) {
+                    this._gameState = value;
+                    if (value === Game_State.Play) {
+                        //开始掉落
+                        this.updateBeginOriginY();
+                    }
+                }
+            },
+            type: Game_State
         }
 
     },
@@ -114,19 +125,14 @@ cc.Class({
 
         console.log("清空成功");
 
-        this.creaePanleContent();
-    },
-
-    //创建所有面板的数据
-    creaePanleContent: function creaePanleContent() {
-
+        //创建所有面板的数据
         for (var index = 0; index < this.num_rank; index++) {
             this.createRankContent(index);
         }
 
-        this.updateBeginOriginY();
-
         this.checkPanelEliminatable();
+
+        this.updateBeginOriginY();
     },
 
     //创建每一列的数据
@@ -145,6 +151,8 @@ cc.Class({
             box.height = this.itemHeight;
 
             var box_c = box.getComponent("BoxDrop");
+            box_c.state_b = BoxState.ENormal;
+
             box_c.initBoxItem();
 
             box_c.boxItem.begin_x = origin_x;
@@ -164,7 +172,7 @@ cc.Class({
         this.rankList.push(rank_list);
     },
 
-    //更新某一列 end y的数据
+    //更新所有列 end y的数据
     updateAllRankEndY: function updateAllRankEndY() {
 
         //看该列的数量是否 小于 this.num_row  少于的话则补充
@@ -208,7 +216,39 @@ cc.Class({
 
         this.updateBeginOriginY();
 
-        this.checkPanelEliminatable();
+        if (this.gamestate === Game_State.Start) {
+            this.checkPanelEliminatable();
+        } else if (this.gamestate === Game_State.Filling) {
+            // cc.director.getScheduler().schedule(callback, this, interval, !this._isRunning);
+
+            this.callBackFilling = function () {
+
+                console.log("======定时器刷了=====");
+
+                for (var _i2 = 0; _i2 < this.num_rank; _i2++) {
+                    var list = this.rankList[_i2];
+
+                    for (var j = 0; j < this.num_row; j++) {
+                        var box = list[j];
+                        var _box_c2 = box.getComponent("BoxDrop");
+                        if (_box_c2.state_b !== BoxState.EFalled) {
+                            return;
+                        }
+                    }
+                }
+
+                // if(this.count_filling === 10){
+                //     this.unschedule(this.callBackFilling);
+                // }
+
+                this.unschedule(this.callBackFilling);
+                this.checkPanelEliminatable();
+            };
+
+            //判断他是否所有方块已掉落到指定位置
+            //这边如果bind this的话 定时器停不下来
+            this.schedule(this.callBackFilling, 0.2);
+        }
     },
 
     /**
@@ -225,7 +265,7 @@ cc.Class({
 
             //判断是否 已达到他的endy 如果还未达到就是 正要掉落
             var off_top = 0;
-            var space_top = 0;
+            var space_top = 5;
 
             // for(let j = this.num_row-1; j>=0; j--){
             for (var j = 0; j < this.num_row; j++) {
@@ -242,13 +282,18 @@ cc.Class({
                      */
                     if (this.gamestate === Game_State.Start || box_c.node.y >= box_c.boxItem.begin_y) {
 
-                        box_c.boxItem.begin_y = this.margin_top + off_top + space_top;
+                        box_c.boxItem.begin_y = this.margin_top + off_top;
 
                         box_c.node.y = box_c.boxItem.begin_y;
 
-                        off_top += box_c.node.height;
+                        off_top = off_top + box_c.node.height + space_top;
 
-                        space_top += space_top + 1;
+                        space_top = space_top + 10;
+                    }
+
+                    //是要掉落的
+                    if (this.gamestate === Game_State.Play || this.gamestate === Game_State.Filling) {
+                        box_c.state_b = BoxState.EFalling;
                     }
                 }
             }
@@ -256,9 +301,12 @@ cc.Class({
     },
 
     //交换两个方块的位置
-    exchangeBoxItem: function exchangeBoxItem(boxItem1, boxItem2) {
+    exchangeBoxItem: function exchangeBoxItem(box1, box2) {
         var toCheckViable = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
 
+
+        var boxItem1 = box1.getComponent("BoxDrop").boxItem;
+        var boxItem2 = box2.getComponent("BoxDrop").boxItem;
 
         if (boxItem1.rank === boxItem2.rank) {
             //同一列的
@@ -268,6 +316,11 @@ cc.Class({
             var temp_endy = boxItem2.end_y;
             boxItem2.end_y = boxItem1.end_y;
             boxItem1.end_y = temp_endy;
+
+            box1.node.runAction(cc.moveTo(0.2, cc.p(boxItem1.begin_x, boxItem1.end_y)));
+            box2.node.runAction(cc.moveTo(0.2, cc.p(boxItem2.begin_x, boxItem2.end_y)));
+            // box1.node.y = boxItem1.end_y;
+            // box2.node.y = boxItem2.end_y;
 
             //交换信息
             var temp_row = boxItem2.row;
@@ -287,6 +340,11 @@ cc.Class({
             var temp_beginx = boxItem2.begin_x;
             boxItem2.begin_x = boxItem1.begin_x;
             boxItem1.begin_x = temp_beginx;
+
+            box1.node.runAction(cc.moveTo(0.2, cc.p(boxItem1.begin_x, boxItem1.end_y)));
+            box2.node.runAction(cc.moveTo(0.2, cc.p(boxItem2.begin_x, boxItem2.end_y)));
+            // box1.node.y = boxItem1.end_y;
+            // box2.node.y = boxItem2.end_y;
 
             //交换信息
             var temp_rank = boxItem2.rank;
@@ -308,7 +366,7 @@ cc.Class({
                 //不可消除的话 位置再互换回来
                 console.log("不可消除");
                 setTimeout(function () {
-                    this.exchangeBoxItem(boxItem2, boxItem1, false);
+                    this.exchangeBoxItem(box2, box1, false);
                 }.bind(this), 300);
             }
         }
@@ -364,8 +422,8 @@ cc.Class({
         }
 
         function isRepeatItemInWipe(item) {
-            for (var _i2 = 0; _i2 < wipe_list.length; _i2++) {
-                if (wipe_list[_i2].getComponent("BoxDrop").boxItem.id === item.getComponent("BoxDrop").boxItem.id) {
+            for (var _i3 = 0; _i3 < wipe_list.length; _i3++) {
+                if (wipe_list[_i3].getComponent("BoxDrop").boxItem.id === item.getComponent("BoxDrop").boxItem.id) {
                     return true;
                 }
             }
@@ -373,12 +431,12 @@ cc.Class({
         }
 
         //判断行 是否有三个以及三个以上的一样的色块连在一起
-        for (var _i3 = 0; _i3 < this.num_row; _i3++) {
+        for (var _i4 = 0; _i4 < this.num_row; _i4++) {
 
             var _tempList = [];
             var _pre_box = null;
             for (var _j = 0; _j < this.num_rank; _j++) {
-                var _box = this.rankList[_j][_i3];
+                var _box = this.rankList[_j][_i4];
                 if (!_pre_box) {
                     _pre_box = _box;
                     _tempList.push(_box);
@@ -423,10 +481,26 @@ cc.Class({
 
         if (wipe_list.length > 0) {
 
-            var showDelayAnimation = false;
+            var showDelayAnimation = true;
             if (this.gamestate === Game_State.Start) {
                 //不显示消除动画
-                showDelayAnimation = true;
+                showDelayAnimation = false;
+            }
+
+            if (showDelayAnimation) {
+                //正在掉落填充
+                this.gamestate = Game_State.Filling;
+            }
+
+            if (showDelayAnimation) {
+                this.schedule(function () {
+                    //状态设置成是摧毁
+                    wipe_list.forEach(function (elem) {
+
+                        var box = elem.getComponent("BoxDrop");
+                        box.state_b = BoxState.EDestroy;
+                    }.bind(this));
+                }, 0.1, 1);
             }
 
             //不是初始化的 停留一会儿再消除
@@ -439,7 +513,7 @@ cc.Class({
                 }.bind(this));
 
                 this.updateAllRankEndY();
-            }.bind(this), showDelayAnimation ? 0 : 1, false);
+            }.bind(this), showDelayAnimation ? 0.5 : 0, false);
 
             return true;
         }
