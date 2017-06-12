@@ -94,9 +94,12 @@ cc.Class({
 
         this.itemSpace = 5;
 
-        // this.margin_top = (cc.director.getWinSize().height)*0.5 + this.itemHeight*0.5;
-        this.margin_top = -cc.director.getWinSize().height * 0.5 + this.itemHeight * this.num_row + this.itemSpace * (this.num_row - 1) + this.itemHeight * 0.5;
-        this.margin_bottom = -cc.director.getWinSize().height * 0.5 - this.itemHeight * 0.5;
+        //this.margin_top = -(cc.director.getWinSize().height)*0.5 + this.itemHeight*this.num_row + this.itemSpace * (this.num_row - 1) + this.itemHeight*0.5;
+        //this.margin_bottom = -(cc.director.getWinSize().height)*0.5 - this.itemHeight*0.5;
+
+        this.margin_top = -this.super_node.height * 0.5 + this.itemHeight * this.num_row + this.itemSpace * (this.num_row - 1) + this.itemHeight * 0.5;
+        this.margin_bottom = -this.super_node.height * 0.5 - this.itemHeight * 0.5;
+
         this.margin_left = -this.itemWidth * this.num_rank * 0.5 + this.itemSpace * (this.num_rank * 0.5 - 1);
         this.margin_right = this.itemWidth * this.num_rank * 0.5 - this.itemSpace * (this.num_rank * 0.5 - 1);
 
@@ -201,10 +204,6 @@ cc.Class({
                 new_box.parent = this.super_node;
 
                 list_sub.push(new_box);
-
-                // if(box_c.state_b === BoxState.EDestroy){
-                //     console.log("sdsdsdd");
-                // }
             }
 
             // let list = this.rankList[index];
@@ -304,8 +303,6 @@ cc.Class({
                     if (this.gamestate === Game_State.Play || this.gamestate === Game_State.Filling || this.gamestate === Game_State.Start) {
                         box_c.state_b = BoxState.EFalling;
                     }
-                } else if (box_c.state_b === BoxState.EDestroy) {
-                    console.log("asdsdd");
                 }
             }
         }
@@ -416,12 +413,6 @@ cc.Class({
                         if (tempList.length >= 3) {
                             //追加到wipe里面
                             Array.prototype.push.apply(wipe_list, tempList);
-
-                            // tempList.forEach(function(elem){
-                            //
-                            //     elem.getComponent("BoxDrop").state_b = BoxState.EDestroy;
-                            //
-                            // });
                         }
                         //清空数组
                         tempList = [];
@@ -475,12 +466,6 @@ cc.Class({
                                     wipe_list.push(elem);
                                 }
                             });
-                            //
-                            // tempList.forEach(function(elem){
-                            //
-                            //     elem.getComponent("BoxDrop").state_b = BoxState.EDestroy;
-                            //
-                            // });
                         }
                         //清空数组
                         _tempList = [];
@@ -499,6 +484,9 @@ cc.Class({
                 //不显示消除动画
                 showDelayAnimation = false;
             }
+
+            //#warn
+            //这一块 逻辑 有问题
 
             if (showDelayAnimation) {
                 this.schedule(function () {

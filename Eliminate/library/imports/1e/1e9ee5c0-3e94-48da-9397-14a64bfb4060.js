@@ -1,14 +1,15 @@
 "use strict";
 
-var Color_Box = cc.Enum({
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Color_Box = cc.Enum(_defineProperty({
 
     YELLOW: -1,
     Green: -1,
     Blue: -1,
     Black: -1,
     White: -1
-
-});
+}, "White", -1));
 
 cc.Class({
     extends: cc.Component,

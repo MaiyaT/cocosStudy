@@ -5,8 +5,7 @@
     "_objFlags": 0,
     "data": {
       "__id__": 1
-    },
-    "asyncLoadAssets": false
+    }
   },
   {
     "__type__": "cc.Node",

@@ -1,122 +1,71 @@
-2017-06-11T09:48:53.976Z - normal: Load ~/.CocosCreator/settings.json
-2017-06-11T09:48:53.979Z - normal: checking language setting...
-2017-06-11T09:48:53.979Z - normal: Language: zh
-2017-06-11T09:48:54.228Z - success: protocol editor-framework registered
-2017-06-11T09:48:54.228Z - success: protocol app registered
-2017-06-11T09:48:54.228Z - success: protocol theme registered
-2017-06-11T09:48:54.228Z - success: protocol profile registered
-2017-06-11T09:48:54.229Z - success: protocol packages registered
-2017-06-11T09:48:54.231Z - success: protocol unpack registerred
-2017-06-11T09:48:54.231Z - success: protocol disable-commonjs registerred
-2017-06-11T09:48:54.476Z - normal: connected!
-2017-06-11T09:48:54.478Z - normal: Check project /Users/linningning/Documents/000/YH_Cocos/Eliminate
-2017-06-11T09:48:54.480Z - normal: Initializing Cocos2d
-2017-06-11T09:48:54.591Z - normal: Initializing Asset Database
-2017-06-11T09:48:54.609Z - success: protocol uuid registerred
-2017-06-11T09:48:54.609Z - success: protocol db registerred
-2017-06-11T09:48:54.609Z - success: protocol thumbnail registerred
-2017-06-11T09:48:54.609Z - normal: Loading editor/builtin packages
-2017-06-11T09:48:54.624Z - success: anysdk loaded
-2017-06-11T09:48:54.715Z - success: assets loaded
-2017-06-11T09:48:54.718Z - success: builder loaded
-2017-06-11T09:48:54.722Z - success: hierarchy loaded
-2017-06-11T09:48:54.725Z - success: inspector loaded
-2017-06-11T09:48:54.727Z - success: keystore loaded
-2017-06-11T09:48:54.730Z - success: node-library loaded
-2017-06-11T09:48:54.731Z - success: package-asset loaded
-2017-06-11T09:48:54.733Z - success: preferences loaded
-2017-06-11T09:48:54.743Z - success: project-importer loaded
-2017-06-11T09:48:54.745Z - success: project-settings loaded
-2017-06-11T09:48:54.748Z - success: ui-kit loaded
-2017-06-11T09:48:54.752Z - success: ui-grid loaded
-2017-06-11T09:48:54.755Z - success: scene loaded
-2017-06-11T09:48:54.757Z - success: sprite-editor loaded
-2017-06-11T09:48:54.760Z - success: store loaded
-2017-06-11T09:48:54.763Z - success: timeline loaded
-2017-06-11T09:48:54.764Z - normal: Loading builtin packages
-2017-06-11T09:48:54.767Z - success: asset-db-debugger loaded
-2017-06-11T09:48:54.769Z - success: code-editor loaded
-2017-06-11T09:48:54.770Z - success: color-picker loaded
-2017-06-11T09:48:54.773Z - success: console loaded
-2017-06-11T09:48:54.776Z - success: package-manager loaded
-2017-06-11T09:48:54.783Z - success: sdkbox loaded
-2017-06-11T09:48:54.786Z - success: tester loaded
-2017-06-11T09:48:54.790Z - success: ui-kit-preview-extra loaded
-2017-06-11T09:48:54.793Z - success: ui-kit-preview loaded
-2017-06-11T09:48:54.796Z - success: ui-tree loaded
-2017-06-11T09:48:54.826Z - normal: Initializing project /Users/linningning/Documents/000/YH_Cocos/Eliminate
-2017-06-11T09:48:54.828Z - normal: Loading packages
-2017-06-11T09:48:54.835Z - success: quick-open loaded
-2017-06-11T09:48:55.001Z - success: quick-preview loaded
-2017-06-11T09:48:55.001Z - normal: Watching packages
-2017-06-11T09:48:55.028Z - normal: Run Application
-2017-06-11T09:48:55.606Z - failed: [db-task][init] Failed to import asset /Users/linningning/Documents/000/YH_Cocos/Eliminate/assets/script/BoxDrop.js, message: Compile error: TypeError: unknown: Duplicate declaration "animation"
-  113 |                         case BoxState.EDestroy:
-  114 |                             console.log("摧毁吹asd");
-> 115 |                             let animation = this.getComponent(cc.Animation);
-      |                                 ^
-  116 |                             animation.play("box_destroy");
-  117 | 
-  118 |                             break;
-    at File.buildCodeFrameError (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-core/lib/transformation/file/index.js:431:15)
-    at Scope.checkBlockScopedCollisions (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-traverse/lib/scope/index.js:398:27)
-    at Scope.registerBinding (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-traverse/lib/scope/index.js:592:16)
-    at Scope.registerDeclaration (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-traverse/lib/scope/index.js:496:14)
-    at Object.BlockScoped (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-traverse/lib/scope/index.js:244:28)
-    at Object.newFn (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-traverse/lib/visitors.js:318:17)
-    at NodePath._call (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-traverse/lib/path/context.js:76:18)
-    at NodePath.call (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-traverse/lib/path/context.js:44:14)
-    at NodePath.visit (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-traverse/lib/path/context.js:105:12)
-    at TraversalContext.visitQueue (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-traverse/lib/context.js:150:16)
-2017-06-11T09:48:55.741Z - success: preview server running at http://localhost:7456
-2017-06-11T09:48:58.147Z - normal: 1.5.0
-2017-06-11T09:49:39.429Z - normal: Compiled project javascript file successfully
-2017-06-11T09:50:32.301Z - normal: Compiled project javascript file successfully
-2017-06-11T09:52:53.594Z - normal: Compiled project javascript file successfully
-2017-06-11T09:53:37.856Z - normal: Compiled project javascript file successfully
-2017-06-11T09:54:35.918Z - normal: Compiled project javascript file successfully
-2017-06-11T09:57:21.203Z - normal: Compiled project javascript file successfully
-2017-06-11T10:01:05.992Z - error: Should not add 3628 to a node which size is already used by its other component.
-    at Object.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/CCDebugger.js:367:18)
-    at cc_Sprite._registSizeProvider (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/components/CCSGComponent.js:94:20)
-    at cc_Sprite.__preload (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/components/CCRendererUnderSG.js:61:14)
-    at cc_Sprite.Sprite.__preload (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/components/CCSprite.js:631:14)
-    at call__preloadInTryCatch (eval at <anonymous> (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/utils/misc.js:1:1), <anonymous>:4:24)
-    at CCClass._invoke (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/component-scheduler.js:217:21)
-    at CCClass.invoke (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/node-activator.js:57:14)
-    at CCClass.activateNode (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/node-activator.js:195:26)
-    at cc_Node.set [as active] (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/utils/base-node.js:277:56)
-2017-06-11T10:06:13.507Z - error: Should not add 3628 to a node which size is already used by its other component.
-    at Object.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/CCDebugger.js:367:18)
-    at cc_Sprite._registSizeProvider (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/components/CCSGComponent.js:94:20)
-    at cc_Sprite.__preload (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/components/CCRendererUnderSG.js:61:14)
-    at cc_Sprite.Sprite.__preload (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/components/CCSprite.js:631:14)
-    at call__preloadInTryCatch (eval at <anonymous> (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/utils/misc.js:1:1), <anonymous>:4:24)
-    at CCClass._invoke (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/component-scheduler.js:217:21)
-    at CCClass.invoke (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/node-activator.js:57:14)
-    at CCClass.activateNode (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/node-activator.js:195:26)
-    at cc_Node.set [as active] (/Applications/CocosCreator.app/Contents/Resources/engine/cocos2d/core/utils/base-node.js:277:56)
-2017-06-11T10:07:21.909Z - normal: Compiled project javascript file successfully
-2017-06-11T10:12:49.353Z - normal: Compiled project javascript file successfully
-2017-06-11T10:13:16.537Z - normal: Compiled project javascript file successfully
-2017-06-11T10:14:02.987Z - normal: Compiled project javascript file successfully
-2017-06-11T10:16:20.478Z - normal: Compiled project javascript file successfully
-2017-06-11T14:03:06.638Z - normal: Compiled project javascript file successfully
-2017-06-11T14:03:47.949Z - normal: Compiled project javascript file successfully
-2017-06-11T14:06:29.029Z - normal: Compiled project javascript file successfully
-2017-06-11T14:09:21.101Z - normal: Compiled project javascript file successfully
-2017-06-11T14:12:29.531Z - normal: Compiled project javascript file successfully
-2017-06-11T14:19:04.510Z - normal: Compiled project javascript file successfully
-2017-06-11T14:21:37.337Z - normal: Compiled project javascript file successfully
-2017-06-11T14:24:05.816Z - normal: Compiled project javascript file successfully
-2017-06-11T14:27:38.550Z - normal: Compiled project javascript file successfully
-2017-06-11T14:37:32.898Z - normal: Compiled project javascript file successfully
-2017-06-11T14:39:48.650Z - normal: Compiled project javascript file successfully
-2017-06-11T14:40:16.228Z - normal: Compiled project javascript file successfully
-2017-06-11T14:44:40.738Z - normal: Compiled project javascript file successfully
-2017-06-11T14:44:57.867Z - normal: Compiled project javascript file successfully
-2017-06-11T14:50:04.625Z - normal: Compiled project javascript file successfully
-2017-06-11T14:52:06.345Z - normal: Compiled project javascript file successfully
-2017-06-11T14:55:31.990Z - normal: Compiled project javascript file successfully
-2017-06-11T15:00:00.098Z - normal: Compiled project javascript file successfully
-2017-06-11T15:03:36.631Z - normal: Compiled project javascript file successfully
+2017-06-12T03:33:35.921Z - normal: Load ~/.CocosCreator/settings.json
+2017-06-12T03:33:35.921Z - normal: checking language setting...
+2017-06-12T03:33:35.921Z - normal: Language: zh
+2017-06-12T03:33:37.217Z - success: protocol editor-framework registered
+2017-06-12T03:33:37.217Z - success: protocol app registered
+2017-06-12T03:33:37.217Z - success: protocol theme registered
+2017-06-12T03:33:37.217Z - success: protocol profile registered
+2017-06-12T03:33:37.217Z - success: protocol packages registered
+2017-06-12T03:33:37.217Z - success: protocol unpack registerred
+2017-06-12T03:33:37.217Z - success: protocol disable-commonjs registerred
+2017-06-12T03:33:37.498Z - normal: connected!
+2017-06-12T03:33:37.498Z - normal: Check project D:\000\Eliminate
+2017-06-12T03:33:37.498Z - normal: Initializing Cocos2d
+2017-06-12T03:33:37.654Z - normal: Initializing Asset Database
+2017-06-12T03:33:37.669Z - success: protocol uuid registerred
+2017-06-12T03:33:37.669Z - success: protocol db registerred
+2017-06-12T03:33:37.669Z - success: protocol thumbnail registerred
+2017-06-12T03:33:37.669Z - normal: Loading editor/builtin packages
+2017-06-12T03:33:37.763Z - success: assets loaded
+2017-06-12T03:33:37.763Z - success: builder loaded
+2017-06-12T03:33:37.763Z - success: hierarchy loaded
+2017-06-12T03:33:37.763Z - success: inspector loaded
+2017-06-12T03:33:37.778Z - success: keystore loaded
+2017-06-12T03:33:37.778Z - success: node-library loaded
+2017-06-12T03:33:37.778Z - success: preferences loaded
+2017-06-12T03:33:37.778Z - success: project-importer loaded
+2017-06-12T03:33:37.778Z - success: project-settings loaded
+2017-06-12T03:33:37.794Z - success: ui-kit loaded
+2017-06-12T03:33:37.794Z - success: ui-grid loaded
+2017-06-12T03:33:37.794Z - success: scene loaded
+2017-06-12T03:33:37.794Z - success: sprite-editor loaded
+2017-06-12T03:33:37.825Z - success: store loaded
+2017-06-12T03:33:37.825Z - success: timeline loaded
+2017-06-12T03:33:37.825Z - normal: Loading builtin packages
+2017-06-12T03:33:37.825Z - success: anysdk loaded
+2017-06-12T03:33:37.825Z - success: asset-db-debugger loaded
+2017-06-12T03:33:37.825Z - success: code-editor loaded
+2017-06-12T03:33:37.841Z - success: color-picker loaded
+2017-06-12T03:33:37.841Z - success: console loaded
+2017-06-12T03:33:37.841Z - success: package-manager loaded
+2017-06-12T03:33:37.841Z - success: tester loaded
+2017-06-12T03:33:37.841Z - success: ui-kit-preview-extra loaded
+2017-06-12T03:33:37.841Z - success: ui-kit-preview loaded
+2017-06-12T03:33:37.841Z - success: ui-tree loaded
+2017-06-12T03:33:37.872Z - normal: Initializing project D:\000\Eliminate
+2017-06-12T03:33:37.872Z - normal: Loading packages
+2017-06-12T03:33:37.888Z - success: quick-open loaded
+2017-06-12T03:33:38.059Z - success: quick-preview loaded
+2017-06-12T03:33:38.059Z - normal: Watching packages
+2017-06-12T03:33:38.090Z - normal: Run Application
+2017-06-12T03:33:39.151Z - failed: [db-task][init] Failed to import asset D:\000\Eliminate\assets\script\BoxPanel.js, message: Compile error: SyntaxError: unknown: Unexpected character '#' (513:12)
+  511 | 
+  512 | 
+> 513 |             #warn
+      |             ^
+  514 |             //这一块 逻辑 有问题
+  515 | 
+  516 |             if(showDelayAnimation) {
+    at Parser.pp$5.raise (C:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:4373:13)
+    at Parser.getTokenFromCode (C:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1145:10)
+    at Parser.readToken (C:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:774:19)
+    at Parser.nextToken (C:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:764:19)
+    at Parser.next (C:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:689:10)
+    at Parser.eat (C:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:696:12)
+    at Parser.pp$1.parseBlockBody (C:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2218:16)
+    at Parser.pp$1.parseBlock (C:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2202:8)
+    at Parser.pp$1.parseStatement (C:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:1823:19)
+    at Parser.pp$1.parseIfStatement (C:\CocosCreator\resources\app.asar\node_modules\babylon\lib\index.js:2014:26)
+2017-06-12T03:33:39.385Z - success: preview server running at http://localhost:7456
+2017-06-12T03:33:39.385Z - normal: Compiling scripts...
+2017-06-12T03:33:42.578Z - normal: 1.4.2

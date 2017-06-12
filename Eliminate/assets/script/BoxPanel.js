@@ -96,9 +96,12 @@ cc.Class({
 
         this.itemSpace = 5;
 
-        // this.margin_top = (cc.director.getWinSize().height)*0.5 + this.itemHeight*0.5;
-        this.margin_top = -(cc.director.getWinSize().height)*0.5 + this.itemHeight*this.num_row + this.itemSpace * (this.num_row - 1) + this.itemHeight*0.5;
-        this.margin_bottom = -(cc.director.getWinSize().height)*0.5 - this.itemHeight*0.5;
+        //this.margin_top = -(cc.director.getWinSize().height)*0.5 + this.itemHeight*this.num_row + this.itemSpace * (this.num_row - 1) + this.itemHeight*0.5;
+        //this.margin_bottom = -(cc.director.getWinSize().height)*0.5 - this.itemHeight*0.5;
+
+        this.margin_top = -(this.super_node.height)*0.5 + this.itemHeight*this.num_row + this.itemSpace * (this.num_row - 1) + this.itemHeight*0.5;
+        this.margin_bottom = -(this.super_node.height)*0.5 - this.itemHeight*0.5;
+
         this.margin_left =  -this.itemWidth*this.num_rank*0.5 + this.itemSpace*(this.num_rank*0.5-1);
         this.margin_right = this.itemWidth * this.num_rank * 0.5 - this.itemSpace * (this.num_rank * 0.5 - 1);
 
@@ -510,7 +513,7 @@ cc.Class({
 
 
 
-            #warn
+            //#warn
             //这一块 逻辑 有问题
 
             if(showDelayAnimation) {
