@@ -1,4 +1,4 @@
-"use strict";
+
 
 var BoxDrop = require("BoxDrop");
 var BoxItem = require("BoxItem");
@@ -6,32 +6,32 @@ var BoxState = require("States").BoxState;
 var Game_State = require("States").Game_State;
 
 cc.Class({
-    extends: cc.Component,
+    "extends": cc.Component,
 
     properties: {
 
         box_prefab: {
-            default: null,
+            "default": null,
             type: cc.Prefab
         },
 
         num_rank: {
-            default: 10,
+            "default": 10,
             tooltip: "列数"
         },
 
         num_row: {
-            default: 10,
+            "default": 10,
             tooltip: "行数"
         },
 
         super_node: {
-            default: null,
+            "default": null,
             type: cc.Node
         },
 
         _gameState: {
-            default: Game_State.Start,
+            "default": Game_State.Start,
             type: Game_State
         },
 
@@ -69,23 +69,23 @@ cc.Class({
             }
         };
 
-        // Array.prototype.filterRepeat = function(){  
-        //     //直接定义结果数组  
+        // Array.prototype.filterRepeat = function(){ 
+        //     //直接定义结果数组 
         //     var arr = [];
         //     if(arr.length > 0){
         //         arr.push(this[0]);
         //     }
 
-        //     for(var i = 1; i < this.length; i++){    //从数组第二项开始循环遍历此数组  
-        //         //对元素进行判断：  
-        //         //如果数组当前元素在此数组中第一次出现的位置不是i  
-        //         //那么我们可以判断第i项元素是重复的，否则直接存入结果数组  
-        //         if(this.indexOf(this[i]) == i){  
-        //             arr.push(this[i]);  
-        //         }  
-        //     }  
-        //     return arr;  
-        // }  
+        //     for(var i = 1; i < this.length; i++){    //从数组第二项开始循环遍历此数组 
+        //         //对元素进行判断： 
+        //         //如果数组当前元素在此数组中第一次出现的位置不是i 
+        //         //那么我们可以判断第i项元素是重复的，否则直接存入结果数组 
+        //         if(this.indexOf(this[i]) == i){ 
+        //             arr.push(this[i]); 
+        //         } 
+        //     } 
+        //     return arr; 
+        // } 
 
         this.rankList = [];
 
@@ -212,10 +212,10 @@ cc.Class({
             for (var _i = 0; _i < list_sub.length; _i++) {
 
                 var item_box = list_sub[_i];
-                var _box_c = item_box.getComponent("BoxDrop");
+                var box_c = item_box.getComponent("BoxDrop");
 
-                _box_c.boxItem.row = _i;
-                _box_c.boxItem.end_y = this.margin_bottom + (this.itemHeight + this.itemSpace) * (_i + 1);
+                box_c.boxItem.row = _i;
+                box_c.boxItem.end_y = this.margin_bottom + (this.itemHeight + this.itemSpace) * (_i + 1);
             }
         }
 
@@ -310,8 +310,7 @@ cc.Class({
 
     //交换两个方块的位置
     exchangeBoxItem: function exchangeBoxItem(box1, box2) {
-        var toCheckViable = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
-
+        var toCheckViable = arguments.length <= 2 || arguments[2] === undefined ? true : arguments[2];
 
         var boxItem1 = box1.getComponent("BoxDrop").boxItem;
         var boxItem2 = box2.getComponent("BoxDrop").boxItem;
@@ -360,9 +359,9 @@ cc.Class({
             boxItem1.rank = temp_rank;
 
             var row_index = boxItem1.row;
-            var _temp_node = list1[row_index];
+            var temp_node = list1[row_index];
             list1[row_index] = list2[row_index];
-            list2[row_index] = _temp_node;
+            list2[row_index] = temp_node;
         }
 
         if (toCheckViable) {
@@ -373,15 +372,16 @@ cc.Class({
 
                 //不可消除的话 位置再互换回来
                 console.log("不可消除");
-                setTimeout(function () {
+                setTimeout((function () {
                     this.exchangeBoxItem(box2, box1, false);
-                }.bind(this), 300);
+                }).bind(this), 300);
             }
         }
     },
 
     //检测面板所有方块 是否可消除
     checkPanelEliminatable: function checkPanelEliminatable() {
+        var _this = this;
 
         var wipe_list = [];
 
@@ -425,8 +425,8 @@ cc.Class({
         }
 
         function isRepeatItemInWipe(item) {
-            for (var _i2 = 0; _i2 < wipe_list.length; _i2++) {
-                if (wipe_list[_i2].getComponent("BoxDrop").boxItem.id === item.getComponent("BoxDrop").boxItem.id) {
+            for (var i = 0; i < wipe_list.length; i++) {
+                if (wipe_list[i].getComponent("BoxDrop").boxItem.id === item.getComponent("BoxDrop").boxItem.id) {
                     return true;
                 }
             }
@@ -434,33 +434,33 @@ cc.Class({
         }
 
         //判断行 是否有三个以及三个以上的一样的色块连在一起
-        for (var _i3 = 0; _i3 < this.num_row; _i3++) {
+        for (var i = 0; i < this.num_row; i++) {
 
-            var _tempList = [];
-            var _pre_box = null;
-            for (var _j = 0; _j < this.num_rank; _j++) {
-                var _box = this.rankList[_j][_i3];
-                if (!_pre_box) {
-                    _pre_box = _box;
-                    _tempList.push(_box);
+            var tempList = [];
+            var pre_box = null;
+            for (var j = 0; j < this.num_rank; j++) {
+                var box = this.rankList[j][i];
+                if (!pre_box) {
+                    pre_box = box;
+                    tempList.push(box);
                 } else {
-                    var _item_pre = _pre_box.getComponent("BoxDrop").boxItem;
-                    var _item_box = _box.getComponent("BoxDrop").boxItem;
+                    var item_pre = pre_box.getComponent("BoxDrop").boxItem;
+                    var item_box = box.getComponent("BoxDrop").boxItem;
 
-                    var _toAdd = false;
-                    if (_item_pre.color_type === _item_box.color_type) {
-                        _tempList.push(_box);
-                        if (_j === this.num_rank - 1) {
-                            _toAdd = true;
+                    var toAdd = false;
+                    if (item_pre.color_type === item_box.color_type) {
+                        tempList.push(box);
+                        if (j === this.num_rank - 1) {
+                            toAdd = true;
                         }
                     } else {
-                        _toAdd = true;
+                        toAdd = true;
                     }
 
-                    if (_toAdd) {
-                        if (_tempList.length >= 3) {
+                    if (toAdd) {
+                        if (tempList.length >= 3) {
                             //追加到wipe里面
-                            _tempList.forEach(function (elem) {
+                            tempList.forEach(function (elem) {
 
                                 if (!isRepeatItemInWipe(elem)) {
                                     wipe_list.push(elem);
@@ -468,56 +468,62 @@ cc.Class({
                             });
                         }
                         //清空数组
-                        _tempList = [];
+                        tempList = [];
 
-                        _pre_box = _box;
-                        _tempList.push(_box);
+                        pre_box = box;
+                        tempList.push(box);
                     }
                 }
             }
         }
 
         if (wipe_list.length > 0) {
+            var _ret = (function () {
 
-            var showDelayAnimation = true;
-            if (this.gamestate === Game_State.Start) {
-                //不显示消除动画
-                showDelayAnimation = false;
-            }
-
-            //#warn
-            //这一块 逻辑 有问题
-
-            if (showDelayAnimation) {
-                this.schedule(function () {
-                    //状态设置成是摧毁
-                    wipe_list.forEach(function (elem) {
-
-                        var box = elem.getComponent("BoxDrop");
-                        box.state_b = BoxState.EDestroy;
-                    }.bind(this));
-                }, 0.3, 1);
-            }
-
-            //不是初始化的 停留一会儿再消除
-            this.schedule(function () {
-
-                //消除掉
-                wipe_list.forEach(function (elem) {
-
-                    this.boxDrop_destroy(elem.getComponent("BoxDrop"));
-                }.bind(this));
-
-                //有销毁在掉落
-                if (showDelayAnimation) {
-                    //正在掉落填充
-                    this.gamestate = Game_State.Filling;
+                var showDelayAnimation = true;
+                if (_this.gamestate === Game_State.Start) {
+                    //不显示消除动画
+                    showDelayAnimation = false;
                 }
 
-                this.updateAllRankEndY();
-            }.bind(this), showDelayAnimation ? 0.6 : 0, false);
+                //#warn
+                //这一块 逻辑 有问题
 
-            return true;
+                if (showDelayAnimation) {
+                    _this.schedule(function () {
+                        //状态设置成是摧毁
+                        wipe_list.forEach((function (elem) {
+
+                            var box = elem.getComponent("BoxDrop");
+                            box.state_b = BoxState.EDestroy;
+                        }).bind(this));
+                    }, 0.3, 1);
+                }
+
+                //不是初始化的 停留一会儿再消除
+                _this.schedule((function () {
+
+                    //消除掉
+                    wipe_list.forEach((function (elem) {
+
+                        this.boxDrop_destroy(elem.getComponent("BoxDrop"));
+                    }).bind(this));
+
+                    //有销毁在掉落
+                    if (showDelayAnimation) {
+                        //正在掉落填充
+                        this.gamestate = Game_State.Filling;
+                    }
+
+                    this.updateAllRankEndY();
+                }).bind(_this), showDelayAnimation ? 0.6 : 0, false);
+
+                return {
+                    v: true
+                };
+            })();
+
+            if (typeof _ret === "object") return _ret.v;
         }
 
         this.gamestate = Game_State.Play;
@@ -553,7 +559,7 @@ cc.Class({
         if (this.gamestate === Game_State.Filling) {
             // cc.director.getScheduler().schedule(callback, this, interval, !this._isRunning);
 
-            var self = this;
+            var _self = this;
 
             if (this.fillInterval === 10) {
 
@@ -561,10 +567,10 @@ cc.Class({
 
                 console.log("======定时开始判断是否都已掉落到底部了=====");
 
-                for (var i = 0; i < self.num_rank; i++) {
-                    var list = self.rankList[i];
+                for (var i = 0; i < _self.num_rank; i++) {
+                    var list = _self.rankList[i];
 
-                    for (var j = 0; j < self.num_row; j++) {
+                    for (var j = 0; j < _self.num_row; j++) {
                         var box = list[j];
                         var box_c_i = box.getComponent("BoxDrop");
                         if (box_c_i.state_b !== BoxState.EFalled) {
@@ -576,7 +582,7 @@ cc.Class({
                 console.log("=========检测是否开消除=========");
 
                 this.gamestate === Game_State.Play;
-                self.checkPanelEliminatable();
+                _self.checkPanelEliminatable();
             }
 
             this.fillInterval += 1;

@@ -8,7 +8,7 @@ var Color_Box = cc.Enum({
     Blue : -1,
     Black : -1,
     White : -1,
-    White : -1,
+    // White : -1,
 
 
     // Count:-1,

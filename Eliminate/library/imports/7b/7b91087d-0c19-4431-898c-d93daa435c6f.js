@@ -1,4 +1,3 @@
-"use strict";
 
 var BoxDrop = require("BoxDrop");
 var BoxItem = require("BoxItem");
@@ -6,12 +5,12 @@ var BoxItem = require("BoxItem");
 var BoxShowType = require("States").BoxShowType;
 
 cc.Class({
-    extends: cc.Component,
+    "extends": cc.Component,
 
     properties: {
 
         _select_box: {
-            default: null,
+            "default": null,
             type: cc.Node,
             visible: false
         },
@@ -80,8 +79,11 @@ cc.Class({
         //  //上面的掉下来
         //  boxPanel.updateRankEndY(boxItem.rank);
 
-
         this.select_box = click_node;
     }
 
 });
+// called every frame, uncomment this function to activate update callback
+// update: function (dt) {
+
+// },

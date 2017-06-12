@@ -1,18 +1,19 @@
-"use strict";
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var Color_Box = cc.Enum(_defineProperty({
+var Color_Box = cc.Enum({
 
     YELLOW: -1,
     Green: -1,
     Blue: -1,
     Black: -1,
     White: -1
-}, "White", -1));
+});
 
+// White : -1,
+
+// Count:-1,
 cc.Class({
-    extends: cc.Component,
+    "extends": cc.Component,
 
     properties: {
 
@@ -64,3 +65,7 @@ cc.Class({
 // module.exports = {
 //     Color_Box : Color_Box
 // };
+// called every frame, uncomment this function to activate update callback
+// update: function (dt) {
+
+// },

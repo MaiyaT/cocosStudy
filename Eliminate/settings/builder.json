@@ -10,9 +10,9 @@
   "mergeStartScene": false,
   "oauthLoginServer": "",
   "orientation": {
-    "landscapeLeft": true,
+    "landscapeLeft": false,
     "landscapeRight": true,
-    "portrait": false,
+    "portrait": true,
     "upsideDown": false
   },
   "packageName": "org.cocos2d.Eliminate",
