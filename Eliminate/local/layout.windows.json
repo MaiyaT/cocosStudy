@@ -82,32 +82,6 @@
         "scene",
         "timeline"
       ]
-    },
-    "window-1497260697357": {
-      "main": false,
-      "url": "unpack://static/window.html",
-      "windowType": "dockable",
-      "x": 167,
-      "y": 235,
-      "width": 500,
-      "height": 722,
-      "layout": {
-        "children": [
-          {
-            "active": 0,
-            "children": [
-              "builder"
-            ],
-            "height": 700,
-            "type": "panel",
-            "width": 500
-          }
-        ],
-        "type": "dock-v"
-      },
-      "panels": [
-        "builder"
-      ]
     }
   },
   "panels": {
