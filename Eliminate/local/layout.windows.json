@@ -5,8 +5,8 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 710,
-      "y": 50,
+      "x": 557,
+      "y": 67,
       "width": 1512,
       "height": 1100,
       "layout": {
@@ -83,7 +83,32 @@
         "timeline"
       ]
     },
-    "worker": {}
+    "window-1497251357319": {
+      "main": false,
+      "url": "unpack://static/window.html",
+      "windowType": "dockable",
+      "x": 430,
+      "y": 55,
+      "width": 516,
+      "height": 738,
+      "layout": {
+        "children": [
+          {
+            "active": 0,
+            "children": [
+              "builder"
+            ],
+            "height": 700,
+            "type": "panel",
+            "width": 500
+          }
+        ],
+        "type": "dock-v"
+      },
+      "panels": [
+        "builder"
+      ]
+    }
   },
   "panels": {
     "sprite-editor": {
@@ -99,16 +124,16 @@
       "height": 638
     },
     "preferences": {
-      "x": 369,
-      "y": 498,
+      "x": 209,
+      "y": 114,
       "width": 580,
-      "height": 564
+      "height": 583
     },
     "project-settings": {
       "x": 360,
       "y": 125,
-      "width": 584,
-      "height": 548
+      "width": 600,
+      "height": 564
     },
     "store": {
       "x": 105,
@@ -121,6 +146,12 @@
       "y": 465,
       "width": 400,
       "height": 422
+    },
+    "builder": {
+      "x": 430,
+      "y": 55,
+      "width": 516,
+      "height": 738
     }
   }
 }

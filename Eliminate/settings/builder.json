@@ -1,0 +1,24 @@
+{
+  "appKey": "",
+  "appSecret": "",
+  "excludeScenes": [],
+  "includeAnySDK": false,
+  "includeSdk": [
+    "anysdk"
+  ],
+  "inlineSpriteFrames": true,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.Eliminate",
+  "privateKey": "",
+  "renderMode": "0",
+  "startScene": "4cf6367e-ad66-485f-b6ad-d81e22dbbfe0",
+  "title": "Eliminate",
+  "webOrientation": "portrait"
+}
