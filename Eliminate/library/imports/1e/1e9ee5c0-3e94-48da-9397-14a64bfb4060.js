@@ -1,4 +1,4 @@
-
+"use strict";
 
 var Color_Box = cc.Enum({
 
@@ -9,11 +9,8 @@ var Color_Box = cc.Enum({
     White: -1
 });
 
-// White : -1,
-
-// Count:-1,
 cc.Class({
-    "extends": cc.Component,
+    extends: cc.Component,
 
     properties: {
 
@@ -65,7 +62,3 @@ cc.Class({
 // module.exports = {
 //     Color_Box : Color_Box
 // };
-// called every frame, uncomment this function to activate update callback
-// update: function (dt) {
-
-// },

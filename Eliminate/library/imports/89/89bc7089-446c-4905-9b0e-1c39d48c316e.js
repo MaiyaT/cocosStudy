@@ -1,3 +1,4 @@
+"use strict";
 
 var BoxItem = require("BoxItem");
 
@@ -5,25 +6,24 @@ var BoxState = require("States").BoxState;
 var BoxShowType = require("States").BoxShowType;
 
 cc.Class({
-    "extends": cc.Component,
+    extends: cc.Component,
 
     properties: {
 
         speed: 0,
 
         acc_speed: {
-            "default": 9.8,
+            default: 9.8,
             tooltop: "加速度"
         },
 
         boxItem: {
-            "default": null,
+            default: null,
             type: BoxItem
         },
 
-        //visible:false,
         _showType: {
-            "default": BoxShowType.K_Normal,
+            default: BoxShowType.K_Normal,
             type: BoxShowType
         },
 
@@ -67,11 +67,10 @@ cc.Class({
         },
 
         _state_b: {
-            "default": BoxState.ENormal,
+            default: BoxState.ENormal,
             type: BoxState
         },
 
-        // visible:false
         state_b: {
 
             get: function get() {
@@ -107,6 +106,7 @@ cc.Class({
                             // this.node.color = cc.color(255,255,255,255);
                             // animation.play("box_destroy");
 
+
                             break;
 
                     }
@@ -119,7 +119,6 @@ cc.Class({
 
     },
 
-    // tooltop:"方块的状态"
     statics: {
         BoxState: BoxState
     },
@@ -132,6 +131,7 @@ cc.Class({
         this.state_b = BoxState.ENormal;
         this.showType = BoxShowType.K_Normal;
     },
+
 
     unuse: function unuse() {
         console.log("xiaohui");
@@ -152,6 +152,7 @@ cc.Class({
     onLoad: function onLoad() {
 
         // this.click_add();
+
 
     },
 
