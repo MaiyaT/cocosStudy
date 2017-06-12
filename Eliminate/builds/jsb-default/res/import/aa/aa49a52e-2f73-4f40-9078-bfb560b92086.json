@@ -1,0 +1,24 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "ani_box",
+  "_duration": 0.12,
+  "sample": 25,
+  "curveData": {
+    "props": {
+      "scaleY": [
+        {
+          "frame": 0,
+          "value": 1
+        },
+        {
+          "frame": 0.04,
+          "value": 1.2
+        },
+        {
+          "frame": 0.12,
+          "value": 1
+        }
+      ]
+    }
+  }
+}
