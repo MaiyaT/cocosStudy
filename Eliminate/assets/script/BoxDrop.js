@@ -114,8 +114,7 @@ cc.Class({
                         case BoxState.EDestroy:
                             console.log("摧毁吹asd");
                             // this.node.color = cc.color(255,255,255,255);
-                            // animation.play("box_destroy");
-
+                            animation.play("box_destroy");
 
                             break;
 

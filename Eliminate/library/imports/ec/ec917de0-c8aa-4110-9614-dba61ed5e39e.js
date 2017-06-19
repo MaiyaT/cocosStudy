@@ -128,7 +128,7 @@ cc.Class({
         var item;
         while (item = this.rankList.shift()) {}
 
-        console.log("清空成功");
+        console.log("清空成==========功======");
 
         //创建所有面板的数据
         for (var index = 0; index < this.num_rank; index++) {
@@ -488,16 +488,18 @@ cc.Class({
             //#warn
             //这一块 逻辑 有问题
 
-            if (showDelayAnimation) {
-                this.schedule(function () {
-                    //状态设置成是摧毁
-                    wipe_list.forEach(function (elem) {
+            // if(showDelayAnimation) {
+            //     this.schedule(function () {
+            //         //状态设置成是摧毁
+            //         wipe_list.forEach(function (elem) {
+            //
+            //             let box = elem.getComponent("BoxDrop");
+            //             box.state_b = BoxState.EDestroy;
+            //
+            //         }.bind(this));
+            //     }, 0.3, 1);
+            // }
 
-                        var box = elem.getComponent("BoxDrop");
-                        box.state_b = BoxState.EDestroy;
-                    }.bind(this));
-                }, 0.3, 1);
-            }
 
             //不是初始化的 停留一会儿再消除
             this.schedule(function () {
@@ -559,7 +561,7 @@ cc.Class({
 
                 this.fillInterval = 0;
 
-                console.log("======定时开始判断是否都已掉落到底部了=====");
+                console.log("======定时开始判断是否都已掉落到底部了 begin =====");
 
                 for (var i = 0; i < self.num_rank; i++) {
                     var list = self.rankList[i];
@@ -573,9 +575,9 @@ cc.Class({
                     }
                 }
 
-                console.log("=========检测是否开消除=========");
+                console.log("=========检测是否开消除 end =========");
 
-                this.gamestate === Game_State.Play;
+                this.gamestate = Game_State.Play;
                 self.checkPanelEliminatable();
             }
 

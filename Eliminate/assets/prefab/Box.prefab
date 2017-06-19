@@ -38,7 +38,7 @@
       "__id__": 10
     },
     "_id": "",
-    "_opacity": 255,
+    "_opacity": 0,
     "_color": {
       "__type__": "cc.Color",
       "r": 49,
@@ -281,6 +281,9 @@
     "_clips": [
       {
         "__uuid__": "aa49a52e-2f73-4f40-9078-bfb560b92086"
+      },
+      {
+        "__uuid__": "b87b24d1-74fd-4b8e-8ddc-5f7ac23f909d"
       }
     ],
     "playOnLoad": true
