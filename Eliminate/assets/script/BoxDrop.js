@@ -3,6 +3,7 @@ var BoxItem = require("BoxItem");
 
 var BoxState = require("States").BoxState;
 var BoxShowType = require("States").BoxShowType;
+var Game_State = require("States").Game_State;
 
 cc.Class({
     extends: cc.Component,
@@ -19,7 +20,7 @@ cc.Class({
         boxItem:{
             default:null,
             type:BoxItem,
-            //visible:false,
+            visible:false,
         },
 
 
@@ -110,11 +111,18 @@ cc.Class({
                             animation.play("ani_box");
 
                             break;
-
                         case BoxState.EDestroy:
                             console.log("摧毁吹asd");
-                            // this.node.color = cc.color(255,255,255,255);
-                            animation.play("box_destroy");
+
+                            // animation.play("ani_destroy");
+
+                            let panel = cc.find("Game/Panel").getComponent("BoxPanel");
+                            if(panel.gamestate === Game_State.Start) {
+                                panel.boxDrop_destroy(this);
+                            }
+                            else {
+                                animation.play("ani_destroy");
+                            }
 
                             break;
 
@@ -177,21 +185,30 @@ cc.Class({
     },
 
     click_action:function(){
-        
-        console.log("点击了   "+"rank="+this.boxItem.rank+"row="+this.boxItem.row);
+        /*
+        只有再play状态下才能点击
+        */
+        let panel = cc.find("Game/Panel").getComponent("BoxPanel");
+        if(panel.gamestate === Game_State.Play) {
+            console.log("点击了   "+"rank="+this.boxItem.rank+"row="+this.boxItem.row);
 
-        let eliminate = cc.find("Game/Eliminate").getComponent("Eliminate");
-        eliminate.click_item(this);
+            let eliminate = cc.find("Game/Eliminate").getComponent("Eliminate");
+            eliminate.click_item(this);
+        }
     },
 
 
 
-    destroyFinish:function () {
+    box_destroy:function () {
 
         //动画结束之后的回调
         this.node.opacity = 255;
 
         console.log("摧毁动画完成");
+
+        let panel = cc.find("Game/Panel").getComponent("BoxPanel");
+
+        panel.boxDrop_destroy(this);
     },
 
 

@@ -265,8 +265,8 @@
     "relativePath": "Texture"
   },
   "1a989054-19b0-487f-b409-997ad3b01f02": {
-    "asset": 1497863793318,
-    "meta": 1497863793325,
+    "asset": 1497877813086,
+    "meta": 1497877813089,
     "relativePath": "prefab\\Box.prefab"
   },
   "1e9ee5c0-3e94-48da-9397-14a64bfb4060": {
@@ -275,8 +275,8 @@
     "relativePath": "script\\BoxItem.js"
   },
   "4cf6367e-ad66-485f-b6ad-d81e22dbbfe0": {
-    "asset": 1497875569514,
-    "meta": 1497875569529,
+    "asset": 1497940211654,
+    "meta": 1497940211665,
     "relativePath": "scenes\\game.fire"
   },
   "7b91087d-0c19-4431-898c-d93daa435c6f": {
@@ -305,18 +305,18 @@
     "relativePath": "Texture\\white@2x.png"
   },
   "8db66979-0456-4999-b0ac-d42b452b9e20": {
-    "asset": 1497872650308,
-    "meta": 1497872650316,
+    "asset": 1497877526636,
+    "meta": 1497877526659,
     "relativePath": "animation\\ani_destroy.anim"
   },
-  "89bc7089-446c-4905-9b0e-1c39d48c316e": {
-    "asset": 1497872842600,
-    "meta": 1497872850418,
-    "relativePath": "script\\BoxDrop.js"
-  },
   "ec917de0-c8aa-4110-9614-dba61ed5e39e": {
-    "asset": 1497875561363,
-    "meta": 1497875564622,
+    "asset": 1497939627092,
+    "meta": 1497939634095,
     "relativePath": "script\\BoxPanel.js"
+  },
+  "89bc7089-446c-4905-9b0e-1c39d48c316e": {
+    "asset": 1497940140724,
+    "meta": 1497940149859,
+    "relativePath": "script\\BoxDrop.js"
   }
 }

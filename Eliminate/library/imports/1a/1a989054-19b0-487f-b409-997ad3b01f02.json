@@ -282,9 +282,12 @@
     "_clips": [
       {
         "__uuid__": "aa49a52e-2f73-4f40-9078-bfb560b92086"
+      },
+      {
+        "__uuid__": "8db66979-0456-4999-b0ac-d42b452b9e20"
       }
     ],
-    "playOnLoad": true
+    "playOnLoad": false
   },
   {
     "__type__": "cc.PrefabInfo",

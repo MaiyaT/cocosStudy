@@ -510,44 +510,44 @@ cc.Class({
             }
 
 
-
-
-            //#warn
-            //这一块 逻辑 有问题
-
-            // if(showDelayAnimation) {
-            //     this.schedule(function () {
-            //         //状态设置成是摧毁
-            //         wipe_list.forEach(function (elem) {
-            //
-            //             let box = elem.getComponent("BoxDrop");
-            //             box.state_b = BoxState.EDestroy;
-            //
-            //         }.bind(this));
-            //     }, 0.3, 1);
-            // }
-
-
-
-            //不是初始化的 停留一会儿再消除
+            //不是初始化的 停留一会儿再消除 让用户看到要消除了什么东西
             this.schedule(function () {
 
                 //消除掉
+                // wipe_list.forEach(function(elem){
+                //
+                //     // let box = elem.getComponent("BoxDrop");
+                //     // box.state_b = BoxState.EDestroy;
+                //     this.boxDrop_destroy(elem.getComponent("BoxDrop"));
+                //
+                // }.bind(this));
+
                 wipe_list.forEach(function(elem){
 
-                    this.boxDrop_destroy(elem.getComponent("BoxDrop"));
+                    let box = elem.getComponent("BoxDrop");
+                    box.state_b = BoxState.EDestroy;
 
                 }.bind(this));
 
-                //有销毁在掉落
-                if(showDelayAnimation){
-                    //正在掉落填充
-                    this.gamestate = Game_State.Filling;
-                }
+                /**
+                 * 这边一个延迟
+                 如果游戏是 初始化的话不延迟
+                 不是初始化 start的 要等销毁动画完成之后再开始掉落
+                 */
+                this.schedule(function () {
 
-                this.updateAllRankEndY();
+                    //有销毁在掉落
+                    if(this.gamestate !== Game_State.Start){
+                        //正在掉落填充
+                        this.gamestate = Game_State.Filling;
+                    }
 
-            }.bind(this),showDelayAnimation?0.6:0,false);
+                    this.updateAllRankEndY();
+
+                }.bind(this),(this.gamestate !== Game_State.Start)?0.3:0,false);
+
+
+            }.bind(this),showDelayAnimation?0.3:0,false);
 
             return true;
         }
