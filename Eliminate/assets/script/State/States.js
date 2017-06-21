@@ -10,8 +10,8 @@ const BoxType = cc.Enum({
 
     TypeCount : -1,
 
-    Barrier : -1,
-
+    Barrier : -1,       //障碍物
+    Blank : -1,          //空白占位
 
     Count : -1
 });
@@ -48,7 +48,8 @@ const BoxShowType = cc.Enum({
 //游戏进行的状态
 var Game_State = cc.Enum({
     Start : -1,     //开始实例
-    Filling: -1,    //方块补齐中
+    Filling: -1,    //方块补齐中 掉落中
+    // BlankFilling : -1, //空位补充 自动掉落
     Play : -1,      //进行中
     Over : -1,      //结束
 });

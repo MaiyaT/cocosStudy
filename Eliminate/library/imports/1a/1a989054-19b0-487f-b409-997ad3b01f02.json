@@ -201,8 +201,8 @@
       "__id__": 1
     },
     "_enabled": true,
-    "speed": 50,
-    "acc_speed": 1500,
+    "speed": 300,
+    "acc_speed": 200,
     "boxItem": null,
     "_showType": 0,
     "_state_b": 1

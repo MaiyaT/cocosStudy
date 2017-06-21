@@ -31,6 +31,8 @@ cc.Class({
                         return cc.Color.BLACK;
                     case BoxType.Barrier:
                         return cc.Color.RED;
+                    case BoxType.Blank:
+                        return cc.Color.WHITE;
                     default:
                         return cc.Color.CYAN;
                 }
@@ -42,10 +44,10 @@ cc.Class({
         //列
         row: 0,
 
-        /*固定的行*/
-        row_fix: 0,
-        /*固定的列*/
-        rank_fix: 0,
+        /*移动y的位置 符合条件的要更新 x的坐标
+        * 里面是 {x:0,y:3,isleft:true} 字典类型
+        * */
+        ani_point: [],
 
         id: {
             get: function get() {
