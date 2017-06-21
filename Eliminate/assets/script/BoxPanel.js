@@ -4,7 +4,7 @@ var BoxDrop = require("BoxDrop");
 var BoxItem = require("BoxItem");
 var BoxState = require("States").BoxState;
 var Game_State = require("States").Game_State;
-
+var BoxType = require("States").BoxType;
 
 cc.Class({
     extends: cc.Component,
@@ -43,7 +43,15 @@ cc.Class({
             set:function (value) {
 
                 if(this._gameState !== value){
+
+                    if(this._gameState === Game_State.Start){
+                        //是刚实例游戏完之后
+                        //创建障碍物
+                        this.createBarrierCanvas();
+                    }
+
                     this._gameState = value;
+
                     if(value === Game_State.Play){
                         //开始掉落
                         this.updateBeginOriginY();
@@ -70,6 +78,7 @@ cc.Class({
                 }
             }
         };
+
 
         // Array.prototype.filterRepeat = function(){  
         //     //直接定义结果数组  
@@ -100,7 +109,7 @@ cc.Class({
         //this.margin_bottom = -(cc.director.getWinSize().height)*0.5 - this.itemHeight*0.5;
 
         this.margin_top = -(this.super_node.height)*0.5 + this.itemHeight*this.num_row + this.itemSpace * (this.num_row - 1) + this.itemHeight*0.5;
-        this.margin_bottom = -(this.super_node.height)*0.5 - this.itemHeight*0.5;
+        this.margin_bottom = -(this.super_node.height)*0.5 +  this.itemHeight*0.5;
 
         this.margin_left =  -this.itemWidth*this.num_rank*0.5 + this.itemSpace*(this.num_rank*0.5-1);
         this.margin_right = this.itemWidth * this.num_rank * 0.5 - this.itemSpace * (this.num_rank * 0.5 - 1);
@@ -142,8 +151,75 @@ cc.Class({
         this.checkPanelEliminatable();
 
         this.updateBeginOriginY();
+
+
+
     },
 
+    /*创建障碍物 布局
+    * 1.在障碍物下面的物体把他清空
+    * 2.这个列的数量没有变还是这些数量
+    * */
+    createBarrierCanvas:function () {
+
+        // for (let i = 3; i<this.num_rank-3; i++){
+        //     let list = this.rankList[i];
+        //
+        //     let box = list[7];
+        //     let box_c = box.getComponent("BoxDrop");
+        //     box_c.boxSpeciallyShow(BoxType.Barrier);
+        // }
+
+        let barrierList = [{"row":7,"rank":5},{"row":7,"rank":6},{"row":7,"rank":7},{"row":7,"rank":8},{"row":6,"rank":5}];
+
+        //设置是 barrier的方块类型
+        barrierList.forEach(function(ele){
+
+            let list = this.rankList[ele.rank];
+            let box = list[ele.row];
+            let box_c = box.getComponent("BoxDrop");
+            box_c.boxSpeciallyShow(BoxType.Barrier);
+
+        }.bind(this));
+
+        /*清空这个barrier下的方块*/
+        barrierList.forEach(function(ele){
+
+            let list = this.rankList[ele.rank];
+            for(let num_b = 0; num_b<ele.row;num_b++){
+
+                //移除这个空位的方块信息
+                // list[num_b] = undefined;
+            }
+        }.bind(this));
+
+
+
+        // for(let i = 0; i < this.num_rank; i++){
+        //
+        //     for(let )
+        //
+        // }
+    },
+
+    // /*获取某列下 是Barrier阻塞类型的方块*/
+    // getMaxRowBarrierAtRank:function (rank) {
+    //
+    //     let row_max = -1;
+    //
+    //     let list = this.rankList[rank];
+    //
+    //     for(let j = 0; j<this.num_row; j++){
+    //
+    //         let box = list[j];
+    //         let box_c = box.getComponent("BoxDrop");
+    //         if(box_c.boxItem.color_type === BoxType.Barrier){
+    //             row_max = Math.max(row_max,j);
+    //         }
+    //     }
+    //
+    //     return row_max;
+    // },
 
     //创建每一列的数据
     createRankContent:function(index){
@@ -170,7 +246,9 @@ cc.Class({
             box_c.boxItem.end_y = this.margin_bottom + (this.itemHeight+this.itemSpace)*(i+1);
             box_c.boxItem.rank = index;
             box_c.boxItem.row = i;
-            box_c.boxItem.color_type = (cc.random0To1()*5) | 0;
+
+            let count = BoxType.TypeCount;
+            box_c.boxItem.color_type = (cc.random0To1()*count) | 0;
 
             box_c.resetOriginPos();
 
@@ -215,18 +293,20 @@ cc.Class({
             }
 
 
-
+            // let barrier_row = this.getMaxRowBarrierAtRank(i);
+            // console.log("======="+barrier_row);
 
             // let list = this.rankList[index];
+
+            let end_box_y = this.margin_bottom;
 
             //更新每个元素的end y 位置
             for (let i = 0; i<list_sub.length; i++){
 
                 let item_box = list_sub[i];
                 let box_c = item_box.getComponent("BoxDrop");
-
                 box_c.boxItem.row = i;
-                box_c.boxItem.end_y = this.margin_bottom + (this.itemHeight+this.itemSpace)*(i+1);
+                box_c.boxItem.end_y = this.margin_bottom + (this.itemHeight+this.itemSpace)*i;
             }
         }
 
@@ -235,40 +315,6 @@ cc.Class({
         if(this.gamestate === Game_State.Start){
             this.checkPanelEliminatable();
         }
-        // else if(this.gamestate === Game_State.Filling){
-        //     // cc.director.getScheduler().schedule(callback, this, interval, !this._isRunning);
-        //
-        //     let self = this;
-        //
-        //     this.callBackFilling = function () {
-        //
-        //         console.log("======定时器刷了=====");
-        //
-        //         for (let i = 0; i<self.num_rank; i++) {
-        //             let list = self.rankList[i];
-        //
-        //             for (let j = 0; j < self.num_row; j++) {
-        //                 let box = list[j];
-        //                 let box_c_i = box.getComponent("BoxDrop");
-        //                 if(box_c_i.state_b !== BoxState.EFalled){
-        //                     return;
-        //                 }
-        //             }
-        //         }
-        //
-        //         console.log("=========检测是否开消除=========");
-        //
-        //         self.unschedule(self.callBackFilling);
-        //
-        //         self.checkPanelEliminatable();
-        //     }
-        //
-        //
-        //     //判断他是否所有方块已掉落到指定位置
-        //     //这边如果bind this的话 定时器停不下来
-        //     this.schedule(this.callBackFilling,0.2);
-        // }
-
     },
 
     /**
@@ -318,6 +364,8 @@ cc.Class({
                         this.gamestate === Game_State.Start){
                         box_c.state_b = BoxState.EFalling;
                     }
+                }else{
+                    box_c.state_b = BoxState.EFalled;
                 }
             }
         }
@@ -418,7 +466,9 @@ cc.Class({
                     let item_box = box.getComponent("BoxDrop").boxItem;
 
                     let toAdd = false;
-                    if(item_pre.color_type === item_box.color_type){
+                    /*颜色相同 并且是普通类型的颜色的时候*/
+                    if(item_pre.color_type === item_box.color_type &&
+                        item_pre.color_type < BoxType.TypeCount){
                         tempList.push(box);
                         if(j === (this.num_row-1)){
                             toAdd = true;
@@ -468,7 +518,8 @@ cc.Class({
                     let item_box = box.getComponent("BoxDrop").boxItem;
 
                     let toAdd = false;
-                    if(item_pre.color_type === item_box.color_type){
+                    if(item_pre.color_type === item_box.color_type &&
+                        item_pre.color_type < BoxType.TypeCount){
                         tempList.push(box);
                         if(j === (this.num_rank-1)){
                             toAdd = true;

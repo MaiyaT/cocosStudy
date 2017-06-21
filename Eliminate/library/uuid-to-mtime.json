@@ -269,14 +269,9 @@
     "meta": 1497877813089,
     "relativePath": "prefab\\Box.prefab"
   },
-  "1e9ee5c0-3e94-48da-9397-14a64bfb4060": {
-    "asset": 1497857753504,
-    "meta": 1497872349810,
-    "relativePath": "script\\BoxItem.js"
-  },
   "4cf6367e-ad66-485f-b6ad-d81e22dbbfe0": {
-    "asset": 1497940211654,
-    "meta": 1497940211665,
+    "asset": 1498017318491,
+    "meta": 1498017318503,
     "relativePath": "scenes\\game.fire"
   },
   "7b91087d-0c19-4431-898c-d93daa435c6f": {
@@ -294,11 +289,6 @@
     "meta": 1497872350049,
     "relativePath": "script\\State"
   },
-  "825df7e8-6362-4d4b-a2ca-2927215f2898": {
-    "asset": 1497857753505,
-    "meta": 1497872350074,
-    "relativePath": "script\\State\\States.js"
-  },
   "d31a25b5-3547-4184-8545-badba8f12e1a": {
     "asset": 1497857753498,
     "meta": 1497872350095,
@@ -309,14 +299,24 @@
     "meta": 1497877526659,
     "relativePath": "animation\\ani_destroy.anim"
   },
-  "ec917de0-c8aa-4110-9614-dba61ed5e39e": {
-    "asset": 1497939627092,
-    "meta": 1497939634095,
-    "relativePath": "script\\BoxPanel.js"
+  "825df7e8-6362-4d4b-a2ca-2927215f2898": {
+    "asset": 1497944171870,
+    "meta": 1497944211842,
+    "relativePath": "script\\State\\States.js"
+  },
+  "1e9ee5c0-3e94-48da-9397-14a64bfb4060": {
+    "asset": 1497964441208,
+    "meta": 1498007427533,
+    "relativePath": "script\\BoxItem.js"
   },
   "89bc7089-446c-4905-9b0e-1c39d48c316e": {
-    "asset": 1497940140724,
-    "meta": 1497940149859,
+    "asset": 1498011372219,
+    "meta": 1498011378611,
     "relativePath": "script\\BoxDrop.js"
+  },
+  "ec917de0-c8aa-4110-9614-dba61ed5e39e": {
+    "asset": 1498017312843,
+    "meta": 1498017315272,
+    "relativePath": "script\\BoxPanel.js"
   }
 }

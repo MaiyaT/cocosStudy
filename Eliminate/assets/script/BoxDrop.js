@@ -2,6 +2,7 @@
 var BoxItem = require("BoxItem");
 
 var BoxState = require("States").BoxState;
+var BoxType = require("States").BoxType;
 var BoxShowType = require("States").BoxShowType;
 var Game_State = require("States").Game_State;
 
@@ -112,7 +113,7 @@ cc.Class({
 
                             break;
                         case BoxState.EDestroy:
-                            console.log("摧毁吹asd");
+                            // console.log("摧毁吹asd");
 
                             // animation.play("ani_destroy");
 
@@ -153,7 +154,7 @@ cc.Class({
 
 
     unuse:function(){
-        console.log("xiaohui");
+        // console.log("xiaohui");
 
         this.state_b = BoxState.ENormal;
         this.showType = BoxShowType.K_Normal;
@@ -162,7 +163,7 @@ cc.Class({
     },
 
     reuse:function(){
-        console.log("chongyong");
+        // console.log("chongyong");
 
         this.state_b = BoxState.ENormal;
         this.showType = BoxShowType.K_Normal;
@@ -189,7 +190,9 @@ cc.Class({
         只有再play状态下才能点击
         */
         let panel = cc.find("Game/Panel").getComponent("BoxPanel");
-        if(panel.gamestate === Game_State.Play) {
+        if(panel.gamestate === Game_State.Play &&
+            this.boxItem.color_type < BoxType.TypeCount) {
+
             console.log("点击了   "+"rank="+this.boxItem.rank+"row="+this.boxItem.row);
 
             let eliminate = cc.find("Game/Eliminate").getComponent("Eliminate");
@@ -220,9 +223,18 @@ cc.Class({
         this.node.x = this.boxItem.begin_x;
         this.node.y = this.boxItem.begin_y;
 
-
         this.node.color = this.boxItem.color_show;
 
+    },
+
+
+    boxSpeciallyShow:function (type) {
+
+        this.node.x = this.boxItem.begin_x;
+        this.node.y = this.boxItem.end_y;
+
+        this.boxItem.color_type = type;
+        this.node.color = this.boxItem.color_show;
     },
 
 
@@ -247,12 +259,11 @@ cc.Class({
                 this.node.y -= s;
             }
 
-            if (this.node.y < this.boxItem.end_y) {
+            if (this.node.y <= this.boxItem.end_y) {
 
                 /**
                  * 掉落到指定位置的时候弹动一下
                  */
-
                 this.node.y = this.boxItem.end_y;
 
                 if(this.state_b === BoxState.EFalling){
@@ -261,8 +272,6 @@ cc.Class({
             }
 
         }
-
-
 
 
 

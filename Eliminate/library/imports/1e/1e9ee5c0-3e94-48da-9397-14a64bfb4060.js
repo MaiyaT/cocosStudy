@@ -1,13 +1,6 @@
 "use strict";
 
-var Color_Box = cc.Enum({
-
-    YELLOW: -1,
-    Green: -1,
-    Blue: -1,
-    Black: -1,
-    White: -1
-});
+var BoxType = require("States").BoxType;
 
 cc.Class({
     extends: cc.Component,
@@ -21,23 +14,25 @@ cc.Class({
         //要抵达的位置Y
         end_y: -1000,
         //显示的颜色
-        color_type: Color_Box.White,
+        color_type: BoxType.White,
 
         color_show: {
             get: function get() {
                 switch (this.color_type) {
-                    case Color_Box.White:
+                    case BoxType.White:
                         return cc.Color.WHITE;
-                    case Color_Box.YELLOW:
+                    case BoxType.YELLOW:
                         return cc.Color.YELLOW;
-                    case Color_Box.Green:
+                    case BoxType.Green:
                         return cc.Color.GREEN;
-                    case Color_Box.Blue:
+                    case BoxType.Blue:
                         return cc.Color.BLUE;
-                    case Color_Box.Black:
+                    case BoxType.Black:
                         return cc.Color.BLACK;
-                    default:
+                    case BoxType.Barrier:
                         return cc.Color.RED;
+                    default:
+                        return cc.Color.CYAN;
                 }
             }
         },
@@ -46,6 +41,11 @@ cc.Class({
         rank: 0,
         //列
         row: 0,
+
+        /*固定的行*/
+        row_fix: 0,
+        /*固定的列*/
+        rank_fix: 0,
 
         id: {
             get: function get() {
@@ -58,7 +58,3 @@ cc.Class({
     onLoad: function onLoad() {}
 
 });
-
-// module.exports = {
-//     Color_Box : Color_Box
-// };

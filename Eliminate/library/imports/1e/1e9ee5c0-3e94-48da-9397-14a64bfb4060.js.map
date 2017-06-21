@@ -4,14 +4,9 @@
     "unknown"
   ],
   "names": [
-    "Color_Box",
+    "BoxType",
+    "require",
     "cc",
-    "Enum",
-    "YELLOW",
-    "Green",
-    "Blue",
-    "Black",
-    "White",
     "Class",
     "extends",
     "Component",
@@ -20,23 +15,32 @@
     "begin_y",
     "end_y",
     "color_type",
+    "White",
     "color_show",
     "get",
     "Color",
     "WHITE",
+    "YELLOW",
+    "Green",
     "GREEN",
+    "Blue",
     "BLUE",
+    "Black",
     "BLACK",
+    "Barrier",
     "RED",
+    "CYAN",
     "rank",
     "row",
+    "row_fix",
+    "rank_fix",
     "id",
     "toString",
     "onLoad"
   ],
-  "mappings": ";;AAGA,IAAIA,YAAYC,GAAGC,IAAH,CAAQ;;AAEpBC,YAAS,CAAC,CAFU;AAGpBC,WAAQ,CAAC,CAHW;AAIpBC,UAAO,CAAC,CAJY;AAKpBC,WAAQ,CAAC,CALW;AAMpBC,WAAQ,CAAC;AANW,CAAR,CAAhB;;AAeAN,GAAGO,KAAH,CAAS;AACLC,aAASR,GAAGS,SADP;;AAGLC,gBAAY;;AAER;AACAC,iBAAQ,CAHA;AAIR;AACAC,iBAAU,CALF;AAMR;AACAC,eAAQ,CAAC,IAPD;AAQR;AACAC,oBAAaf,UAAUO,KATf;;AAWRS,oBAAW;AACPC,iBAAI,eAAU;AACV,wBAAO,KAAKF,UAAZ;AACI,yBAAKf,UAAUO,KAAf;AAAqB,+BAAON,GAAGiB,KAAH,CAASC,KAAhB;AACrB,yBAAKnB,UAAUG,MAAf;AAAsB,+BAAOF,GAAGiB,KAAH,CAASf,MAAhB;AACtB,yBAAKH,UAAUI,KAAf;AAAqB,+BAAOH,GAAGiB,KAAH,CAASE,KAAhB;AACrB,yBAAKpB,UAAUK,IAAf;AAAoB,+BAAOJ,GAAGiB,KAAH,CAASG,IAAhB;AACpB,yBAAKrB,UAAUM,KAAf;AAAqB,+BAAOL,GAAGiB,KAAH,CAASI,KAAhB;AACrB;AAAQ,+BAAOrB,GAAGiB,KAAH,CAASK,GAAhB;AANZ;AAQH;AAVM,SAXH;;AAwBR;AACAC,cAAO,CAzBC;AA0BR;AACAC,aAAM,CA3BE;;AA6BRC,YAAG;AACCT,iBAAI,eAAU;AACV,uBAAO,KAAKO,IAAL,CAAUG,QAAV,KAAuB,KAAKF,GAAL,CAASE,QAAT,EAA9B;AACH;AAHF;AA7BK,KAHP;;AAuCL;AACAC,YAAQ,kBAAY,CAEnB;;AA1CI,CAAT;;AAmDA;AACA;AACA",
+  "mappings": ";;AAGA,IAAIA,UAAUC,QAAQ,QAAR,EAAkBD,OAAhC;;AAGAE,GAAGC,KAAH,CAAS;AACLC,aAASF,GAAGG,SADP;;AAGLC,gBAAY;;AAER;AACAC,iBAAQ,CAHA;AAIR;AACAC,iBAAU,CALF;AAMR;AACAC,eAAQ,CAAC,IAPD;AAQR;AACAC,oBAAaV,QAAQW,KATb;;AAWRC,oBAAW;AACPC,iBAAI,eAAU;AACV,wBAAO,KAAKH,UAAZ;AACI,yBAAKV,QAAQW,KAAb;AAAmB,+BAAOT,GAAGY,KAAH,CAASC,KAAhB;AACnB,yBAAKf,QAAQgB,MAAb;AAAoB,+BAAOd,GAAGY,KAAH,CAASE,MAAhB;AACpB,yBAAKhB,QAAQiB,KAAb;AAAmB,+BAAOf,GAAGY,KAAH,CAASI,KAAhB;AACnB,yBAAKlB,QAAQmB,IAAb;AAAkB,+BAAOjB,GAAGY,KAAH,CAASM,IAAhB;AAClB,yBAAKpB,QAAQqB,KAAb;AAAmB,+BAAOnB,GAAGY,KAAH,CAASQ,KAAhB;AACnB,yBAAKtB,QAAQuB,OAAb;AAAqB,+BAAOrB,GAAGY,KAAH,CAASU,GAAhB;AACrB;AAAQ,+BAAOtB,GAAGY,KAAH,CAASW,IAAhB;AAPZ;AASH;AAXM,SAXH;;AAyBR;AACAC,cAAO,CA1BC;AA2BR;AACAC,aAAM,CA5BE;;AA8BR;AACAC,iBAAU,CA/BF;AAgCR;AACAC,kBAAW,CAjCH;;AAoCRC,YAAG;AACCjB,iBAAI,eAAU;AACV,uBAAO,KAAKa,IAAL,CAAUK,QAAV,KAAuB,KAAKJ,GAAL,CAASI,QAAT,EAA9B;AACH;AAHF;AApCK,KAHP;;AA8CL;AACAC,YAAQ,kBAAY,CAEnB;;AAjDI,CAAT",
   "file": "unknown",
   "sourcesContent": [
-    "\r\n\r\n\r\nvar Color_Box = cc.Enum({\r\n\r\n    YELLOW : -1,\r\n    Green : -1,\r\n    Blue : -1,\r\n    Black : -1,\r\n    White : -1,\r\n    // White : -1,\r\n\r\n\r\n    // Count:-1,\r\n});\r\n\r\n\r\n\r\ncc.Class({\r\n    extends: cc.Component,\r\n\r\n    properties: {\r\n\r\n        //开始掉落的位置x\r\n        begin_x:0,\r\n        //开始掉落的位置y\r\n        begin_y : 0,\r\n        //要抵达的位置Y\r\n        end_y : -1000,\r\n        //显示的颜色\r\n        color_type : Color_Box.White,\r\n\r\n        color_show:{\r\n            get:function(){\r\n                switch(this.color_type){\r\n                    case Color_Box.White:return cc.Color.WHITE;\r\n                    case Color_Box.YELLOW:return cc.Color.YELLOW;\r\n                    case Color_Box.Green:return cc.Color.GREEN;\r\n                    case Color_Box.Blue:return cc.Color.BLUE;\r\n                    case Color_Box.Black:return cc.Color.BLACK;\r\n                    default:return cc.Color.RED;\r\n                }\r\n            }\r\n        },\r\n\r\n        //行\r\n        rank : 0,\r\n        //列\r\n        row : 0,\r\n\r\n        id:{\r\n            get:function(){\r\n                return this.rank.toString() + this.row.toString();\r\n            }\r\n        }\r\n    },\r\n\r\n    // use this for initialization\r\n    onLoad: function () {\r\n\r\n    },\r\n\r\n    // called every frame, uncomment this function to activate update callback\r\n    // update: function (dt) {\r\n\r\n    // },\r\n});\r\n\r\n\r\n// module.exports = {\r\n//     Color_Box : Color_Box\r\n// };"
+    "\r\n\r\n\r\nvar BoxType = require(\"States\").BoxType;\r\n\r\n\r\ncc.Class({\r\n    extends: cc.Component,\r\n\r\n    properties: {\r\n\r\n        //开始掉落的位置x\r\n        begin_x:0,\r\n        //开始掉落的位置y\r\n        begin_y : 0,\r\n        //要抵达的位置Y\r\n        end_y : -1000,\r\n        //显示的颜色\r\n        color_type : BoxType.White,\r\n\r\n        color_show:{\r\n            get:function(){\r\n                switch(this.color_type){\r\n                    case BoxType.White:return cc.Color.WHITE;\r\n                    case BoxType.YELLOW:return cc.Color.YELLOW;\r\n                    case BoxType.Green:return cc.Color.GREEN;\r\n                    case BoxType.Blue:return cc.Color.BLUE;\r\n                    case BoxType.Black:return cc.Color.BLACK;\r\n                    case BoxType.Barrier:return cc.Color.RED;\r\n                    default:return cc.Color.CYAN;\r\n                }\r\n            }\r\n        },\r\n\r\n        //行\r\n        rank : 0,\r\n        //列\r\n        row : 0,\r\n\r\n        /*固定的行*/\r\n        row_fix : 0,\r\n        /*固定的列*/\r\n        rank_fix : 0,\r\n\r\n\r\n        id:{\r\n            get:function(){\r\n                return this.rank.toString() + this.row.toString();\r\n            }\r\n        }\r\n    },\r\n\r\n    // use this for initialization\r\n    onLoad: function () {\r\n\r\n    },\r\n\r\n    // called every frame, uncomment this function to activate update callback\r\n    // update: function (dt) {\r\n\r\n    // },\r\n});\r\n"
   ]
 }

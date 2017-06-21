@@ -1,4 +1,24 @@
 
+
+/*方块的类型*/
+const BoxType = cc.Enum({
+    YELLOW : -1,
+    Green : -1,
+    Blue : -1,
+    Black : -1,
+    White : -1,
+
+    TypeCount : -1,
+
+    Barrier : -1,
+
+
+    Count : -1
+});
+
+
+
+
 //方块掉落的状态
 const BoxState = cc.Enum({
 
@@ -40,6 +60,7 @@ module.exports = {
 
     BoxState,
     BoxShowType,
-    Game_State
+    Game_State,
+    BoxType
 
 };
