@@ -168,7 +168,7 @@ cc.Class({
         //     box_c.boxSpeciallyShow(BoxType.Barrier);
         // }
 
-        var barrierList = [{ "row": 7, "rank": 2 }, { "row": 6, "rank": 2 }, { "row": 7, "rank": 3 }, { "row": 7, "rank": 4 }, { "row": 7, "rank": 5 }, { "row": 7, "rank": 6 }, { "row": 7, "rank": 7 }, { "row": 6, "rank": 7 }];
+        var barrierList = [{ "row": 7, "rank": 2 }, { "row": 6, "rank": 2 }, { "row": 7, "rank": 3 }, { "row": 7, "rank": 4 }, { "row": 7, "rank": 5 }, { "row": 7, "rank": 6 }, { "row": 7, "rank": 7 }, { "row": 6, "rank": 7 }, { "row": 2, "rank": 2 }, { "row": 3, "rank": 2 }, { "row": 2, "rank": 3 }, { "row": 2, "rank": 6 }, { "row": 2, "rank": 7 }, { "row": 3, "rank": 7 }];
 
         //将blank按row大小排序 从小到大 底部到顶部 排序底部到顶部
         barrierList.sort(function (a, b) {
@@ -241,7 +241,7 @@ cc.Class({
             var box_Right = this.rankList[box_c.boxItem.rank + 1][box_c.boxItem.row];
             var box_bottom = this.rankList[box_c.boxItem.rank][box_c.boxItem.row - 1];
 
-            // //如果这个障碍物 上 左 右 都有其他的障碍物 这个障碍物不做处理 由他上方掉落的方块处理
+            //如果这个障碍物 上 左 右 都有其他的障碍物 这个障碍物不做处理 由他上方掉落的方块处理
             // let haveRight = (function () {
             //     for(let i = box_c.boxItem.rank+1; i < this.num_rank; i++){
             //         let b = this.rankList[i][box_c.boxItem.row];
@@ -272,6 +272,8 @@ cc.Class({
             //
             // if(haveLeft && haveRight &&haveTop){
             //     console.log("这个三面都有障碍物 "+box_c.boxItem.rank +"  "+ box_c.boxItem.row);
+            //     // return;
+            // }else {
             //     return;
             // }
 
@@ -411,11 +413,19 @@ cc.Class({
             return elem.x === box_bl.boxItem.begin_x;
         });
 
+        //存储动画的节点
+        var isleft = box_bl.boxItem.begin_x < box_re.boxItem.begin_x;
         if (repeatList.length === 0) {
-            var isleft = box_bl.boxItem.begin_x < box_re.boxItem.begin_x;
             box_re.boxItem.ani_point.push({ "x": box_bl.boxItem.begin_x, "y": box_bl.boxItem.end_y + box_bl.node.height, "isleft": isleft });
         }
+        // else if(repeatList.length === 1){
+        //     let dic = repeatList[0];
+        //     dic.x = box_bl.boxItem.begin_x;
+        //     dic.isleft = isleft;
+        // }
 
+
+        box_re.boxItem.begin_x = box_bl.boxItem.begin_x;
         box_re.boxItem.end_y = box_bl.boxItem.end_y;
 
         // let temp_rank = box_re.boxItem.rank;
@@ -878,6 +888,12 @@ cc.Class({
         list.removeByValue(list, box.node);
 
         this.boxPool.put(box.node);
+    },
+
+    /*是否开启调试*/
+    gameShowDebugMessage: function gameShowDebugMessage() {
+
+        YHDebug = !YHDebug;
     },
 
     // called every frame, uncomment this function to activate update callback

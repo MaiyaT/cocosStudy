@@ -1,350 +1,78 @@
-2017-06-12T12:06:18.211Z - normal: Load ~/.CocosCreator/settings.json
-2017-06-12T12:06:18.214Z - normal: checking language setting...
-2017-06-12T12:06:18.214Z - normal: Language: zh
-2017-06-12T12:06:19.188Z - success: protocol editor-framework registered
-2017-06-12T12:06:19.188Z - success: protocol app registered
-2017-06-12T12:06:19.188Z - success: protocol theme registered
-2017-06-12T12:06:19.189Z - success: protocol profile registered
-2017-06-12T12:06:19.189Z - success: protocol packages registered
-2017-06-12T12:06:19.191Z - success: protocol unpack registerred
-2017-06-12T12:06:19.191Z - success: protocol disable-commonjs registerred
-2017-06-12T12:06:19.478Z - normal: connected!
-2017-06-12T12:06:19.481Z - normal: Check project /Users/linningning/Documents/000/YH_Cocos/Eliminate
-2017-06-12T12:06:19.482Z - normal: Initializing Cocos2d
-2017-06-12T12:06:19.739Z - normal: Initializing Asset Database
-2017-06-12T12:06:19.809Z - success: protocol uuid registerred
-2017-06-12T12:06:19.809Z - success: protocol db registerred
-2017-06-12T12:06:19.809Z - success: protocol thumbnail registerred
-2017-06-12T12:06:19.810Z - normal: Loading editor/builtin packages
-2017-06-12T12:06:19.901Z - success: anysdk loaded
-2017-06-12T12:06:20.053Z - success: assets loaded
-2017-06-12T12:06:20.057Z - success: builder loaded
-2017-06-12T12:06:20.063Z - success: hierarchy loaded
-2017-06-12T12:06:20.068Z - success: inspector loaded
-2017-06-12T12:06:20.070Z - success: keystore loaded
-2017-06-12T12:06:20.074Z - success: node-library loaded
-2017-06-12T12:06:20.075Z - success: package-asset loaded
-2017-06-12T12:06:20.077Z - success: preferences loaded
-2017-06-12T12:06:20.095Z - success: project-importer loaded
-2017-06-12T12:06:20.098Z - success: project-settings loaded
-2017-06-12T12:06:20.101Z - success: ui-kit loaded
-2017-06-12T12:06:20.121Z - success: ui-grid loaded
-2017-06-12T12:06:20.129Z - success: scene loaded
-2017-06-12T12:06:20.130Z - success: sprite-editor loaded
-2017-06-12T12:06:20.134Z - success: store loaded
-2017-06-12T12:06:20.150Z - success: timeline loaded
-2017-06-12T12:06:20.151Z - normal: Loading builtin packages
-2017-06-12T12:06:20.165Z - success: asset-db-debugger loaded
-2017-06-12T12:06:20.167Z - success: code-editor loaded
-2017-06-12T12:06:20.172Z - success: color-picker loaded
-2017-06-12T12:06:20.176Z - success: console loaded
-2017-06-12T12:06:20.184Z - success: package-manager loaded
-2017-06-12T12:06:20.193Z - success: sdkbox loaded
-2017-06-12T12:06:20.200Z - success: tester loaded
-2017-06-12T12:06:20.204Z - success: ui-kit-preview-extra loaded
-2017-06-12T12:06:20.212Z - success: ui-kit-preview loaded
-2017-06-12T12:06:20.216Z - success: ui-tree loaded
-2017-06-12T12:06:20.261Z - normal: Initializing project /Users/linningning/Documents/000/YH_Cocos/Eliminate
-2017-06-12T12:06:20.263Z - normal: Loading packages
-2017-06-12T12:06:20.286Z - success: quick-open loaded
-2017-06-12T12:06:20.781Z - success: quick-preview loaded
-2017-06-12T12:06:20.781Z - normal: Watching packages
-2017-06-12T12:06:20.805Z - normal: Run Application
-2017-06-12T12:06:24.023Z - success: preview server running at http://localhost:7456
-2017-06-12T12:06:24.024Z - normal: Compiling scripts...
-2017-06-12T12:06:25.899Z - normal: Compiled project javascript file successfully
-2017-06-12T12:06:29.545Z - normal: 1.5.0
-2017-06-12T12:09:26.241Z - normal: Start building with options : {
-  "androidStudio": true,
-  "apiLevel": "",
-  "appABIs": [],
-  "appKey": "",
-  "appSecret": "",
-  "buildPath": "/Users/linningning/Documents/000/YH_Cocos/Eliminate/build",
-  "debug": false,
-  "dest": "/Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default",
-  "excludedModules": [],
-  "includeAnySDK": false,
-  "inlineSpriteFrames": true,
-  "mergeStartScene": false,
-  "oauthLoginServer": "",
-  "orientation": {
-    "landscapeLeft": false,
-    "landscapeRight": true,
-    "portrait": true,
-    "upsideDown": false
-  },
-  "packageName": "org.cocos2d.Eliminate",
-  "platform": "ios",
-  "previewHeight": 720,
-  "previewWidth": 1280,
-  "privateKey": "",
-  "renderMode": "0",
-  "scenes": [
-    {
-      "url": "db://assets/scenes/game.fire",
-      "uuid": "4cf6367e-ad66-485f-b6ad-d81e22dbbfe0"
-    }
-  ],
-  "sourceMaps": false,
-  "startScene": "4cf6367e-ad66-485f-b6ad-d81e22dbbfe0",
-  "template": "default",
-  "title": "Eliminate",
-  "useDebugKeystore": true,
-  "vsVersion": "auto",
-  "webOrientation": "portrait",
-  "project": "/Users/linningning/Documents/000/YH_Cocos/Eliminate",
-  "projectName": "Eliminate",
-  "runtimePath": "/Applications/CocosCreator.app/Contents/Resources/engine",
-  "debugBuildWorker": false
-}
-2017-06-12T12:09:26.243Z - normal: Building /Users/linningning/Documents/000/YH_Cocos/Eliminate
-2017-06-12T12:09:26.243Z - normal: Destination /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default
-2017-06-12T12:09:26.713Z - normal: Checked Python Version [2.7.10]
-2017-06-12T12:09:28.031Z - normal: Creating native cocos project to  /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default
-2017-06-12T12:09:33.834Z - normal: Delete /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/**/*
-2017-06-12T12:09:33.835Z - normal: Delete /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/src/*/
-2017-06-12T12:09:33.956Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
-2017-06-12T12:09:35.181Z - normal: Compiled project javascript file successfully
-2017-06-12T12:09:35.182Z - normal: Start building assets
-2017-06-12T12:09:35.182Z - normal: Start spawn build-worker
-2017-06-12T12:09:35.718Z - normal: Finish spawn build-worker
-2017-06-12T12:09:35.718Z - normal: Start init build-worker
-2017-06-12T12:09:36.421Z - normal: 1.5.0
-2017-06-12T12:09:36.474Z - normal: Finish init build-worker
-2017-06-12T12:09:36.475Z - normal: Start build-assets in worker
-2017-06-12T12:09:36.590Z - warn: Enable "内联所有 SpriteFrame" in native platform will increase the package size used in hot update.
-2017-06-12T12:09:36.680Z - normal: Finish build-assets in worker
-2017-06-12T12:09:36.684Z - normal: Finish building assets
-2017-06-12T12:09:36.717Z - normal: Start building raw assets
-2017-06-12T12:09:36.718Z - normal: [build-raw-assets] Start copying /Applications/CocosCreator.app/Contents/Resources/static/default-assets/image/default_sprite_splash.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-internal/image/default_sprite_splash.png
-2017-06-12T12:09:36.718Z - normal: [build-raw-assets] Start copying /Users/linningning/Documents/000/YH_Cocos/Eliminate/assets/atlas/menu.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-assets/atlas/menu.png
-2017-06-12T12:09:36.731Z - normal: [build-raw-assets] Finish copying /Applications/CocosCreator.app/Contents/Resources/static/default-assets/image/default_sprite_splash.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-internal/image/default_sprite_splash.png
-2017-06-12T12:09:36.732Z - normal: [build-raw-assets] Finish copying /Users/linningning/Documents/000/YH_Cocos/Eliminate/assets/atlas/menu.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-assets/atlas/menu.png
-2017-06-12T12:09:36.732Z - normal: Finish building raw assets
-2017-06-12T12:09:36.750Z - normal: Checked Python Version [2.7.10]
-2017-06-12T12:09:38.254Z - normal: Built to "/Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default" successfully
-2017-06-12T12:10:44.629Z - normal: Start building with options : {
-  "androidStudio": true,
-  "apiLevel": "",
-  "appABIs": [],
-  "appKey": "",
-  "appSecret": "",
-  "buildPath": "/Users/linningning/Documents/000/YH_Cocos/Eliminate/build",
-  "debug": false,
-  "dest": "/Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default",
-  "excludedModules": [],
-  "includeAnySDK": false,
-  "inlineSpriteFrames": true,
-  "mergeStartScene": false,
-  "oauthLoginServer": "",
-  "orientation": {
-    "landscapeLeft": false,
-    "landscapeRight": true,
-    "portrait": true,
-    "upsideDown": false
-  },
-  "packageName": "org.cocos2d.Eliminate",
-  "platform": "ios",
-  "previewHeight": 720,
-  "previewWidth": 1280,
-  "privateKey": "",
-  "renderMode": "0",
-  "scenes": [
-    {
-      "url": "db://assets/scenes/game.fire",
-      "uuid": "4cf6367e-ad66-485f-b6ad-d81e22dbbfe0"
-    }
-  ],
-  "sourceMaps": false,
-  "startScene": "4cf6367e-ad66-485f-b6ad-d81e22dbbfe0",
-  "template": "default",
-  "title": "Eliminate",
-  "useDebugKeystore": true,
-  "vsVersion": "auto",
-  "webOrientation": "portrait",
-  "project": "/Users/linningning/Documents/000/YH_Cocos/Eliminate",
-  "projectName": "Eliminate",
-  "runtimePath": "/Applications/CocosCreator.app/Contents/Resources/engine",
-  "debugBuildWorker": false
-}
-2017-06-12T12:10:44.629Z - normal: Building /Users/linningning/Documents/000/YH_Cocos/Eliminate
-2017-06-12T12:10:44.629Z - normal: Destination /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default
-2017-06-12T12:10:44.643Z - normal: Checked Python Version [2.7.10]
-2017-06-12T12:10:45.771Z - normal: Delete /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/**/*
-2017-06-12T12:10:45.772Z - normal: Delete /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/src/*/
-2017-06-12T12:10:45.846Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
-2017-06-12T12:10:47.162Z - normal: Compiled project javascript file successfully
-2017-06-12T12:10:47.162Z - normal: Start building assets
-2017-06-12T12:10:47.163Z - normal: Start spawn build-worker
-2017-06-12T12:10:47.703Z - normal: Finish spawn build-worker
-2017-06-12T12:10:47.704Z - normal: Start init build-worker
-2017-06-12T12:10:48.504Z - normal: 1.5.0
-2017-06-12T12:10:48.558Z - normal: Finish init build-worker
-2017-06-12T12:10:48.559Z - normal: Start build-assets in worker
-2017-06-12T12:10:48.629Z - warn: Enable "内联所有 SpriteFrame" in native platform will increase the package size used in hot update.
-2017-06-12T12:10:48.716Z - normal: Finish build-assets in worker
-2017-06-12T12:10:48.719Z - normal: Finish building assets
-2017-06-12T12:10:48.751Z - normal: Start building raw assets
-2017-06-12T12:10:48.752Z - normal: [build-raw-assets] Start copying /Applications/CocosCreator.app/Contents/Resources/static/default-assets/image/default_sprite_splash.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-internal/image/default_sprite_splash.png
-2017-06-12T12:10:48.752Z - normal: [build-raw-assets] Start copying /Users/linningning/Documents/000/YH_Cocos/Eliminate/assets/atlas/menu.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-assets/atlas/menu.png
-2017-06-12T12:10:48.772Z - normal: [build-raw-assets] Finish copying /Applications/CocosCreator.app/Contents/Resources/static/default-assets/image/default_sprite_splash.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-internal/image/default_sprite_splash.png
-2017-06-12T12:10:48.774Z - normal: [build-raw-assets] Finish copying /Users/linningning/Documents/000/YH_Cocos/Eliminate/assets/atlas/menu.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-assets/atlas/menu.png
-2017-06-12T12:10:48.774Z - normal: Finish building raw assets
-2017-06-12T12:10:48.784Z - normal: Checked Python Version [2.7.10]
-2017-06-12T12:10:50.156Z - normal: Built to "/Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default" successfully
-2017-06-12T12:17:10.924Z - normal: Start building with options : {
-  "androidStudio": true,
-  "apiLevel": "",
-  "appABIs": [],
-  "appKey": "",
-  "appSecret": "",
-  "buildPath": "/Users/linningning/Documents/000/YH_Cocos/Eliminate/build",
-  "debug": true,
-  "dest": "/Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default",
-  "excludedModules": [],
-  "includeAnySDK": false,
-  "inlineSpriteFrames": true,
-  "mergeStartScene": false,
-  "oauthLoginServer": "",
-  "orientation": {
-    "landscapeLeft": false,
-    "landscapeRight": true,
-    "portrait": true,
-    "upsideDown": false
-  },
-  "packageName": "org.cocos2d.Eliminate",
-  "platform": "ios",
-  "previewHeight": 720,
-  "previewWidth": 1280,
-  "privateKey": "",
-  "renderMode": "0",
-  "scenes": [
-    {
-      "url": "db://assets/scenes/game.fire",
-      "uuid": "4cf6367e-ad66-485f-b6ad-d81e22dbbfe0"
-    }
-  ],
-  "sourceMaps": false,
-  "startScene": "4cf6367e-ad66-485f-b6ad-d81e22dbbfe0",
-  "template": "default",
-  "title": "Eliminate",
-  "useDebugKeystore": true,
-  "vsVersion": "auto",
-  "webOrientation": "portrait",
-  "project": "/Users/linningning/Documents/000/YH_Cocos/Eliminate",
-  "projectName": "Eliminate",
-  "runtimePath": "/Applications/CocosCreator.app/Contents/Resources/engine",
-  "debugBuildWorker": false
-}
-2017-06-12T12:17:10.926Z - normal: Building /Users/linningning/Documents/000/YH_Cocos/Eliminate
-2017-06-12T12:17:10.926Z - normal: Destination /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default
-2017-06-12T12:17:11.098Z - normal: Checked Python Version [2.7.10]
-2017-06-12T12:17:12.487Z - normal: Delete /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/**/*
-2017-06-12T12:17:12.487Z - normal: Delete /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/src/*/
-2017-06-12T12:17:12.683Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
-2017-06-12T12:17:14.580Z - normal: Compiled project javascript file successfully
-2017-06-12T12:17:14.581Z - normal: Start building assets
-2017-06-12T12:17:14.581Z - normal: Start spawn build-worker
-2017-06-12T12:17:15.139Z - normal: Finish spawn build-worker
-2017-06-12T12:17:15.139Z - normal: Start init build-worker
-2017-06-12T12:17:16.010Z - normal: 1.5.0
-2017-06-12T12:17:16.072Z - normal: Finish init build-worker
-2017-06-12T12:17:16.072Z - normal: Start build-assets in worker
-2017-06-12T12:17:16.373Z - warn: Enable "内联所有 SpriteFrame" in native platform will increase the package size used in hot update.
-2017-06-12T12:17:16.461Z - normal: Finish build-assets in worker
-2017-06-12T12:17:16.465Z - normal: Finish building assets
-2017-06-12T12:17:16.500Z - normal: Start building raw assets
-2017-06-12T12:17:16.501Z - normal: [build-raw-assets] Start copying /Applications/CocosCreator.app/Contents/Resources/static/default-assets/image/default_sprite_splash.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-internal/image/default_sprite_splash.png
-2017-06-12T12:17:16.501Z - normal: [build-raw-assets] Start copying /Users/linningning/Documents/000/YH_Cocos/Eliminate/assets/atlas/menu.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-assets/atlas/menu.png
-2017-06-12T12:17:16.533Z - normal: [build-raw-assets] Finish copying /Applications/CocosCreator.app/Contents/Resources/static/default-assets/image/default_sprite_splash.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-internal/image/default_sprite_splash.png
-2017-06-12T12:17:16.555Z - normal: [build-raw-assets] Finish copying /Users/linningning/Documents/000/YH_Cocos/Eliminate/assets/atlas/menu.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-assets/atlas/menu.png
-2017-06-12T12:17:16.556Z - normal: Finish building raw assets
-2017-06-12T12:17:16.557Z - normal: Built to "/Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default" successfully
-2017-06-12T13:10:04.053Z - normal: Compiled project javascript file successfully
-2017-06-12T13:10:22.168Z - normal: Compiled project javascript file successfully
-2017-06-12T13:13:53.396Z - normal: Compiled project javascript file successfully
-2017-06-12T13:17:09.565Z - normal: Compiled project javascript file successfully
-2017-06-12T13:21:17.393Z - normal: Compiled project javascript file successfully
-2017-06-12T13:24:06.833Z - normal: Compiled project javascript file successfully
-2017-06-12T13:24:51.979Z - normal: Compiled project javascript file successfully
-2017-06-12T13:26:20.281Z - normal: Compiled project javascript file successfully
-2017-06-12T13:27:00.703Z - normal: Compiled project javascript file successfully
-2017-06-12T13:29:28.423Z - normal: Compiled project javascript file successfully
-2017-06-12T13:38:41.351Z - normal: Compiled project javascript file successfully
-2017-06-12T13:39:41.950Z - normal: Compiled project javascript file successfully
-2017-06-12T14:04:56.839Z - normal: Compiled project javascript file successfully
-2017-06-12T14:36:51.076Z - normal: Start building with options : {
-  "androidStudio": true,
-  "apiLevel": "",
-  "appABIs": [],
-  "appKey": "",
-  "appSecret": "",
-  "buildPath": "/Users/linningning/Documents/000/YH_Cocos/Eliminate/build",
-  "debug": true,
-  "dest": "/Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default",
-  "excludedModules": [],
-  "includeAnySDK": false,
-  "inlineSpriteFrames": true,
-  "mergeStartScene": false,
-  "oauthLoginServer": "",
-  "orientation": {
-    "landscapeLeft": false,
-    "landscapeRight": true,
-    "portrait": true,
-    "upsideDown": false
-  },
-  "packageName": "org.cocos2d.Eliminate",
-  "platform": "ios",
-  "previewHeight": 720,
-  "previewWidth": 1280,
-  "privateKey": "",
-  "renderMode": "0",
-  "scenes": [
-    {
-      "url": "db://assets/scenes/game.fire",
-      "uuid": "4cf6367e-ad66-485f-b6ad-d81e22dbbfe0"
-    }
-  ],
-  "sourceMaps": false,
-  "startScene": "4cf6367e-ad66-485f-b6ad-d81e22dbbfe0",
-  "template": "default",
-  "title": "Eliminate",
-  "useDebugKeystore": true,
-  "vsVersion": "auto",
-  "webOrientation": "portrait",
-  "project": "/Users/linningning/Documents/000/YH_Cocos/Eliminate",
-  "projectName": "Eliminate",
-  "runtimePath": "/Applications/CocosCreator.app/Contents/Resources/engine",
-  "debugBuildWorker": false
-}
-2017-06-12T14:36:51.079Z - normal: Building /Users/linningning/Documents/000/YH_Cocos/Eliminate
-2017-06-12T14:36:51.079Z - normal: Destination /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default
-2017-06-12T14:36:51.183Z - normal: Checked Python Version [2.7.10]
-2017-06-12T14:36:52.605Z - normal: Delete /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/**/*
-2017-06-12T14:36:52.606Z - normal: Delete /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/src/*/
-2017-06-12T14:36:52.714Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
-2017-06-12T14:36:54.683Z - normal: Compiled project javascript file successfully
-2017-06-12T14:36:54.683Z - normal: Start building assets
-2017-06-12T14:36:54.683Z - normal: Start spawn build-worker
-2017-06-12T14:36:55.433Z - normal: Finish spawn build-worker
-2017-06-12T14:36:55.433Z - normal: Start init build-worker
-2017-06-12T14:36:56.645Z - normal: 1.5.0
-2017-06-12T14:36:56.701Z - normal: Finish init build-worker
-2017-06-12T14:36:56.701Z - normal: Start build-assets in worker
-2017-06-12T14:36:57.031Z - warn: Enable "内联所有 SpriteFrame" in native platform will increase the package size used in hot update.
-2017-06-12T14:36:57.184Z - normal: Finish build-assets in worker
-2017-06-12T14:36:57.187Z - normal: Finish building assets
-2017-06-12T14:36:57.220Z - normal: Start building raw assets
-2017-06-12T14:36:57.220Z - normal: [build-raw-assets] Start copying /Applications/CocosCreator.app/Contents/Resources/static/default-assets/image/default_sprite_splash.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-internal/image/default_sprite_splash.png
-2017-06-12T14:36:57.221Z - normal: [build-raw-assets] Start copying /Applications/CocosCreator.app/Contents/Resources/static/default-assets/image/default_btn_disabled.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-internal/image/default_btn_disabled.png
-2017-06-12T14:36:57.221Z - normal: [build-raw-assets] Start copying /Applications/CocosCreator.app/Contents/Resources/static/default-assets/image/default_btn_pressed.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-internal/image/default_btn_pressed.png
-2017-06-12T14:36:57.221Z - normal: [build-raw-assets] Start copying /Applications/CocosCreator.app/Contents/Resources/static/default-assets/image/default_btn_normal.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-internal/image/default_btn_normal.png
-2017-06-12T14:36:57.221Z - normal: [build-raw-assets] Start copying /Users/linningning/Documents/000/YH_Cocos/Eliminate/assets/atlas/menu.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-assets/atlas/menu.png
-2017-06-12T14:36:57.321Z - normal: [build-raw-assets] Finish copying /Applications/CocosCreator.app/Contents/Resources/static/default-assets/image/default_btn_disabled.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-internal/image/default_btn_disabled.png
-2017-06-12T14:36:57.322Z - normal: [build-raw-assets] Finish copying /Applications/CocosCreator.app/Contents/Resources/static/default-assets/image/default_btn_normal.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-internal/image/default_btn_normal.png
-2017-06-12T14:36:57.322Z - normal: [build-raw-assets] Finish copying /Applications/CocosCreator.app/Contents/Resources/static/default-assets/image/default_btn_pressed.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-internal/image/default_btn_pressed.png
-2017-06-12T14:36:57.323Z - normal: [build-raw-assets] Finish copying /Applications/CocosCreator.app/Contents/Resources/static/default-assets/image/default_sprite_splash.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-internal/image/default_sprite_splash.png
-2017-06-12T14:36:57.384Z - normal: [build-raw-assets] Finish copying /Users/linningning/Documents/000/YH_Cocos/Eliminate/assets/atlas/menu.png to /Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default/res/raw-assets/atlas/menu.png
-2017-06-12T14:36:57.384Z - normal: Finish building raw assets
-2017-06-12T14:36:57.385Z - normal: Built to "/Users/linningning/Documents/000/YH_Cocos/Eliminate/build/jsb-default" successfully
+2017-06-22T13:45:27.792Z - normal: Load ~/.CocosCreator/settings.json
+2017-06-22T13:45:27.796Z - normal: checking language setting...
+2017-06-22T13:45:27.796Z - normal: Language: zh
+2017-06-22T13:45:28.709Z - success: protocol editor-framework registered
+2017-06-22T13:45:28.709Z - success: protocol app registered
+2017-06-22T13:45:28.709Z - success: protocol theme registered
+2017-06-22T13:45:28.709Z - success: protocol profile registered
+2017-06-22T13:45:28.709Z - success: protocol packages registered
+2017-06-22T13:45:28.712Z - success: protocol unpack registerred
+2017-06-22T13:45:28.712Z - success: protocol disable-commonjs registerred
+2017-06-22T13:45:29.016Z - normal: connected!
+2017-06-22T13:45:29.019Z - normal: Check project /Users/linningning/Documents/000/YH_Cocos/Eliminate
+2017-06-22T13:45:29.020Z - normal: Initializing Cocos2d
+2017-06-22T13:45:29.315Z - normal: Initializing Asset Database
+2017-06-22T13:45:29.381Z - success: protocol uuid registerred
+2017-06-22T13:45:29.381Z - success: protocol db registerred
+2017-06-22T13:45:29.381Z - success: protocol thumbnail registerred
+2017-06-22T13:45:29.381Z - normal: Loading editor/builtin packages
+2017-06-22T13:45:29.483Z - success: anysdk loaded
+2017-06-22T13:45:29.634Z - success: assets loaded
+2017-06-22T13:45:29.639Z - success: builder loaded
+2017-06-22T13:45:29.643Z - success: hierarchy loaded
+2017-06-22T13:45:29.649Z - success: inspector loaded
+2017-06-22T13:45:29.650Z - success: keystore loaded
+2017-06-22T13:45:29.654Z - success: node-library loaded
+2017-06-22T13:45:29.656Z - success: package-asset loaded
+2017-06-22T13:45:29.658Z - success: preferences loaded
+2017-06-22T13:45:29.676Z - success: project-importer loaded
+2017-06-22T13:45:29.678Z - success: project-settings loaded
+2017-06-22T13:45:29.682Z - success: ui-kit loaded
+2017-06-22T13:45:29.693Z - success: ui-grid loaded
+2017-06-22T13:45:29.698Z - success: scene loaded
+2017-06-22T13:45:29.699Z - success: sprite-editor loaded
+2017-06-22T13:45:29.702Z - success: store loaded
+2017-06-22T13:45:29.709Z - success: timeline loaded
+2017-06-22T13:45:29.709Z - normal: Loading builtin packages
+2017-06-22T13:45:29.720Z - success: asset-db-debugger loaded
+2017-06-22T13:45:29.723Z - success: code-editor loaded
+2017-06-22T13:45:29.728Z - success: color-picker loaded
+2017-06-22T13:45:29.733Z - success: console loaded
+2017-06-22T13:45:29.736Z - success: package-manager loaded
+2017-06-22T13:45:29.744Z - success: sdkbox loaded
+2017-06-22T13:45:29.748Z - success: tester loaded
+2017-06-22T13:45:29.752Z - success: ui-kit-preview-extra loaded
+2017-06-22T13:45:29.756Z - success: ui-kit-preview loaded
+2017-06-22T13:45:29.759Z - success: ui-tree loaded
+2017-06-22T13:45:29.800Z - normal: Initializing project /Users/linningning/Documents/000/YH_Cocos/Eliminate
+2017-06-22T13:45:29.802Z - normal: Loading packages
+2017-06-22T13:45:29.826Z - success: quick-open loaded
+2017-06-22T13:45:30.297Z - success: quick-preview loaded
+2017-06-22T13:45:30.297Z - normal: Watching packages
+2017-06-22T13:45:30.323Z - normal: Run Application
+2017-06-22T13:45:35.081Z - success: preview server running at http://localhost:7456
+2017-06-22T13:45:35.081Z - normal: Compiling scripts...
+2017-06-22T13:45:36.867Z - normal: Compiled project javascript file successfully
+2017-06-22T13:45:40.490Z - normal: 1.5.0
+2017-06-22T13:49:12.711Z - normal: Compiled project javascript file successfully
+2017-06-22T13:49:21.423Z - normal: Compiled project javascript file successfully
+2017-06-22T13:49:42.121Z - normal: Compiled project javascript file successfully
+2017-06-22T13:51:06.203Z - normal: Compiled project javascript file successfully
+2017-06-22T13:53:40.124Z - normal: Compiled project javascript file successfully
+2017-06-22T13:59:01.751Z - normal: Compiled project javascript file successfully
+2017-06-22T14:00:35.381Z - normal: Compiled project javascript file successfully
+2017-06-22T14:03:43.914Z - normal: Compiled project javascript file successfully
+2017-06-22T14:04:15.998Z - normal: Compiled project javascript file successfully
+2017-06-22T14:04:55.405Z - normal: Compiled project javascript file successfully
+2017-06-22T14:09:01.853Z - normal: Compiled project javascript file successfully
+2017-06-22T14:11:11.524Z - normal: Compiled project javascript file successfully
+2017-06-22T14:12:09.282Z - normal: Compiled project javascript file successfully
+2017-06-22T14:20:26.248Z - normal: Compiled project javascript file successfully
+2017-06-22T14:21:22.803Z - normal: Compiled project javascript file successfully
+2017-06-22T14:25:18.498Z - normal: Compiled project javascript file successfully
+2017-06-22T14:25:49.871Z - normal: Compiled project javascript file successfully
+2017-06-22T14:26:00.361Z - normal: Compiled project javascript file successfully
+2017-06-22T14:28:54.078Z - normal: Compiled project javascript file successfully
+2017-06-22T14:40:00.490Z - normal: Compiled project javascript file successfully
+2017-06-22T15:21:13.443Z - normal: Compiled project javascript file successfully
+2017-06-22T15:23:04.325Z - normal: Compiled project javascript file successfully

@@ -136,6 +136,8 @@ cc.Class({
     init: function init() {
 
         this.select_item = this.node.getChildByName("sel");
+        this.titleShow = this.node.getChildByName("Label");
+
         this.currentSpeed = 0;
 
         this.state_b = BoxState.ENormal;
@@ -257,6 +259,7 @@ cc.Class({
         }
 
         if (this.boxItem.ani_point.length > 0) {
+
             // console.log("需要做偏移操作 判断");
             // let point_a = this.boxItem.ani_point
 
@@ -292,6 +295,18 @@ cc.Class({
             }
 
             // console.log("====" + last_point);
+        }
+
+        if (YHDebug) {
+            this.titleShow.active = true;
+            this.titleShow.getComponent(cc.Label).string = this.boxItem.rank + "_" + this.boxItem.row;
+            if (this.boxItem.color_type === BoxType.White || this.boxItem.color_type === BoxType.YELLOW) {
+                this.titleShow.getComponent(cc.Label).node.color = cc.Color.BLACK;
+            } else {
+                this.titleShow.getComponent(cc.Label).node.color = cc.Color.WHITE;
+            }
+        } else {
+            this.titleShow.active = false;
         }
 
         // if (this.node.x > this.boxItem.begin_x) {

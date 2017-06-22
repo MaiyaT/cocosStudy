@@ -148,6 +148,8 @@ cc.Class({
     init(){
 
         this.select_item = this.node.getChildByName("sel");
+        this.titleShow = this.node.getChildByName("Label");
+
         this.currentSpeed = 0;
 
         this.state_b = BoxState.ENormal;
@@ -248,6 +250,7 @@ cc.Class({
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
 
+
         //如果是正在掉落的 刷新endy 的坐标
         // if(this.state_b === BoxState.EFalling ||
         //     this.state_b === BoxState.EDestroy){
@@ -282,6 +285,7 @@ cc.Class({
 
 
         if(this.boxItem.ani_point.length > 0){
+
             // console.log("需要做偏移操作 判断");
             // let point_a = this.boxItem.ani_point
 
@@ -298,6 +302,10 @@ cc.Class({
 
                 // this.node.x = last_point.x;
                 // this.boxItem.ani_point.shift();//删除第一个元素
+
+                if(this.boxItem.rank === 6 && this.boxItem.row === 1){
+                    console.log("这个位置异常");
+                }
 
                 if(last_point.isleft){
                     //左边的递减
@@ -321,6 +329,20 @@ cc.Class({
             // console.log("====" + last_point);
         }
 
+
+        if(YHDebug){
+            this.titleShow.active = true;
+            this.titleShow.getComponent(cc.Label).string = this.boxItem.rank + "_" + this.boxItem.row;
+            if(this.boxItem.color_type === BoxType.White ||
+                this.boxItem.color_type === BoxType.YELLOW){
+                this.titleShow.getComponent(cc.Label).node.color = cc.Color.BLACK;
+            }else {
+                this.titleShow.getComponent(cc.Label).node.color = cc.Color.WHITE;
+            }
+
+        }else {
+            this.titleShow.active = false;
+        }
 
         // if (this.node.x > this.boxItem.begin_x) {
         //     this.node.x -= this.speed * dt;
