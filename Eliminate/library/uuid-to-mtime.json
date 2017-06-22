@@ -265,13 +265,13 @@
     "relativePath": "Texture"
   },
   "1a989054-19b0-487f-b409-997ad3b01f02": {
-    "asset": 1498046505965,
-    "meta": 1498046505974,
+    "asset": 1498103239322,
+    "meta": 1498103239342,
     "relativePath": "prefab\\Box.prefab"
   },
   "4cf6367e-ad66-485f-b6ad-d81e22dbbfe0": {
-    "asset": 1498052893957,
-    "meta": 1498052893972,
+    "asset": 1498103239827,
+    "meta": 1498103239841,
     "relativePath": "scenes\\game.fire"
   },
   "7b91087d-0c19-4431-898c-d93daa435c6f": {
@@ -309,14 +309,14 @@
     "meta": 1498051592196,
     "relativePath": "script\\BoxItem.js"
   },
-  "89bc7089-446c-4905-9b0e-1c39d48c316e": {
-    "asset": 1498051859795,
-    "meta": 1498052602478,
-    "relativePath": "script\\BoxDrop.js"
-  },
   "ec917de0-c8aa-4110-9614-dba61ed5e39e": {
-    "asset": 1498052877722,
-    "meta": 1498052891059,
+    "asset": 1498102869825,
+    "meta": 1498102871420,
     "relativePath": "script\\BoxPanel.js"
+  },
+  "89bc7089-446c-4905-9b0e-1c39d48c316e": {
+    "asset": 1498103228433,
+    "meta": 1498103231866,
+    "relativePath": "script\\BoxDrop.js"
   }
 }

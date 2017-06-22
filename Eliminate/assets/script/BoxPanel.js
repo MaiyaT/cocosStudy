@@ -50,7 +50,7 @@ cc.Class({
 
                     if(value === Game_State.Play){
                         //开始掉落
-                        this.updateBeginOriginY();
+                        this.updateAllBeginOriginY();
                     }else  if(value === Game_State.Filling){
                         this.fillInterval = 0;
                     }
@@ -154,7 +154,7 @@ cc.Class({
             this.createRankContent(index);
         }
 
-        this.updateBeginOriginY();
+        this.updateAllBeginOriginY();
 
         this.checkPanelEliminatable();
     },
@@ -225,15 +225,15 @@ cc.Class({
 
             let box = this.listBarrier[i];
 
-            this.blankCheckReplaceAvailable(box);
+            this.blankCheckReplaceBlankAvailable(box);
         }
     },
 
 
     /*检测是否可以替换
-    * box_c 这个要操作的方块类型  是 障碍物、方块
+    * box_c 这个要操作的方块类型  是 障碍物
     * */
-    blankCheckReplaceAvailable : function (box){
+    blankCheckReplaceBlankAvailable : function (box) {
 
         let box_c = box.getComponent("BoxDrop");
 
@@ -251,15 +251,31 @@ cc.Class({
                 if(box_left.getComponent("BoxDrop").boxItem.color_type < BoxType.TypeCount){
                     //左边位置掉落填充
                     console.log("左边位置掉落填充");
+
+                    //移除 左边这个要删除的 更新新的方块的开始位置信息
+                    this.blankRemoveItemAtRank(box_left);
+
+                    //设置要替换的位置
                     this.blankReplaceBox(box_bottom,box_left);
-                    return true;
+
+                    this.blankCheckReplaceBlankAvailable(box);
 
                 }else if(box_Right.getComponent("BoxDrop").boxItem.color_type < BoxType.TypeCount){
                     //右边位置掉落填充
                     console.log("右边位置掉落填充");
+
                 }
             }
-        }else if(box_c.boxItem.color_type < BoxType.TypeCount){
+        }
+    },
+
+    /*检测是否可以替换
+     * box_c 这个要操作的方块类型  是 方块
+     * */
+    blankCheckReplaceNormalAvailable : function (box){
+
+        let box_c = box.getComponent("BoxDrop");
+        if(box_c.boxItem.color_type < BoxType.TypeCount){
             //是方块
 
             //这个方块的 左下方 右下方 正下方 判断是否是空位
@@ -271,19 +287,23 @@ cc.Class({
                 //正下方是空的 往正下方 替换
                 console.log("正下方是空的 往正下方 替换");
                 this.blankReplaceBox(box_bottom_zheng,box);
-                return true;
+                return false;
             }else if(box_bottom_left !== undefined &&
                 box_bottom_left.getComponent("BoxDrop").boxItem.color_type === BoxType.Blank){
                 //左下方是空的 往左下方 替换
                 console.log("左下方");
+                this.blankReplaceBox(box_bottom_left,box);
+                return false;
             }else if(box_bottom_Right !== undefined &&
                 box_bottom_Right.getComponent("BoxDrop").boxItem.color_type === BoxType.Blank){
                 //右下方是空的 往右下方 替换
                 console.log("右下方");
+                this.blankReplaceBox(box_bottom_Right,box);
+                return false;
             }
         }
 
-        return false;
+        return true;
     },
 
 
@@ -294,33 +314,34 @@ cc.Class({
         let box_re = boxReplace.getComponent("BoxDrop");
         let box_bl = boxBlank.getComponent("BoxDrop");
 
+
+        //设置x的位置变化的时候 点
         let repeatList = box_re.boxItem.ani_point.filter(function(elem){
             return elem.x === box_bl.boxItem.begin_x;
         });
         
         if(repeatList.length === 0) {
             let isleft = box_bl.boxItem.begin_x < box_re.boxItem.begin_x;
-            box_re.boxItem.ani_point.push({"x": box_bl.boxItem.begin_x, "y": box_bl.boxItem.end_y,"isleft":isleft});
+            box_re.boxItem.ani_point.push({"x": box_bl.boxItem.begin_x, "y": box_bl.boxItem.end_y + box_bl.node.height,"isleft":isleft});
         }
+
+
         box_re.boxItem.end_y = box_bl.boxItem.end_y;
 
-        let temp_rank = box_re.boxItem.rank;
+        // let temp_rank = box_re.boxItem.rank;
 
         box_re.boxItem.row = box_bl.boxItem.row;
         box_re.boxItem.rank = box_bl.boxItem.rank;
 
-
-
-        //占位的方块 位置替换成要移入的方块  移除这个占位方块
-        this.rankList[box_bl.boxItem.rank][box_bl.boxItem.row] = boxReplace;
-
         //这个方块继续往下替换
-        if(!this.blankCheckReplaceAvailable(box_re)){
+        if(this.blankCheckReplaceNormalAvailable(box_re)){
             console.log("移动完成 替换=======");
+
+            //占位的方块 位置替换成要移入的方块  移除这个占位方块
+            this.rankList[box_bl.boxItem.rank][box_bl.boxItem.row] = boxReplace;
 
             this.boxPool.put(box_bl.node);
         }
-
 
 
         //后面遍历的时候把他移除掉
@@ -338,6 +359,47 @@ cc.Class({
 
     },
 
+    
+    blankRemoveItemAtRank:function (boxRemove) {
+
+        let box_re = boxRemove.getComponent("BoxDrop");
+        let list = this.rankList[box_re.boxItem.rank];
+        list.removeByValue(list,boxRemove);
+
+        let new_box = this.updateRankEndYIndex(box_re.boxItem.rank);
+
+        if(new_box !== null){
+
+            let box_c = new_box.getComponent("BoxDrop");
+            if(box_c.node.y !== box_c.boxItem.end_y){
+
+                if((this.gamestate === Game_State.Start) || (box_c.node.y >= box_c.boxItem.begin_y)){
+
+                    //他本身是最后一个 跟倒数第二个对比
+                    let last_box = list[list.length-2];
+                    if(last_box !== undefined){
+                        box_c.boxItem.begin_y = last_box.getComponent("BoxDrop").boxItem.begin_y + box_c.node.height + 10*list.length;
+                    }
+                    else {
+                        box_c.boxItem.begin_y = this.margin_top + space_top;
+                        box_c.node.y = box_c.boxItem.begin_y;
+                    }
+                    box_c.node.y = box_c.boxItem.begin_y;
+                }
+
+                //是要掉落的
+                if(this.gamestate === Game_State.Play ||
+                    this.gamestate === Game_State.Filling ||
+                    this.gamestate === Game_State.Start){
+                    box_c.state_b = BoxState.EFalling;
+                }
+            }else{
+                box_c.state_b = BoxState.EFalled;
+            }
+
+        }
+    },
+    
 
 
     //创建每一列的数据
@@ -387,54 +449,73 @@ cc.Class({
         //看该列的数量是否 小于 this.num_row  少于的话则补充
         for(let i = 0; i<this.num_rank; i++){
 
-            let origin_x = this.margin_left + (this.itemWidth+this.itemSpace)*i;
-
-            let list_sub = this.rankList[i];
-            
-            while(list_sub.length < this.num_row){
-
-                let new_box = this.boxDrop_get();
-                new_box.active = true;
-
-                let box_c = new_box.getComponent("BoxDrop");
-
-                box_c.boxItem.begin_x = origin_x;
-                box_c.boxItem.begin_y = this.margin_top;
-                box_c.boxItem.rank = i;
-                box_c.boxItem.row = 0;
-                box_c.boxItem.color_type = (cc.random0To1()*5) | 0;
-                box_c.resetOriginPos();
-
-                new_box.parent = this.super_node;
-
-                list_sub.push(new_box);
-
-            }
-
-
-            let end_box_y = this.margin_bottom;
-
-            //更新每个元素的end y 位置
-            for (let i = 0; i<list_sub.length; i++){
-
-                let item_box = list_sub[i];
-                let box_c = item_box.getComponent("BoxDrop");
-                box_c.boxItem.row = i;
-                box_c.boxItem.end_y = this.margin_bottom + (this.itemHeight+this.itemSpace)*i;
-            }
+            this.updateRankEndYIndex(i);
         }
 
-        this.updateBeginOriginY();
+        this.updateAllBeginOriginY();
 
         if(this.gamestate === Game_State.Start){
             this.checkPanelEliminatable();
         }
     },
 
+    /*更新某列的数据*/
+    updateRankEndYIndex:function(index){
+
+        let createBox = null;
+
+        let origin_x = this.margin_left + (this.itemWidth+this.itemSpace)*index;
+
+        let list_sub = this.rankList[index];
+
+        while(list_sub.length < this.num_row){
+
+            let new_box = this.boxDrop_get();
+            new_box.active = true;
+            new_box.width = this.itemWidth;
+            new_box.height = this.itemHeight;
+
+            let box_c = new_box.getComponent("BoxDrop");
+            box_c.state_b = BoxState.ENormal;
+
+            box_c.initBoxItem();
+
+            box_c.boxItem.begin_x = origin_x;
+            box_c.boxItem.begin_y = this.margin_top;
+            box_c.boxItem.rank = index;
+            box_c.boxItem.row = 0;
+            box_c.boxItem.color_type = (cc.random0To1()*5) | 0;
+            box_c.resetOriginPos();
+
+            new_box.parent = this.super_node;
+
+            list_sub.push(new_box);
+
+
+            createBox = new_box;
+        }
+
+
+        let end_box_y = this.margin_bottom;
+
+        //更新每个元素的end y 位置
+        for (let i = 0; i<list_sub.length; i++){
+
+            let item_box = list_sub[i];
+            let box_c = item_box.getComponent("BoxDrop");
+            box_c.boxItem.row = i;
+            box_c.boxItem.end_y = this.margin_bottom + (this.itemHeight+this.itemSpace)*i;
+        }
+
+
+        return createBox;
+    },
+
+
     /**
      * 更新每一列他们中的每个元素的初始的origin y的值
      */
-    updateBeginOriginY:function () {
+    updateAllBeginOriginY:function () {
 
 
         /**
@@ -448,7 +529,6 @@ cc.Class({
             let off_top = 0;
             let space_top = 5;
 
-            // for(let j = this.num_row-1; j>=0; j--){
             for(let j = 0; j<this.num_row; j++){
                 let box = list[j];
 
@@ -485,7 +565,7 @@ cc.Class({
         }
     },
 
-    
+
     //交换两个方块的位置
     exchangeBoxItem:function(box1,box2,toCheckViable = true){
 
