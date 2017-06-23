@@ -386,9 +386,6 @@ cc.Class({
             } else if (box_bottom_left !== undefined && box_bottom_left.getComponent("BoxDrop").boxItem.color_type === BoxType.Blank) {
                 //左下方是空的 往左下方 替换
                 console.log("左下方");
-
-                /*判断左下方 或者 右下方 要填充的这个方块 与他的边界障碍物做判断 这个方块是由这边路口掉落 还是另外一边*/
-
                 this.blankReplaceBox(box_bottom_left, box, edgeOtherBox);
                 return false;
             } else if (box_bottom_Right !== undefined && box_bottom_Right.getComponent("BoxDrop").boxItem.color_type === BoxType.Blank) {
@@ -409,21 +406,18 @@ cc.Class({
         var box_bl = boxBlank.getComponent("BoxDrop");
 
         //设置x的位置变化的时候 点
-        var repeatList = box_re.boxItem.ani_point.filter(function (elem) {
-            return elem.x === box_bl.boxItem.begin_x;
-        });
+        // let repeatList = box_re.boxItem.ani_point.filter(function(elem){
+        //     return elem.x === box_bl.boxItem.begin_x;
+        // });
+
+        //要取最后一个位置 来判断这个动画是够添加过
+        var lastPoint = box_re.boxItem.ani_point[box_re.boxItem.ani_point.length - 1];
 
         //存储动画的节点
         var isleft = box_bl.boxItem.begin_x < box_re.boxItem.begin_x;
-        if (repeatList.length === 0) {
+        if (lastPoint === undefined || lastPoint.x !== box_bl.boxItem.begin_x) {
             box_re.boxItem.ani_point.push({ "x": box_bl.boxItem.begin_x, "y": box_bl.boxItem.end_y + box_bl.node.height, "isleft": isleft });
         }
-        // else if(repeatList.length === 1){
-        //     let dic = repeatList[0];
-        //     dic.x = box_bl.boxItem.begin_x;
-        //     dic.isleft = isleft;
-        // }
-
 
         box_re.boxItem.begin_x = box_bl.boxItem.begin_x;
         box_re.boxItem.end_y = box_bl.boxItem.end_y;
