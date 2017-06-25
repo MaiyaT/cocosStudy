@@ -2,4 +2,4 @@
 
 
 //是否开启调试
-window.YHDebug = true;
+window.YHDebug = false;

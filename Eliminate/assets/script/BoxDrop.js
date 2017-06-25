@@ -164,6 +164,7 @@ cc.Class({
         this.showType = BoxShowType.K_Normal;
         this.node.y = -100000;
 
+        this.boxItem.ani_point = [];
     },
 
     reuse:function(){
@@ -287,10 +288,10 @@ cc.Class({
         if(this.boxItem.ani_point.length > 0){
 
             // console.log("需要做偏移操作 判断");
-            // let point_a = this.boxItem.ani_point
+            // let point_a = this.boxItem.blank_move_point
 
             //判断这个位置的y 需要在的x的位置
-            // let points = this.boxItem.ani_point.filter(function(elem){
+            // let points = this.boxItem.blank_move_point.filter(function(elem){
             //     return this.node.y < elem.y;
             // }.bind(this));
 
@@ -301,49 +302,24 @@ cc.Class({
                 this.node.y < last_point.y){
 
                 // this.node.x = last_point.x;
-                // this.boxItem.ani_point.shift();//删除第一个元素
+                // this.boxItem.blank_move_point.shift();//删除第一个元素
 
-                if(this.boxItem.rank === 6 && this.boxItem.row === 1){
-                    console.log("这个位置异常" + this.boxItem.ani_point);
-
-                    if(last_point.isleft){
-                        //左边的递减
-                        this.node.x = this.node.x - this.speed*0.5;
-                        if(this.node.x <= last_point.x){
-                            this.node.x = last_point.x;
-                            this.boxItem.ani_point.shift();//删除第一个元素
-                            console.log("=======移除");
-                        }
-                    }else {
-                        //右边的递增
-                        this.node.x = this.node.x + this.speed*0.5;
-                        if(this.node.x >= last_point.x){
-                            this.node.x = last_point.x;
-                            this.boxItem.ani_point.shift();//删除第一个元素
-                            console.log("=======移除");
-                        }
+                if(last_point.isleft){
+                    //左边的递减
+                    this.node.x = this.node.x - this.speed*0.5;
+                    if(this.node.x <= last_point.x){
+                        this.node.x = last_point.x;
+                        this.boxItem.ani_point.shift();//删除第一个元素
+                        console.log("=======移除");
                     }
-
                 }else {
-
-                    if(last_point.isleft){
-                        //左边的递减
-                        this.node.x = this.node.x - this.speed*0.5;
-                        if(this.node.x <= last_point.x){
-                            this.node.x = last_point.x;
-                            this.boxItem.ani_point.shift();//删除第一个元素
-                            console.log("=======移除");
-                        }
-                    }else {
-                        //右边的递增
-                        this.node.x = this.node.x + this.speed*0.5;
-                        if(this.node.x >= last_point.x){
-                            this.node.x = last_point.x;
-                            this.boxItem.ani_point.shift();//删除第一个元素
-                            console.log("=======移除");
-                        }
+                    //右边的递增
+                    this.node.x = this.node.x + this.speed*0.5;
+                    if(this.node.x >= last_point.x){
+                        this.node.x = last_point.x;
+                        this.boxItem.ani_point.shift();//删除第一个元素
+                        console.log("=======移除");
                     }
-
                 }
             }
 
