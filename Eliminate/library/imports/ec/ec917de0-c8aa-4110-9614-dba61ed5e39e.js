@@ -44,7 +44,13 @@ cc.Class({
 
                 if (this._gameState !== value) {
 
-                    var tempBefore = this._gameState;
+                    // let tempBefore = this._gameState;
+                    //
+                    // if(tempBefore === Game_State.Start){
+                    //     //是刚实例游戏完之后
+                    //     //创建障碍物
+                    //     this.createBarrierCanvas();
+                    // }
 
                     this._gameState = value;
 
@@ -53,12 +59,6 @@ cc.Class({
                         this.updateAllBeginOriginY();
                     } else if (value === Game_State.Filling) {
                         this.fillInterval = 0;
-                    }
-
-                    if (tempBefore === Game_State.Start) {
-                        //是刚实例游戏完之后
-                        //创建障碍物
-                        this.createBarrierCanvas();
                     }
                 }
             },
@@ -151,6 +151,8 @@ cc.Class({
 
         this.updateAllBeginOriginY();
 
+        this.createBarrierCanvas();
+
         this.checkPanelEliminatable();
     },
 
@@ -208,6 +210,8 @@ cc.Class({
         }.bind(this));
 
         this.blankBeginFill();
+
+        this.checkPanelEliminatable();
     },
 
     /*开始空位填充*/
@@ -225,21 +229,31 @@ cc.Class({
 
         //遍历出场景中所有的空位方块
         // for(let b_i = 0; b_i < this.num_row; b_i++){
-        for (var b_i = 4; b_i < this.num_row; b_i++) {
+        for (var b_i = 0; b_i < this.num_row; b_i++) {
             for (var b_j = 0; b_j < this.num_rank; b_j++) {
                 var box = this.rankList[b_j][b_i];
-                if (box.getComponent("BoxDrop").boxItem.color_type === BoxType.Blank) {
+                if (box !== undefined && box.getComponent("BoxDrop").boxItem.color_type === BoxType.Blank) {
                     //这个位置是空缺的
                     listBlank.push(box);
                 }
             }
         }
 
-        //对blank排序 从上到下 从右往左
-        listBlank.sort(function (boxa, boxb) {
+        var listBlankRightToLeft = listBlank.slice(0);
+        var listBlankLeftToRight = listBlank.slice(0);
 
+        //对blank排序 从上到下 从右往左
+        listBlankRightToLeft.sort(function (boxa, boxb) {
             if (boxa.getComponent("BoxDrop").boxItem.row === boxb.getComponent("BoxDrop").boxItem.row) {
                 return boxb.getComponent("BoxDrop").boxItem.rank - boxa.getComponent("BoxDrop").boxItem.rank;
+            } else {
+                return boxb.getComponent("BoxDrop").boxItem.row - boxa.getComponent("BoxDrop").boxItem.row;
+            }
+        });
+        //对blank排序 从上到下 从左往右
+        listBlankLeftToRight.sort(function (boxa, boxb) {
+            if (boxa.getComponent("BoxDrop").boxItem.row === boxb.getComponent("BoxDrop").boxItem.row) {
+                return boxa.getComponent("BoxDrop").boxItem.rank - boxb.getComponent("BoxDrop").boxItem.rank;
             } else {
                 return boxb.getComponent("BoxDrop").boxItem.row - boxa.getComponent("BoxDrop").boxItem.row;
             }
@@ -250,24 +264,30 @@ cc.Class({
             return;
         }
 
-        for (var i = 0; i < listBlank.length; i++) {
+        for (var i = 0; i < listBlankRightToLeft.length; i++) {
 
-            this.blankAviableFillItem(listBlank[i]);
+            if (this.blankAviableFillItem(listBlankRightToLeft[i], false)) {
+                this.blankBeginFill();
+                return;
+            }
         }
 
-        //给这个障碍物下面补充方块
-        // for (let i = 0; i < this.listBarrier.length; i++){
-        //
-        //     let box = this.listBarrier[i];
-        //
-        //     this.blankCheckReplaceBlankAvailable(box);
-        // }
+        for (var _i = 0; _i < listBlankLeftToRight.length; _i++) {
+
+            if (this.blankAviableFillItem(listBlankLeftToRight[_i], true)) {
+                this.blankBeginFill();
+                return;
+            }
+        }
+
+        //去掉可消除的选项
+        // this.checkPanelEliminatable();
     },
 
     /* 填充这个方块
     * 判断这个方块是否可填充
     * 方向顺序 上 左 右*/
-    blankAviableFillItem: function blankAviableFillItem(blank_box) {
+    blankAviableFillItem: function blankAviableFillItem(blank_box, isLeftArrow) {
 
         var box_c = blank_box.getComponent("BoxDrop");
 
@@ -280,14 +300,15 @@ cc.Class({
         //顶部是有方块可以填充
         if (box_top !== undefined && box_top.getComponent("BoxDrop").boxItem.color_type < BoxType.TypeCount) {
             box_re = box_top;
-        } else if (box_topLeft !== undefined && box_topLeft.getComponent("BoxDrop").boxItem.color_type < BoxType.TypeCount) {
+        } else if (box_topLeft !== undefined && box_topLeft.getComponent("BoxDrop").boxItem.color_type < BoxType.TypeCount && isLeftArrow) {
             box_re = box_topLeft;
-        } else if (box_topRight !== undefined && box_topRight.getComponent("BoxDrop").boxItem.color_type < BoxType.TypeCount) {
+        } else if (box_topRight !== undefined && box_topRight.getComponent("BoxDrop").boxItem.color_type < BoxType.TypeCount && !isLeftArrow) {
             box_re = box_topRight;
         }
 
         if (box_re !== undefined) {
 
+            //替换到 本身之前就是 空缺方块的位置 重新开始 填充
             return this.blankReplaceBox(blank_box, box_re);
         }
 
@@ -313,22 +334,14 @@ cc.Class({
             });
         }
 
-        var haveTop = function () {
-            for (var i = box_re.boxItem.row + 1; i < this.num_row; i++) {
-                var b = this.rankList[box_re.boxItem.rank][i];
-                if (b.getComponent(BoxDrop).boxItem.color_type === BoxType.Barrier) {
-                    return true;
-                }
-            }
-            return false;
-        }.bind(this)();
+        var tempBeginy = box_re.boxItem.begin_y;
 
-        if (haveTop) {} else {
-
+        var haveTop = this.blankTopBoxExit(boxReplace);
+        if (!haveTop) {
             this.blankRemoveItemAtRank(boxReplace);
         }
 
-        // let tempBeginx = box_re.boxItem.begin_x;
+        var tempBeginx = box_re.boxItem.begin_x;
         var tempEndy = box_re.boxItem.end_y;
         var tempRow = box_re.boxItem.row;
         var tempRank = box_re.boxItem.rank;
@@ -338,14 +351,18 @@ cc.Class({
         box_re.boxItem.row = box_bl.boxItem.row;
         box_re.boxItem.rank = box_bl.boxItem.rank;
 
-        // box_bl.boxItem.begin_x = tempBeginx;
+        box_bl.boxItem.begin_x = tempBeginx;
         box_bl.boxItem.end_y = tempEndy;
         box_bl.boxItem.row = tempRow;
         box_bl.boxItem.rank = tempRank;
+        box_bl.boxItem.begin_y = tempBeginy;
 
         if (haveTop) {
             //这个位置的方块设置成空缺的状态
-            this.rankList[box_bl.boxItem.rank][box_bl.boxItem.row] = boxBlank; //.getComponent("BoxDrop").boxSpeciallyShow(BoxType.Blank);
+            //占位的方块 位置替换成要移入的方块  移除这个占位方块
+            this.rankList[box_re.boxItem.rank][box_re.boxItem.row] = boxReplace;
+            this.rankList[box_bl.boxItem.rank][box_bl.boxItem.row] = boxBlank;
+
             box_bl.resetOriginPos();
 
             //从头开始重新遍历
@@ -395,6 +412,19 @@ cc.Class({
                 box_c.state_b = BoxState.EFalled;
             }
         }
+    },
+
+    blankTopBoxExit: function blankTopBoxExit(box) {
+
+        var box_b = box.getComponent("BoxDrop");
+
+        for (var i = box_b.boxItem.row + 1; i < this.num_row; i++) {
+            var b = this.rankList[box_b.boxItem.rank][i];
+            if (b !== undefined && b.getComponent(BoxDrop).boxItem.color_type === BoxType.Barrier) {
+                return true;
+            }
+        }
+        return false;
     },
 
     // /*检测是否可以替换
@@ -957,8 +987,8 @@ cc.Class({
         }
 
         function isRepeatItemInWipe(item) {
-            for (var _i = 0; _i < wipe_list.length; _i++) {
-                if (wipe_list[_i].getComponent("BoxDrop").boxItem.id === item.getComponent("BoxDrop").boxItem.id) {
+            for (var _i2 = 0; _i2 < wipe_list.length; _i2++) {
+                if (wipe_list[_i2].getComponent("BoxDrop").boxItem.id === item.getComponent("BoxDrop").boxItem.id) {
                     return true;
                 }
             }
@@ -966,12 +996,12 @@ cc.Class({
         }
 
         //判断行 是否有三个以及三个以上的一样的色块连在一起
-        for (var _i2 = 0; _i2 < this.num_row; _i2++) {
+        for (var _i3 = 0; _i3 < this.num_row; _i3++) {
 
             var _tempList = [];
             var _pre_box = null;
             for (var _j = 0; _j < this.num_rank; _j++) {
-                var _box = this.rankList[_j][_i2];
+                var _box = this.rankList[_j][_i3];
                 if (!_pre_box) {
                     _pre_box = _box;
                     _tempList.push(_box);
@@ -1033,24 +1063,11 @@ cc.Class({
 
                     var box = elem.getComponent("BoxDrop");
 
-                    if (this.gamestate !== Game_State.Start) {
+                    var haveTop = this.blankTopBoxExit(elem);
 
-                        var haveTop = function () {
-                            for (var _i3 = box.boxItem.row + 1; _i3 < this.num_row; _i3++) {
-                                var b = this.rankList[box.boxItem.rank][_i3];
-                                if (b.getComponent(BoxDrop).boxItem.color_type === BoxType.Barrier) {
-                                    return true;
-                                }
-                            }
-                            return false;
-                        }.bind(this)();
-
-                        if (haveTop) {
-                            //如果这个方块顶部是有障碍物的话 这个方块不销毁 将它设置成 Blank类型
-                            box.boxSpeciallyShow(BoxType.Blank);
-                        } else {
-                            box.state_b = BoxState.EDestroy;
-                        }
+                    if (haveTop) {
+                        //如果这个方块顶部是有障碍物的话 这个方块不销毁 将它设置成 Blank类型
+                        box.boxSpeciallyShow(BoxType.Blank);
                     } else {
                         box.state_b = BoxState.EDestroy;
                     }

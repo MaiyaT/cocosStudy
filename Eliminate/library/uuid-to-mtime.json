@@ -1,7 +1,7 @@
 {
   "45eb1a7b-c713-4244-b94f-2177ec612048": {
-    "asset": 1498314482000,
-    "meta": 1498374594000,
+    "asset": 1498485677000,
+    "meta": 1498485789000,
     "relativePath": "script"
   },
   "54e471f9-0182-4ba6-9a42-4d8c80ef83c3": {
@@ -315,13 +315,13 @@
     "relativePath": "script/BoxItem.js"
   },
   "4cf6367e-ad66-485f-b6ad-d81e22dbbfe0": {
-    "asset": 1498403673000,
-    "meta": 1498403673000,
+    "asset": 1498490154000,
+    "meta": 1498490154000,
     "relativePath": "scenes/game.fire"
   },
   "ec917de0-c8aa-4110-9614-dba61ed5e39e": {
-    "asset": 1498403656000,
-    "meta": 1498403670000,
+    "asset": 1498490146000,
+    "meta": 1498490151000,
     "relativePath": "script/BoxPanel.js"
   }
 }
