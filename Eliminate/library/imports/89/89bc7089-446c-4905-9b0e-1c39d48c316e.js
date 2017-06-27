@@ -271,14 +271,13 @@ cc.Class({
 
             var last_point = this.boxItem.ani_point[0];
 
-            if (last_point !== undefined && this.node.x !== last_point.x && this.node.y < last_point.y) {
-
-                // this.node.x = last_point.x;
-                // this.boxItem.blank_move_point.shift();//删除第一个元素
+            if (last_point !== undefined &&
+            // this.node.x !== last_point.x &&
+            this.node.y < last_point.y) {
 
                 if (last_point.isleft) {
                     //左边的递减
-                    this.node.x = this.node.x - this.speed * 0.5;
+                    this.node.x = this.node.x - this.speed * 0.3;
                     if (this.node.x <= last_point.x) {
                         this.node.x = last_point.x;
                         this.boxItem.ani_point.shift(); //删除第一个元素
@@ -286,7 +285,7 @@ cc.Class({
                     }
                 } else {
                     //右边的递增
-                    this.node.x = this.node.x + this.speed * 0.5;
+                    this.node.x = this.node.x + this.speed * 0.3;
                     if (this.node.x >= last_point.x) {
                         this.node.x = last_point.x;
                         this.boxItem.ani_point.shift(); //删除第一个元素

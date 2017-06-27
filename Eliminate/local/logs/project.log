@@ -1,89 +1,67 @@
-2017-06-26T14:03:07.369Z - normal: Load ~/.CocosCreator/settings.json
-2017-06-26T14:03:07.372Z - normal: checking language setting...
-2017-06-26T14:03:07.372Z - normal: Language: zh
-2017-06-26T14:03:07.630Z - success: protocol editor-framework registered
-2017-06-26T14:03:07.630Z - success: protocol app registered
-2017-06-26T14:03:07.630Z - success: protocol theme registered
-2017-06-26T14:03:07.630Z - success: protocol profile registered
-2017-06-26T14:03:07.630Z - success: protocol packages registered
-2017-06-26T14:03:07.632Z - success: protocol unpack registerred
-2017-06-26T14:03:07.633Z - success: protocol disable-commonjs registerred
-2017-06-26T14:03:07.889Z - normal: connected!
-2017-06-26T14:03:07.892Z - normal: Check project /Users/linningning/Documents/000/YH_Cocos/Eliminate
-2017-06-26T14:03:07.893Z - normal: Initializing Cocos2d
-2017-06-26T14:03:08.007Z - normal: Initializing Asset Database
-2017-06-26T14:03:08.026Z - success: protocol uuid registerred
-2017-06-26T14:03:08.027Z - success: protocol db registerred
-2017-06-26T14:03:08.027Z - success: protocol thumbnail registerred
-2017-06-26T14:03:08.027Z - normal: Loading editor/builtin packages
-2017-06-26T14:03:08.041Z - success: anysdk loaded
-2017-06-26T14:03:08.136Z - success: assets loaded
-2017-06-26T14:03:08.139Z - success: builder loaded
-2017-06-26T14:03:08.143Z - success: hierarchy loaded
-2017-06-26T14:03:08.147Z - success: inspector loaded
-2017-06-26T14:03:08.148Z - success: keystore loaded
-2017-06-26T14:03:08.151Z - success: node-library loaded
-2017-06-26T14:03:08.153Z - success: package-asset loaded
-2017-06-26T14:03:08.154Z - success: preferences loaded
-2017-06-26T14:03:08.164Z - success: project-importer loaded
-2017-06-26T14:03:08.166Z - success: project-settings loaded
-2017-06-26T14:03:08.169Z - success: ui-kit loaded
-2017-06-26T14:03:08.173Z - success: ui-grid loaded
-2017-06-26T14:03:08.176Z - success: scene loaded
-2017-06-26T14:03:08.177Z - success: sprite-editor loaded
-2017-06-26T14:03:08.180Z - success: store loaded
-2017-06-26T14:03:08.183Z - success: timeline loaded
-2017-06-26T14:03:08.183Z - normal: Loading builtin packages
-2017-06-26T14:03:08.187Z - success: asset-db-debugger loaded
-2017-06-26T14:03:08.188Z - success: code-editor loaded
-2017-06-26T14:03:08.190Z - success: color-picker loaded
-2017-06-26T14:03:08.193Z - success: console loaded
-2017-06-26T14:03:08.196Z - success: package-manager loaded
-2017-06-26T14:03:08.203Z - success: sdkbox loaded
-2017-06-26T14:03:08.207Z - success: tester loaded
-2017-06-26T14:03:08.210Z - success: ui-kit-preview-extra loaded
-2017-06-26T14:03:08.214Z - success: ui-kit-preview loaded
-2017-06-26T14:03:08.216Z - success: ui-tree loaded
-2017-06-26T14:03:08.247Z - normal: Initializing project /Users/linningning/Documents/000/YH_Cocos/Eliminate
-2017-06-26T14:03:08.248Z - normal: Loading packages
-2017-06-26T14:03:08.256Z - success: quick-open loaded
-2017-06-26T14:03:08.422Z - success: quick-preview loaded
-2017-06-26T14:03:08.422Z - normal: Watching packages
-2017-06-26T14:03:08.449Z - normal: Run Application
-2017-06-26T14:03:09.072Z - failed: [db-task][init] Failed to import asset /Users/linningning/Documents/000/YH_Cocos/Eliminate/assets/script/BoxPanel.js, message: Compile error: TypeError: unknown: Duplicate declaration "haveTop"
-  356 | 
-  357 | 
-> 358 |         let haveTop = this.blankTopBoxExit(boxReplace);
-      |             ^
-  359 |         if(!haveTop){
-  360 |             this.blankRemoveItemAtRank(boxReplace);
-  361 |         }
-    at File.buildCodeFrameError (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-core/lib/transformation/file/index.js:431:15)
-    at Scope.checkBlockScopedCollisions (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-traverse/lib/scope/index.js:398:27)
-    at Scope.registerBinding (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-traverse/lib/scope/index.js:592:16)
-    at Scope.registerDeclaration (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-traverse/lib/scope/index.js:496:14)
-    at Object.BlockScoped (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-traverse/lib/scope/index.js:244:28)
-    at Object.newFn (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-traverse/lib/visitors.js:318:17)
-    at NodePath._call (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-traverse/lib/path/context.js:76:18)
-    at NodePath.call (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-traverse/lib/path/context.js:44:14)
-    at NodePath.visit (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-traverse/lib/path/context.js:105:12)
-    at TraversalContext.visitQueue (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babel-traverse/lib/context.js:150:16)
-2017-06-26T14:03:09.211Z - success: preview server running at http://localhost:7456
-2017-06-26T14:03:11.673Z - normal: 1.5.0
-2017-06-26T14:04:16.109Z - normal: Compiled project javascript file successfully
-2017-06-26T14:05:09.055Z - normal: Compiled project javascript file successfully
-2017-06-26T14:06:16.979Z - normal: Compiled project javascript file successfully
-2017-06-26T14:09:20.035Z - normal: Compiled project javascript file successfully
-2017-06-26T14:10:23.339Z - normal: Compiled project javascript file successfully
-2017-06-26T14:12:53.698Z - normal: Compiled project javascript file successfully
-2017-06-26T14:14:43.090Z - normal: Compiled project javascript file successfully
-2017-06-26T14:22:11.827Z - normal: Compiled project javascript file successfully
-2017-06-26T14:24:49.807Z - normal: Compiled project javascript file successfully
-2017-06-26T14:25:35.588Z - normal: Compiled project javascript file successfully
-2017-06-26T14:26:29.834Z - normal: Compiled project javascript file successfully
-2017-06-26T14:30:28.804Z - normal: Compiled project javascript file successfully
-2017-06-26T14:32:49.195Z - normal: Compiled project javascript file successfully
-2017-06-26T14:43:23.566Z - normal: Compiled project javascript file successfully
-2017-06-26T15:01:30.471Z - normal: Compiled project javascript file successfully
-2017-06-26T15:14:17.500Z - normal: Compiled project javascript file successfully
-2017-06-26T15:15:52.559Z - normal: Compiled project javascript file successfully
+2017-06-27T11:55:52.043Z - normal: Load ~/.CocosCreator/settings.json
+2017-06-27T11:55:52.046Z - normal: checking language setting...
+2017-06-27T11:55:52.047Z - normal: Language: zh
+2017-06-27T11:55:52.988Z - success: protocol editor-framework registered
+2017-06-27T11:55:52.988Z - success: protocol app registered
+2017-06-27T11:55:52.988Z - success: protocol theme registered
+2017-06-27T11:55:52.988Z - success: protocol profile registered
+2017-06-27T11:55:52.988Z - success: protocol packages registered
+2017-06-27T11:55:52.990Z - success: protocol unpack registerred
+2017-06-27T11:55:52.991Z - success: protocol disable-commonjs registerred
+2017-06-27T11:55:53.292Z - normal: connected!
+2017-06-27T11:55:53.294Z - normal: Check project /Users/linningning/Documents/000/YH_Cocos/Eliminate
+2017-06-27T11:55:53.296Z - normal: Initializing Cocos2d
+2017-06-27T11:55:53.553Z - normal: Initializing Asset Database
+2017-06-27T11:55:53.624Z - success: protocol uuid registerred
+2017-06-27T11:55:53.625Z - success: protocol db registerred
+2017-06-27T11:55:53.625Z - success: protocol thumbnail registerred
+2017-06-27T11:55:53.625Z - normal: Loading editor/builtin packages
+2017-06-27T11:55:53.784Z - success: anysdk loaded
+2017-06-27T11:55:53.933Z - success: assets loaded
+2017-06-27T11:55:53.938Z - success: builder loaded
+2017-06-27T11:55:53.943Z - success: hierarchy loaded
+2017-06-27T11:55:53.949Z - success: inspector loaded
+2017-06-27T11:55:53.950Z - success: keystore loaded
+2017-06-27T11:55:53.955Z - success: node-library loaded
+2017-06-27T11:55:53.957Z - success: package-asset loaded
+2017-06-27T11:55:53.959Z - success: preferences loaded
+2017-06-27T11:55:53.976Z - success: project-importer loaded
+2017-06-27T11:55:53.979Z - success: project-settings loaded
+2017-06-27T11:55:53.982Z - success: ui-kit loaded
+2017-06-27T11:55:53.995Z - success: ui-grid loaded
+2017-06-27T11:55:54.000Z - success: scene loaded
+2017-06-27T11:55:54.001Z - success: sprite-editor loaded
+2017-06-27T11:55:54.005Z - success: store loaded
+2017-06-27T11:55:54.011Z - success: timeline loaded
+2017-06-27T11:55:54.011Z - normal: Loading builtin packages
+2017-06-27T11:55:54.023Z - success: asset-db-debugger loaded
+2017-06-27T11:55:54.025Z - success: code-editor loaded
+2017-06-27T11:55:54.030Z - success: color-picker loaded
+2017-06-27T11:55:54.035Z - success: console loaded
+2017-06-27T11:55:54.038Z - success: package-manager loaded
+2017-06-27T11:55:54.047Z - success: sdkbox loaded
+2017-06-27T11:55:54.051Z - success: tester loaded
+2017-06-27T11:55:54.055Z - success: ui-kit-preview-extra loaded
+2017-06-27T11:55:54.059Z - success: ui-kit-preview loaded
+2017-06-27T11:55:54.063Z - success: ui-tree loaded
+2017-06-27T11:55:54.103Z - normal: Initializing project /Users/linningning/Documents/000/YH_Cocos/Eliminate
+2017-06-27T11:55:54.106Z - normal: Loading packages
+2017-06-27T11:55:54.127Z - success: quick-open loaded
+2017-06-27T11:55:54.582Z - success: quick-preview loaded
+2017-06-27T11:55:54.582Z - normal: Watching packages
+2017-06-27T11:55:54.609Z - normal: Run Application
+2017-06-27T11:55:55.500Z - success: preview server running at http://localhost:7456
+2017-06-27T11:55:59.559Z - normal: 1.5.0
+2017-06-27T12:12:31.906Z - normal: Compiled project javascript file successfully
+2017-06-27T12:15:09.782Z - normal: Compiled project javascript file successfully
+2017-06-27T12:19:39.362Z - normal: Compiled project javascript file successfully
+2017-06-27T12:20:56.769Z - normal: Compiled project javascript file successfully
+2017-06-27T12:21:46.329Z - normal: Compiled project javascript file successfully
+2017-06-27T13:11:21.788Z - normal: Compiled project javascript file successfully
+2017-06-27T13:12:40.953Z - normal: Compiled project javascript file successfully
+2017-06-27T13:13:29.050Z - normal: Compiled project javascript file successfully
+2017-06-27T13:37:48.431Z - normal: Compiled project javascript file successfully
+2017-06-27T13:46:39.318Z - normal: Compiled project javascript file successfully
+2017-06-27T13:49:51.137Z - normal: Compiled project javascript file successfully
+2017-06-27T13:51:20.965Z - normal: Compiled project javascript file successfully
+2017-06-27T13:53:30.380Z - normal: Compiled project javascript file successfully

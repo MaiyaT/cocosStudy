@@ -322,17 +322,20 @@ cc.Class({
         var box_bl = boxBlank.getComponent("BoxDrop");
 
         //要取最后一个位置 来判断这个动画是够添加过
-        var lastPoint = box_re.boxItem.ani_point[box_re.boxItem.ani_point.length - 1];
+        // let lastPoint = box_re.boxItem.ani_point[box_re.boxItem.ani_point.length - 1];
 
         //存储动画的节点
         var isleft = box_bl.boxItem.begin_x < box_re.boxItem.begin_x;
-        if (lastPoint === undefined || lastPoint.x !== box_bl.boxItem.begin_x) {
-            box_re.boxItem.ani_point.push({
-                "x": box_bl.boxItem.begin_x,
-                "y": box_bl.boxItem.end_y + box_bl.node.height,
-                "isleft": isleft
-            });
-        }
+
+        box_re.boxItem.ani_point.push({
+            "x": box_bl.boxItem.begin_x,
+            "y": box_bl.boxItem.end_y + box_bl.node.height,
+            "isleft": isleft
+        });
+
+        // boxReplace.y = box_bl.boxItem.end_y + box_bl.node.height;
+        // boxReplace.x = box_bl.boxItem.begin_x;
+
 
         var tempBeginy = box_re.boxItem.begin_y;
 
@@ -342,11 +345,13 @@ cc.Class({
         }
 
         var tempBeginx = box_re.boxItem.begin_x;
+        var tempBeginY = box_re.boxItem.begin_y;
         var tempEndy = box_re.boxItem.end_y;
         var tempRow = box_re.boxItem.row;
         var tempRank = box_re.boxItem.rank;
 
         box_re.boxItem.begin_x = box_bl.boxItem.begin_x;
+        box_re.boxItem.begin_y = box_bl.boxItem.begin_y;
         box_re.boxItem.end_y = box_bl.boxItem.end_y;
         box_re.boxItem.row = box_bl.boxItem.row;
         box_re.boxItem.rank = box_bl.boxItem.rank;
@@ -356,6 +361,7 @@ cc.Class({
         box_bl.boxItem.row = tempRow;
         box_bl.boxItem.rank = tempRank;
         box_bl.boxItem.begin_y = tempBeginy;
+        box_bl.boxItem.begin_y = tempBeginY;
 
         if (haveTop) {
             //这个位置的方块设置成空缺的状态
@@ -363,7 +369,7 @@ cc.Class({
             this.rankList[box_re.boxItem.rank][box_re.boxItem.row] = boxReplace;
             this.rankList[box_bl.boxItem.rank][box_bl.boxItem.row] = boxBlank;
 
-            box_bl.resetOriginPos();
+            box_bl.boxSpeciallyShow(BoxType.Blank);
 
             //从头开始重新遍历
             return true;
